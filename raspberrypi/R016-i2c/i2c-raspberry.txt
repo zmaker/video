@@ -1,0 +1,17 @@
+gpiosudo raspi-config
+
+ablita i2c
+
+listo la scheda con
+gpio i2cd
+
+la vede 0x40
+
+creo una directory
+
+git clone https://github.com/vanvught/rpidmx512.git
+
+cd lib-pca9685
+(https://github.com/vanvught/rpidmx512/tree/master/lib-pca9685)
+
+make -f Makefile.Linux "DEF=-DRASPPI"
