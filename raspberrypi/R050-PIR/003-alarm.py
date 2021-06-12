@@ -1,0 +1,23 @@
+import machine
+import utime
+
+sensor_pir = machine.Pin(16, machine.Pin.IN, machine.Pin.PULL_DOWN)
+led = machine.Pin(15, machine.Pin.OUT)
+buzzer = machine.Pin(14, machine.Pin.OUT)
+
+def pir_handler(pin):
+    utime.sleep_ms(100)
+    if pin.value():
+        print("ALLARME!")
+        for i in range(50):
+            led.toggle()
+            buzzer.toggle()
+            utime.sleep_ms(100)
+
+sensor_pir.irq(trigger=machine.Pin.IRQ_RISING, handler=pir_handler)
+
+while True:
+    led.off()
+    utime.sleep(3)
+    led.on()
+    utime.sleep(.5)
