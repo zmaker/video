@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DownloadTask>
+  <FullDownload>pdata.srt</FullDownload>
+  <FullDownload type="ADMINDATA">pdata.pwx</FullDownload>
+  <FullDownload>pdata.ORIE.cnk</FullDownload>
+  <FullDownload>pdata.ETH0.cnk</FullDownload>
+</DownloadTask>
