@@ -1,0 +1,77 @@
+[
+    {
+        "id": "e92d317d8748679c",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "793847e7a19784c8",
+        "type": "exec",
+        "z": "e92d317d8748679c",
+        "command": "",
+        "addpay": "payload",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "",
+        "x": 390,
+        "y": 900,
+        "wires": [
+            [
+                "119f521b47645353"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "864250e6ab884c62",
+        "type": "inject",
+        "z": "e92d317d8748679c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "ping -n 4 8.8.8.8",
+        "payloadType": "str",
+        "x": 180,
+        "y": 900,
+        "wires": [
+            [
+                "793847e7a19784c8"
+            ]
+        ]
+    },
+    {
+        "id": "119f521b47645353",
+        "type": "debug",
+        "z": "e92d317d8748679c",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 640,
+        "y": 880,
+        "wires": []
+    }
+]

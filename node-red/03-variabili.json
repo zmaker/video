@@ -1,0 +1,146 @@
+[
+    {
+        "id": "e92d317d8748679c",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "099107ee4c421d5e",
+        "type": "inject",
+        "z": "e92d317d8748679c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 200,
+        "wires": [
+            [
+                "6e768a945dc9c792"
+            ]
+        ]
+    },
+    {
+        "id": "7fdf885b62f26999",
+        "type": "debug",
+        "z": "e92d317d8748679c",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 680,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "6e768a945dc9c792",
+        "type": "function",
+        "z": "e92d317d8748679c",
+        "name": "function 1",
+        "func": "flow.set(\"temp\", 23);\nglobal.set(\"debug-level\", 3);\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 200,
+        "wires": [
+            [
+                "c0726855002f4049",
+                "36dbeeb9e4f05c83"
+            ]
+        ]
+    },
+    {
+        "id": "c0726855002f4049",
+        "type": "change",
+        "z": "e92d317d8748679c",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "temp",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 500,
+        "y": 200,
+        "wires": [
+            [
+                "7fdf885b62f26999"
+            ]
+        ]
+    },
+    {
+        "id": "36dbeeb9e4f05c83",
+        "type": "change",
+        "z": "e92d317d8748679c",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "debug-level",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 520,
+        "y": 280,
+        "wires": [
+            [
+                "ec17edb2eb81697e"
+            ]
+        ]
+    },
+    {
+        "id": "ec17edb2eb81697e",
+        "type": "debug",
+        "z": "e92d317d8748679c",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 720,
+        "y": 280,
+        "wires": []
+    }
+]

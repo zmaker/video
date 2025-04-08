@@ -1,0 +1,192 @@
+[
+    {
+        "id": "e92d317d8748679c",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "9d8761752438e14c",
+        "type": "link in",
+        "z": "e92d317d8748679c",
+        "name": "link in 1",
+        "links": [
+            "999b094b0ab02c6e"
+        ],
+        "x": 515,
+        "y": 140,
+        "wires": [
+            [
+                "f242ecc6cdca8cba"
+            ]
+        ]
+    },
+    {
+        "id": "999b094b0ab02c6e",
+        "type": "link out",
+        "z": "e92d317d8748679c",
+        "name": "link out 1",
+        "mode": "link",
+        "links": [
+            "9d8761752438e14c"
+        ],
+        "x": 355,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "ed3b9eda6d0a3c9c",
+        "type": "inject",
+        "z": "e92d317d8748679c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 200,
+        "y": 140,
+        "wires": [
+            [
+                "999b094b0ab02c6e"
+            ]
+        ]
+    },
+    {
+        "id": "f242ecc6cdca8cba",
+        "type": "debug",
+        "z": "e92d317d8748679c",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 680,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "ce6ef936bec3121f",
+        "type": "link call",
+        "z": "e92d317d8748679c",
+        "name": "call fun",
+        "links": [
+            "9493cfceb3d22965"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 420,
+        "y": 260,
+        "wires": [
+            [
+                "cfc760ccc837f56e"
+            ]
+        ]
+    },
+    {
+        "id": "7cc0c76f5387ed79",
+        "type": "inject",
+        "z": "e92d317d8748679c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "temp",
+        "payload": "24",
+        "payloadType": "num",
+        "x": 200,
+        "y": 260,
+        "wires": [
+            [
+                "ce6ef936bec3121f"
+            ]
+        ]
+    },
+    {
+        "id": "cfc760ccc837f56e",
+        "type": "debug",
+        "z": "e92d317d8748679c",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 620,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "9493cfceb3d22965",
+        "type": "link in",
+        "z": "e92d317d8748679c",
+        "name": "link in 2",
+        "links": [],
+        "x": 275,
+        "y": 420,
+        "wires": [
+            [
+                "7074c9d17e2ab9c8"
+            ]
+        ]
+    },
+    {
+        "id": "68f1f4a36c65a97b",
+        "type": "link out",
+        "z": "e92d317d8748679c",
+        "name": "link out 2",
+        "mode": "return",
+        "links": [],
+        "x": 615,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "7074c9d17e2ab9c8",
+        "type": "function",
+        "z": "e92d317d8748679c",
+        "name": "function 1",
+        "func": "msg.payload = (msg.payload * 9/5) + 32;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 440,
+        "y": 420,
+        "wires": [
+            [
+                "68f1f4a36c65a97b"
+            ]
+        ]
+    }
+]

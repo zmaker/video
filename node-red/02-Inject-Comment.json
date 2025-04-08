@@ -1,0 +1,156 @@
+[
+    {
+        "id": "e92d317d8748679c",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "51310658d68ac671",
+        "type": "inject",
+        "z": "e92d317d8748679c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "temp",
+        "payload": "13",
+        "payloadType": "num",
+        "x": 160,
+        "y": 200,
+        "wires": [
+            [
+                "cccd8bedea0c4516"
+            ]
+        ]
+    },
+    {
+        "id": "cccd8bedea0c4516",
+        "type": "debug",
+        "z": "e92d317d8748679c",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 520,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "7a1de99e8e85cee0",
+        "type": "inject",
+        "z": "e92d317d8748679c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "3",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "time",
+        "payload": "",
+        "payloadType": "date",
+        "x": 180,
+        "y": 260,
+        "wires": [
+            [
+                "190b1d462eb69e7f"
+            ]
+        ]
+    },
+    {
+        "id": "190b1d462eb69e7f",
+        "type": "debug",
+        "z": "e92d317d8748679c",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 520,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "7ffe2b4aaecb0908",
+        "type": "comment",
+        "z": "e92d317d8748679c",
+        "name": "Flusso con ripetizione",
+        "info": "# Trasmetto a ripetizione\nil nodo ripete l'invio ogni 3 secondi",
+        "x": 740,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "9e6103bd309fd6dd",
+        "type": "inject",
+        "z": "e92d317d8748679c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "msg",
+        "payload": "hello flow",
+        "payloadType": "str",
+        "x": 170,
+        "y": 140,
+        "wires": [
+            [
+                "eb4b37762c74d316"
+            ]
+        ]
+    },
+    {
+        "id": "eb4b37762c74d316",
+        "type": "debug",
+        "z": "e92d317d8748679c",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 520,
+        "y": 140,
+        "wires": []
+    }
+]

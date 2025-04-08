@@ -1,0 +1,125 @@
+[
+    {
+        "id": "e92d317d8748679c",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "507248694415eaca",
+        "type": "range",
+        "z": "e92d317d8748679c",
+        "minin": "0",
+        "maxin": "100",
+        "minout": "0",
+        "maxout": "255",
+        "action": "drop",
+        "round": false,
+        "property": "payload",
+        "name": "",
+        "x": 420,
+        "y": 320,
+        "wires": [
+            [
+                "bfd16966f23e5dc3"
+            ]
+        ]
+    },
+    {
+        "id": "98c1c7e3fd94cab8",
+        "type": "inject",
+        "z": "e92d317d8748679c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 200,
+        "y": 180,
+        "wires": [
+            [
+                "923bb8027f6943bb"
+            ]
+        ]
+    },
+    {
+        "id": "923bb8027f6943bb",
+        "type": "function",
+        "z": "e92d317d8748679c",
+        "name": "function 1",
+        "func": "msg.payload = Math.floor(Math.random() * 100)\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 180,
+        "wires": [
+            [
+                "507248694415eaca",
+                "bfd16966f23e5dc3"
+            ]
+        ]
+    },
+    {
+        "id": "bfd16966f23e5dc3",
+        "type": "debug",
+        "z": "e92d317d8748679c",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 660,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "a0bb993705b4ed77",
+        "type": "inject",
+        "z": "e92d317d8748679c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "300",
+        "payloadType": "num",
+        "x": 190,
+        "y": 360,
+        "wires": [
+            [
+                "507248694415eaca"
+            ]
+        ]
+    }
+]

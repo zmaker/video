@@ -1,0 +1,76 @@
+[
+    {
+        "id": "e92d317d8748679c",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "1af0ce15f8595f70",
+        "type": "sort",
+        "z": "e92d317d8748679c",
+        "name": "",
+        "order": "descending",
+        "as_num": false,
+        "target": "payload",
+        "targetType": "msg",
+        "msgKey": "payload",
+        "msgKeyType": "elem",
+        "seqKey": "payload",
+        "seqKeyType": "msg",
+        "x": 470,
+        "y": 1080,
+        "wires": [
+            [
+                "07d4b79460f980ae"
+            ]
+        ]
+    },
+    {
+        "id": "b7cb1b3e36941514",
+        "type": "inject",
+        "z": "e92d317d8748679c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "value",
+        "payload": "[7,5,6,4,3,2,4,1,9]",
+        "payloadType": "json",
+        "x": 220,
+        "y": 1020,
+        "wires": [
+            [
+                "1af0ce15f8595f70"
+            ]
+        ]
+    },
+    {
+        "id": "07d4b79460f980ae",
+        "type": "debug",
+        "z": "e92d317d8748679c",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 660,
+        "y": 1080,
+        "wires": []
+    }
+]

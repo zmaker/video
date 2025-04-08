@@ -1,0 +1,187 @@
+[
+    {
+        "id": "e92d317d8748679c",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "fe84c4f990bb4b4b",
+        "type": "switch",
+        "z": "e92d317d8748679c",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 250,
+        "y": 260,
+        "wires": [
+            [
+                "6fe6a6997e64d72a"
+            ],
+            [
+                "3caeaea6183e973e"
+            ]
+        ]
+    },
+    {
+        "id": "60b3c2ca6e1cb8d8",
+        "type": "inject",
+        "z": "e92d317d8748679c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 160,
+        "y": 120,
+        "wires": [
+            [
+                "265103e05ea715de"
+            ]
+        ]
+    },
+    {
+        "id": "265103e05ea715de",
+        "type": "function",
+        "z": "e92d317d8748679c",
+        "name": "function 1",
+        "func": "msg.payload = Math.floor(Math.random() * 100);\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 120,
+        "wires": [
+            [
+                "1ba83afcf256fa9f",
+                "cc3efca512a7e8fa"
+            ]
+        ]
+    },
+    {
+        "id": "1ba83afcf256fa9f",
+        "type": "function",
+        "z": "e92d317d8748679c",
+        "name": "function 2",
+        "func": "msg.payload = msg.payload%2;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 120,
+        "wires": [
+            [
+                "fe84c4f990bb4b4b"
+            ]
+        ]
+    },
+    {
+        "id": "6fe6a6997e64d72a",
+        "type": "change",
+        "z": "e92d317d8748679c",
+        "name": "",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "1",
+                "fromt": "num",
+                "to": "DISPARI",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 520,
+        "y": 240,
+        "wires": [
+            [
+                "cc3efca512a7e8fa"
+            ]
+        ]
+    },
+    {
+        "id": "3caeaea6183e973e",
+        "type": "change",
+        "z": "e92d317d8748679c",
+        "name": "",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "0",
+                "fromt": "num",
+                "to": "PARI",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 520,
+        "y": 300,
+        "wires": [
+            [
+                "cc3efca512a7e8fa"
+            ]
+        ]
+    },
+    {
+        "id": "cc3efca512a7e8fa",
+        "type": "debug",
+        "z": "e92d317d8748679c",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 840,
+        "y": 200,
+        "wires": []
+    }
+]

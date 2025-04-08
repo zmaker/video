@@ -1,0 +1,138 @@
+[
+    {
+        "id": "e92d317d8748679c",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "435dd902866d9562",
+        "type": "template",
+        "z": "e92d317d8748679c",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "This is the payload: {{payload}} !",
+        "output": "str",
+        "x": 380,
+        "y": 620,
+        "wires": [
+            [
+                "b71a1c0d74be0005"
+            ]
+        ]
+    },
+    {
+        "id": "97ca08e005d63c48",
+        "type": "inject",
+        "z": "e92d317d8748679c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 180,
+        "y": 620,
+        "wires": [
+            [
+                "435dd902866d9562"
+            ]
+        ]
+    },
+    {
+        "id": "b71a1c0d74be0005",
+        "type": "debug",
+        "z": "e92d317d8748679c",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 580,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "22c5ce7eb7bfbf47",
+        "type": "inject",
+        "z": "e92d317d8748679c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "saluto",
+        "payload": "Mario",
+        "payloadType": "str",
+        "x": 170,
+        "y": 700,
+        "wires": [
+            [
+                "648a618ef40a5310"
+            ]
+        ]
+    },
+    {
+        "id": "b9666a4992481df7",
+        "type": "debug",
+        "z": "e92d317d8748679c",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 540,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "648a618ef40a5310",
+        "type": "template",
+        "z": "e92d317d8748679c",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Questo è un {{topic}} personalizzato:\nCiao, {{payload}}!",
+        "output": "str",
+        "x": 340,
+        "y": 700,
+        "wires": [
+            [
+                "b9666a4992481df7"
+            ]
+        ]
+    }
+]

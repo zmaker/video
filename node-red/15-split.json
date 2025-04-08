@@ -1,0 +1,205 @@
+[
+    {
+        "id": "e92d317d8748679c",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "78e462a6faea2313",
+        "type": "split",
+        "z": "e92d317d8748679c",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "property": "payload",
+        "x": 470,
+        "y": 940,
+        "wires": [
+            [
+                "da1217e05c8aa180"
+            ]
+        ]
+    },
+    {
+        "id": "1e4eca0c9bbb3f3a",
+        "type": "inject",
+        "z": "e92d317d8748679c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "[1,2,3]",
+        "payloadType": "json",
+        "x": 190,
+        "y": 920,
+        "wires": [
+            [
+                "78e462a6faea2313"
+            ]
+        ]
+    },
+    {
+        "id": "da1217e05c8aa180",
+        "type": "debug",
+        "z": "e92d317d8748679c",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 720,
+        "y": 940,
+        "wires": []
+    },
+    {
+        "id": "97574273490b444a",
+        "type": "split",
+        "z": "e92d317d8748679c",
+        "name": "",
+        "splt": "3",
+        "spltType": "len",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "property": "payload",
+        "x": 450,
+        "y": 1060,
+        "wires": [
+            [
+                "6ad6d0002f186fe7"
+            ]
+        ]
+    },
+    {
+        "id": "9d610a3ea4a15d8f",
+        "type": "inject",
+        "z": "e92d317d8748679c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "hello world",
+        "payloadType": "str",
+        "x": 180,
+        "y": 1040,
+        "wires": [
+            [
+                "97574273490b444a"
+            ]
+        ]
+    },
+    {
+        "id": "6ad6d0002f186fe7",
+        "type": "debug",
+        "z": "e92d317d8748679c",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 700,
+        "y": 1060,
+        "wires": []
+    },
+    {
+        "id": "617859a5390d15b0",
+        "type": "split",
+        "z": "e92d317d8748679c",
+        "name": "",
+        "splt": "3",
+        "spltType": "len",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "property": "payload",
+        "x": 430,
+        "y": 1160,
+        "wires": [
+            [
+                "0428e8dc3c623d4f"
+            ]
+        ]
+    },
+    {
+        "id": "48c35bb21baf3cb0",
+        "type": "inject",
+        "z": "e92d317d8748679c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"nome\":\"Mario\", \"eta\":\"24\", \"citta\":\"Roma\"}",
+        "payloadType": "json",
+        "x": 150,
+        "y": 1140,
+        "wires": [
+            [
+                "617859a5390d15b0"
+            ]
+        ]
+    },
+    {
+        "id": "0428e8dc3c623d4f",
+        "type": "debug",
+        "z": "e92d317d8748679c",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 680,
+        "y": 1160,
+        "wires": []
+    }
+]

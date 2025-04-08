@@ -1,0 +1,104 @@
+[
+    {
+        "id": "e92d317d8748679c",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "9b38e3963fbc2ec5",
+        "type": "batch",
+        "z": "e92d317d8748679c",
+        "name": "",
+        "mode": "interval",
+        "count": "3",
+        "overlap": 0,
+        "interval": 10,
+        "allowEmptySequence": false,
+        "honourParts": false,
+        "topics": [],
+        "x": 380,
+        "y": 1080,
+        "wires": [
+            [
+                "0977036e0c22fb82"
+            ]
+        ]
+    },
+    {
+        "id": "90ba36ac8a207d90",
+        "type": "inject",
+        "z": "e92d317d8748679c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "seq",
+        "payload": "1",
+        "payloadType": "num",
+        "x": 170,
+        "y": 1080,
+        "wires": [
+            [
+                "9b38e3963fbc2ec5"
+            ]
+        ]
+    },
+    {
+        "id": "0977036e0c22fb82",
+        "type": "join",
+        "z": "e92d317d8748679c",
+        "name": "",
+        "mode": "custom",
+        "build": "array",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "useparts": true,
+        "accumulate": false,
+        "timeout": "",
+        "count": "3",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 570,
+        "y": 1080,
+        "wires": [
+            [
+                "df311396a065b82c"
+            ]
+        ]
+    },
+    {
+        "id": "df311396a065b82c",
+        "type": "debug",
+        "z": "e92d317d8748679c",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 760,
+        "y": 1080,
+        "wires": []
+    }
+]
