@@ -1,0 +1,182 @@
+***********************************************************************
+*
+*	DYNAMIC LINK AND INDIRECT ALLOCATION LISTING FOR: PLC02-relepassopasso
+*
+***********************************************************************
+
+
+***************************************************
+	 FIRST CODE AREA
+***************************************************
+
+***************************************************
+	 DATABLOCK PATCHES
+***************************************************
+*
+* List of data blocks that will be checked run-time for consistency with
+* their definition available at compile-time
+*
+*
+*	REQUIREMENTS for DATA BLOCK %I255
+*		Process image: 1
+*		Number of elements: 32
+*		Data size (bytes): 1
+0000	01 01 FF 00 20 00 00 00 01 00 00 00 
+
+*
+*	REQUIREMENTS for DATA BLOCK %Q255
+*		Process image: 1
+*		Number of elements: 32
+*		Data size (bytes): 1
+000C	01 02 FF 00 20 00 00 00 01 00 00 00 
+
+*
+* List of all references to data allocated on data blocks
+* along with the whole information required by the run-time linker
+*
+*
+*	2 REFERENCE(S) TO 8-BIT VAR AT BYTE #0 OF DATA BLOCK %I255
+0000	00 00 FF 00 00 00 00 00 01 01 02 00 
+
+*		Instruction type: 0x00
+*		Code offset: 0x00000558
+000C	58 05 00 00 
+
+*		Instruction type: 0x00
+*		Code offset: 0x00000578
+0010	78 05 00 00 
+
+*
+*	4 REFERENCE(S) TO 8-BIT VAR AT BYTE #0 OF DATA BLOCK %Q255
+0014	00 00 FF 00 00 00 00 00 02 01 04 00 
+
+*		Instruction type: 0x00
+*		Code offset: 0x00000591
+0020	91 05 00 00 
+
+*		Instruction type: 0x00
+*		Code offset: 0x000005B1
+0024	B1 05 00 00 
+
+*		Instruction type: 0x00
+*		Code offset: 0x000005D3
+0028	D3 05 00 00 
+
+*		Instruction type: 0x00
+*		Code offset: 0x000005EA
+002C	EA 05 00 00 
+
+
+***************************************************
+	 FUNCTION PATCHES
+***************************************************
+
+NAME: Sysstrlen  - NUM: 1
+	 Patch - TYPE: 0x0 - CODE OFFSET: 0x00000150
+
+NAME: SysXUnifiedValue  - NUM: 1
+	 Patch - TYPE: 0x0 - CODE OFFSET: 0x000004A6
+
+***************************************************
+	MEMORY AREA ACCESS PATCH
+***************************************************
+*
+* List of all references to data allocated in memory areas
+* along with the whole information required by the run-time linker
+*
+*
+*	1 REFERENCE(S) TO 8-BIT VAR AT BYTE #8 OF DATA AREA
+0000	44 01 01 00 08 00 00 00 
+
+*		Instruction type: 0x00
+*		Code offset: 0x00000509
+0008	09 05 00 00 
+
+*
+*	2 REFERENCE(S) TO 8-BIT VAR AT BYTE #9 OF DATA AREA
+000C	44 01 02 00 09 00 00 00 
+
+*		Instruction type: 0x00
+*		Code offset: 0x00000560
+0014	60 05 00 00 
+
+*		Instruction type: 0x00
+*		Code offset: 0x00000581
+0018	81 05 00 00 
+
+*
+*	4 REFERENCE(S) TO 8-BIT VAR AT BYTE #10 OF DATA AREA
+001C	44 01 04 00 0A 00 00 00 
+
+*		Instruction type: 0x00
+*		Code offset: 0x00000570
+0024	70 05 00 00 
+
+*		Instruction type: 0x00
+*		Code offset: 0x00000589
+0028	89 05 00 00 
+
+*		Instruction type: 0x00
+*		Code offset: 0x000005A9
+002C	A9 05 00 00 
+
+*		Instruction type: 0x00
+*		Code offset: 0x000005F8
+0030	F8 05 00 00 
+
+*
+*	2 REFERENCE(S) TO 8-BIT VAR AT BYTE #11 OF DATA AREA
+0034	44 01 02 00 0B 00 00 00 
+
+*		Instruction type: 0x00
+*		Code offset: 0x000005A1
+003C	A1 05 00 00 
+
+*		Instruction type: 0x00
+*		Code offset: 0x000005C4
+0040	C4 05 00 00 
+
+*
+*	2 REFERENCE(S) TO 8-BIT VAR AT BYTE #12 OF DATA AREA
+0044	44 01 02 00 0C 00 00 00 
+
+*		Instruction type: 0x00
+*		Code offset: 0x000005BC
+004C	BC 05 00 00 
+
+*		Instruction type: 0x00
+*		Code offset: 0x000005DB
+0050	DB 05 00 00 
+
+*
+*	1 REFERENCE(S) TO 64-BIT VAR AT BYTE #16 OF DATA AREA
+0054	44 08 01 00 10 00 00 00 
+
+*		Instruction type: 0x00
+*		Code offset: 0x0000061A
+005C	1A 06 00 00 
+
+*
+*	1 REFERENCE(S) TO 64-BIT VAR AT BYTE #24 OF DATA AREA
+0060	44 08 01 00 18 00 00 00 
+
+*		Instruction type: 0x00
+*		Code offset: 0x00000625
+0068	25 06 00 00 
+
+*
+*	1 REFERENCE(S) TO 48-BIT VAR AT BYTE #32 OF DATA AREA
+006C	44 06 01 00 20 00 00 00 
+
+*		Instruction type: 0x00
+*		Code offset: 0x00000614
+0074	14 06 00 00 
+
+*
+*	1 REFERENCE(S) TO 48-BIT VAR AT BYTE #38 OF DATA AREA
+0078	44 06 01 00 26 00 00 00 
+
+*		Instruction type: 0x00
+*		Code offset: 0x0000061F
+0080	1F 06 00 00 
+

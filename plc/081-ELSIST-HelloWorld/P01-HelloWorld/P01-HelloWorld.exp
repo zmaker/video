@@ -1,0 +1,12 @@
+﻿	(******************************)
+	(*                            *)
+	(*     EXPORTED VARIABLES     *)
+	(*                            *)
+	(******************************)
+
+        VAR_GLOBAL
+	{G:"Variables"}
+STATO AT %IX255.0 : BOOL;
+LED AT %QX255.1 : BOOL;
+	END_VAR
+

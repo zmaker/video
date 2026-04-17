@@ -1,0 +1,977 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml-stylesheet type ="text/xsl" href="file://C:/Users/paolo/AppData/Local/Temp/LLSymTab.xsl" version="1.0"?>
+<LLSymbolTable Version="1.4" Name="PLC04-passopasso" TargetID="Mps053_XUnified_1_0" CodeId="0x5A9F6285" DebugMemoId="0x00008BF5" MemoId="0x0000558E" DataRelocation="patch" DbRelocation="patch" FunctRelocation="patch" dataAddrMode="byte" codeAddrMode="byte" NoIncrAlloc="false" is64bit="false" isBigEndian="false" dataSignature="0xEC561A50">
+	<Resource Name="ELS20" Proc="ARM9"/>
+	<CaseSensitive>true</CaseSensitive>
+	<CompilerOptions FBExtCheck="true"/>
+	<Tasks>
+		<Task Name="Boot" OrigName="Boot" Priority="2">
+			<Prog Name="$$ElsistInit" OrigName="$$ElsistInit"/>
+		</Task>
+		<Task Name="Slow" OrigName="Slow" Priority="1" Period="10000">
+			<Prog Name="MyProgram" OrigName="MyProgram"/>
+		</Task>
+	</Tasks>
+	<GlobalVars>
+		<Var Name="$$STKPOINTER$$" OrigName="$$STKPOINTER$$" Type="DWORD" OrigType="DWORD" Addr="0x8340000" Group="$$COMPILER_INTERNAL_VARS$$" RelocationRecord="$$DATA$$+0"/>
+		<Var Name="$$DEBUGID$$" OrigName="$$DEBUGID$$" Type="DWORD" OrigType="DWORD" Addr="0x8340004" Group="$$COMPILER_INTERNAL_VARS$$" RelocationRecord="$$DATA$$+4"/>
+		<Var Name="BT1" OrigName="BT1" Type="BOOL" OrigType="BOOL" Addr="0x833962C" Group="Variables" RelocationRecord="%I255+0" OnDataBlock="true" DataBlockType="I" DBDataType="X" DataBlockNumber="255" DataBlockIndex="0" Access="1"/>
+		<Var Name="OUT" OrigName="OUT" Type="BOOL" OrigType="BOOL" Addr="0x833984C" Group="Variables" RelocationRecord="%Q255+0" OnDataBlock="true" DataBlockType="Q" DBDataType="X" DataBlockNumber="255" DataBlockIndex="0" Access="3"/>
+		<Var Name="SysDI00" OrigName="SysDI00" Type="BOOL" OrigType="BOOL" Addr="0x833942C" Descr="Logic inputs module 00" Group="Digital_inputs" RelocationRecord="%I0+0" OnDataBlock="true" DataBlockType="I" DBDataType="X" DataBlockNumber="0" DataBlockIndex="0" Access="1" Dims="32"/>
+		<Var Name="SysDI01" OrigName="SysDI01" Type="BOOL" OrigType="BOOL" Addr="0x833944C" Descr="Logic inputs module 01" Group="Digital_inputs" RelocationRecord="%I1+0" OnDataBlock="true" DataBlockType="I" DBDataType="X" DataBlockNumber="1" DataBlockIndex="0" Access="1" Dims="32"/>
+		<Var Name="SysDI02" OrigName="SysDI02" Type="BOOL" OrigType="BOOL" Addr="0x833946C" Descr="Logic inputs module 02" Group="Digital_inputs" RelocationRecord="%I2+0" OnDataBlock="true" DataBlockType="I" DBDataType="X" DataBlockNumber="2" DataBlockIndex="0" Access="1" Dims="32"/>
+		<Var Name="SysDI03" OrigName="SysDI03" Type="BOOL" OrigType="BOOL" Addr="0x833948C" Descr="Logic inputs module 03" Group="Digital_inputs" RelocationRecord="%I3+0" OnDataBlock="true" DataBlockType="I" DBDataType="X" DataBlockNumber="3" DataBlockIndex="0" Access="1" Dims="32"/>
+		<Var Name="SysDI04" OrigName="SysDI04" Type="BOOL" OrigType="BOOL" Addr="0x83394AC" Descr="Logic inputs module 04" Group="Digital_inputs" RelocationRecord="%I4+0" OnDataBlock="true" DataBlockType="I" DBDataType="X" DataBlockNumber="4" DataBlockIndex="0" Access="1" Dims="32"/>
+		<Var Name="SysDI05" OrigName="SysDI05" Type="BOOL" OrigType="BOOL" Addr="0x83394CC" Descr="Logic inputs module 05" Group="Digital_inputs" RelocationRecord="%I5+0" OnDataBlock="true" DataBlockType="I" DBDataType="X" DataBlockNumber="5" DataBlockIndex="0" Access="1" Dims="32"/>
+		<Var Name="SysDI06" OrigName="SysDI06" Type="BOOL" OrigType="BOOL" Addr="0x83394EC" Descr="Logic inputs module 06" Group="Digital_inputs" RelocationRecord="%I6+0" OnDataBlock="true" DataBlockType="I" DBDataType="X" DataBlockNumber="6" DataBlockIndex="0" Access="1" Dims="32"/>
+		<Var Name="SysDI07" OrigName="SysDI07" Type="BOOL" OrigType="BOOL" Addr="0x833950C" Descr="Logic inputs module 07" Group="Digital_inputs" RelocationRecord="%I7+0" OnDataBlock="true" DataBlockType="I" DBDataType="X" DataBlockNumber="7" DataBlockIndex="0" Access="1" Dims="32"/>
+		<Var Name="SysDI08" OrigName="SysDI08" Type="BOOL" OrigType="BOOL" Addr="0x833952C" Descr="Logic inputs module 08" Group="Digital_inputs" RelocationRecord="%I8+0" OnDataBlock="true" DataBlockType="I" DBDataType="X" DataBlockNumber="8" DataBlockIndex="0" Access="1" Dims="32"/>
+		<Var Name="SysDI09" OrigName="SysDI09" Type="BOOL" OrigType="BOOL" Addr="0x833954C" Descr="Logic inputs module 09" Group="Digital_inputs" RelocationRecord="%I9+0" OnDataBlock="true" DataBlockType="I" DBDataType="X" DataBlockNumber="9" DataBlockIndex="0" Access="1" Dims="32"/>
+		<Var Name="SysDI10" OrigName="SysDI10" Type="BOOL" OrigType="BOOL" Addr="0x833956C" Descr="Logic inputs module 10" Group="Digital_inputs" RelocationRecord="%I10+0" OnDataBlock="true" DataBlockType="I" DBDataType="X" DataBlockNumber="10" DataBlockIndex="0" Access="1" Dims="32"/>
+		<Var Name="SysDI11" OrigName="SysDI11" Type="BOOL" OrigType="BOOL" Addr="0x833958C" Descr="Logic inputs module 11" Group="Digital_inputs" RelocationRecord="%I11+0" OnDataBlock="true" DataBlockType="I" DBDataType="X" DataBlockNumber="11" DataBlockIndex="0" Access="1" Dims="32"/>
+		<Var Name="SysDI12" OrigName="SysDI12" Type="BOOL" OrigType="BOOL" Addr="0x83395AC" Descr="Logic inputs module 12" Group="Digital_inputs" RelocationRecord="%I12+0" OnDataBlock="true" DataBlockType="I" DBDataType="X" DataBlockNumber="12" DataBlockIndex="0" Access="1" Dims="32"/>
+		<Var Name="SysDI13" OrigName="SysDI13" Type="BOOL" OrigType="BOOL" Addr="0x83395CC" Descr="Logic inputs module 13" Group="Digital_inputs" RelocationRecord="%I13+0" OnDataBlock="true" DataBlockType="I" DBDataType="X" DataBlockNumber="13" DataBlockIndex="0" Access="1" Dims="32"/>
+		<Var Name="SysDI14" OrigName="SysDI14" Type="BOOL" OrigType="BOOL" Addr="0x83395EC" Descr="Logic inputs module 14" Group="Digital_inputs" RelocationRecord="%I14+0" OnDataBlock="true" DataBlockType="I" DBDataType="X" DataBlockNumber="14" DataBlockIndex="0" Access="1" Dims="32"/>
+		<Var Name="SysDI15" OrigName="SysDI15" Type="BOOL" OrigType="BOOL" Addr="0x833960C" Descr="Logic inputs module 15" Group="Digital_inputs" RelocationRecord="%I15+0" OnDataBlock="true" DataBlockType="I" DBDataType="X" DataBlockNumber="15" DataBlockIndex="0" Access="1" Dims="32"/>
+		<Var Name="SysCPUDI" OrigName="SysCPUDI" Type="BOOL" OrigType="BOOL" Addr="0x833962C" Descr="Logic inputs CPU" Group="Digital_inputs" RelocationRecord="%I255+0" OnDataBlock="true" DataBlockType="I" DBDataType="X" DataBlockNumber="255" DataBlockIndex="0" Access="1" Dims="32"/>
+		<Var Name="SysDO00" OrigName="SysDO00" Type="BOOL" OrigType="BOOL" Addr="0x833964C" Descr="Logic outputs module 00" Group="Digital_outputs" RelocationRecord="%Q0+0" OnDataBlock="true" DataBlockType="Q" DBDataType="X" DataBlockNumber="0" DataBlockIndex="0" Access="3" Dims="32"/>
+		<Var Name="SysDO01" OrigName="SysDO01" Type="BOOL" OrigType="BOOL" Addr="0x833966C" Descr="Logic outputs module 01" Group="Digital_outputs" RelocationRecord="%Q1+0" OnDataBlock="true" DataBlockType="Q" DBDataType="X" DataBlockNumber="1" DataBlockIndex="0" Access="3" Dims="32"/>
+		<Var Name="SysDO02" OrigName="SysDO02" Type="BOOL" OrigType="BOOL" Addr="0x833968C" Descr="Logic outputs module 02" Group="Digital_outputs" RelocationRecord="%Q2+0" OnDataBlock="true" DataBlockType="Q" DBDataType="X" DataBlockNumber="2" DataBlockIndex="0" Access="3" Dims="32"/>
+		<Var Name="SysDO03" OrigName="SysDO03" Type="BOOL" OrigType="BOOL" Addr="0x83396AC" Descr="Logic outputs module 03" Group="Digital_outputs" RelocationRecord="%Q3+0" OnDataBlock="true" DataBlockType="Q" DBDataType="X" DataBlockNumber="3" DataBlockIndex="0" Access="3" Dims="32"/>
+		<Var Name="SysDO04" OrigName="SysDO04" Type="BOOL" OrigType="BOOL" Addr="0x83396CC" Descr="Logic outputs module 04" Group="Digital_outputs" RelocationRecord="%Q4+0" OnDataBlock="true" DataBlockType="Q" DBDataType="X" DataBlockNumber="4" DataBlockIndex="0" Access="3" Dims="32"/>
+		<Var Name="SysDO05" OrigName="SysDO05" Type="BOOL" OrigType="BOOL" Addr="0x83396EC" Descr="Logic outputs module 05" Group="Digital_outputs" RelocationRecord="%Q5+0" OnDataBlock="true" DataBlockType="Q" DBDataType="X" DataBlockNumber="5" DataBlockIndex="0" Access="3" Dims="32"/>
+		<Var Name="SysDO06" OrigName="SysDO06" Type="BOOL" OrigType="BOOL" Addr="0x833970C" Descr="Logic outputs module 06" Group="Digital_outputs" RelocationRecord="%Q6+0" OnDataBlock="true" DataBlockType="Q" DBDataType="X" DataBlockNumber="6" DataBlockIndex="0" Access="3" Dims="32"/>
+		<Var Name="SysDO07" OrigName="SysDO07" Type="BOOL" OrigType="BOOL" Addr="0x833972C" Descr="Logic outputs module 07" Group="Digital_outputs" RelocationRecord="%Q7+0" OnDataBlock="true" DataBlockType="Q" DBDataType="X" DataBlockNumber="7" DataBlockIndex="0" Access="3" Dims="32"/>
+		<Var Name="SysDO08" OrigName="SysDO08" Type="BOOL" OrigType="BOOL" Addr="0x833974C" Descr="Logic outputs module 08" Group="Digital_outputs" RelocationRecord="%Q8+0" OnDataBlock="true" DataBlockType="Q" DBDataType="X" DataBlockNumber="8" DataBlockIndex="0" Access="3" Dims="32"/>
+		<Var Name="SysDO09" OrigName="SysDO09" Type="BOOL" OrigType="BOOL" Addr="0x833976C" Descr="Logic outputs module 09" Group="Digital_outputs" RelocationRecord="%Q9+0" OnDataBlock="true" DataBlockType="Q" DBDataType="X" DataBlockNumber="9" DataBlockIndex="0" Access="3" Dims="32"/>
+		<Var Name="SysDO10" OrigName="SysDO10" Type="BOOL" OrigType="BOOL" Addr="0x833978C" Descr="Logic outputs module 10" Group="Digital_outputs" RelocationRecord="%Q10+0" OnDataBlock="true" DataBlockType="Q" DBDataType="X" DataBlockNumber="10" DataBlockIndex="0" Access="3" Dims="32"/>
+		<Var Name="SysDO11" OrigName="SysDO11" Type="BOOL" OrigType="BOOL" Addr="0x83397AC" Descr="Logic outputs module 11" Group="Digital_outputs" RelocationRecord="%Q11+0" OnDataBlock="true" DataBlockType="Q" DBDataType="X" DataBlockNumber="11" DataBlockIndex="0" Access="3" Dims="32"/>
+		<Var Name="SysDO12" OrigName="SysDO12" Type="BOOL" OrigType="BOOL" Addr="0x83397CC" Descr="Logic outputs module 12" Group="Digital_outputs" RelocationRecord="%Q12+0" OnDataBlock="true" DataBlockType="Q" DBDataType="X" DataBlockNumber="12" DataBlockIndex="0" Access="3" Dims="32"/>
+		<Var Name="SysDO13" OrigName="SysDO13" Type="BOOL" OrigType="BOOL" Addr="0x83397EC" Descr="Logic outputs module 13" Group="Digital_outputs" RelocationRecord="%Q13+0" OnDataBlock="true" DataBlockType="Q" DBDataType="X" DataBlockNumber="13" DataBlockIndex="0" Access="3" Dims="32"/>
+		<Var Name="SysDO14" OrigName="SysDO14" Type="BOOL" OrigType="BOOL" Addr="0x833980C" Descr="Logic outputs module 14" Group="Digital_outputs" RelocationRecord="%Q14+0" OnDataBlock="true" DataBlockType="Q" DBDataType="X" DataBlockNumber="14" DataBlockIndex="0" Access="3" Dims="32"/>
+		<Var Name="SysDO15" OrigName="SysDO15" Type="BOOL" OrigType="BOOL" Addr="0x833982C" Descr="Logic outputs module 15" Group="Digital_outputs" RelocationRecord="%Q15+0" OnDataBlock="true" DataBlockType="Q" DBDataType="X" DataBlockNumber="15" DataBlockIndex="0" Access="3" Dims="32"/>
+		<Var Name="SysCPUDO" OrigName="SysCPUDO" Type="BOOL" OrigType="BOOL" Addr="0x833984C" Descr="Logic outputs CPU" Group="Digital_outputs" RelocationRecord="%Q255+0" OnDataBlock="true" DataBlockType="Q" DBDataType="X" DataBlockNumber="255" DataBlockIndex="0" Access="3" Dims="32"/>
+		<Var Name="SysVR" OrigName="SysVR" Type="BYTE" OrigType="BYTE" Addr="0x8337E94" Descr="System read only variables" Group="SystemVariables" RelocationRecord="%M0+0" OnDataBlock="true" DataBlockType="M" DBDataType="B" DataBlockNumber="0" DataBlockIndex="0" Access="1" Dims="768"/>
+		<Var Name="SysClock100" OrigName="SysClock100" Type="BOOL" OrigType="BOOL" Addr="0x8337E94" Descr="System clock 100 mS" Group="SystemVariables" RelocationRecord="%M0+0" OnDataBlock="true" DataBlockType="M" DBDataType="B" DataBlockNumber="0" DataBlockIndex="0" Access="1"/>
+		<Var Name="SysClock1000" OrigName="SysClock1000" Type="BOOL" OrigType="BOOL" Addr="0x8337E95" Descr="System clock 1000 mS" Group="SystemVariables" RelocationRecord="%M0+1" OnDataBlock="true" DataBlockType="M" DBDataType="B" DataBlockNumber="0" DataBlockIndex="1" Access="1"/>
+		<Var Name="SysBackupEnd" OrigName="SysBackupEnd" Type="BOOL" OrigType="BOOL" Addr="0x8337E96" Descr="System backup end" Group="SystemVariables" RelocationRecord="%M0+2" OnDataBlock="true" DataBlockType="M" DBDataType="B" DataBlockNumber="0" DataBlockIndex="2" Access="1"/>
+		<Var Name="SysRestoreFault" OrigName="SysRestoreFault" Type="BOOL" OrigType="BOOL" Addr="0x8337E97" Descr="System restore fault" Group="SystemVariables" RelocationRecord="%M0+3" OnDataBlock="true" DataBlockType="M" DBDataType="B" DataBlockNumber="0" DataBlockIndex="3" Access="1"/>
+		<Var Name="SysPLCInRun" OrigName="SysPLCInRun" Type="BOOL" OrigType="BOOL" Addr="0x8337E98" Descr="System PLC is running" Group="SystemVariables" RelocationRecord="%M0+4" OnDataBlock="true" DataBlockType="M" DBDataType="B" DataBlockNumber="0" DataBlockIndex="4" Access="1"/>
+		<Var Name="SysFirstLoop" OrigName="SysFirstLoop" Type="BOOL" OrigType="BOOL" Addr="0x8337E99" Descr="System first execution loop" Group="SystemVariables" RelocationRecord="%M0+5" OnDataBlock="true" DataBlockType="M" DBDataType="B" DataBlockNumber="0" DataBlockIndex="5" Access="1"/>
+		<Var Name="SysLLabCn" OrigName="SysLLabCn" Type="BOOL" OrigType="BOOL" Addr="0x8337E9A" Descr="LogicLab connected to the system" Group="SystemVariables" RelocationRecord="%M0+6" OnDataBlock="true" DataBlockType="M" DBDataType="B" DataBlockNumber="0" DataBlockIndex="6" Access="1"/>
+		<Var Name="SysIsDST" OrigName="SysIsDST" Type="BOOL" OrigType="BOOL" Addr="0x8337E9B" Descr="Is daylight saving time" Group="SystemVariables" RelocationRecord="%M0+7" OnDataBlock="true" DataBlockType="M" DBDataType="B" DataBlockNumber="0" DataBlockIndex="7" Access="1"/>
+		<Var Name="SysDTSet" OrigName="SysDTSet" Type="BOOL" OrigType="BOOL" Addr="0x8337E9C" Descr="Date/Time set" Group="SystemVariables" RelocationRecord="%M0+8" OnDataBlock="true" DataBlockType="M" DBDataType="B" DataBlockNumber="0" DataBlockIndex="8" Access="1"/>
+		<Var Name="SysUVSet" OrigName="SysUVSet" Type="BOOL" OrigType="BOOL" Addr="0x8337E9D" Descr="User variables set" Group="SystemVariables" RelocationRecord="%M0+9" OnDataBlock="true" DataBlockType="M" DBDataType="B" DataBlockNumber="0" DataBlockIndex="9" Access="1"/>
+		<Var Name="SysAlwaysOff" OrigName="SysAlwaysOff" Type="BOOL" OrigType="BOOL" Addr="0x8337E9E" Descr="Always off" Group="SystemVariables" RelocationRecord="%M0+10" OnDataBlock="true" DataBlockType="M" DBDataType="B" DataBlockNumber="0" DataBlockIndex="10" Access="1"/>
+		<Var Name="SysAlwaysOn" OrigName="SysAlwaysOn" Type="BOOL" OrigType="BOOL" Addr="0x8337E9F" Descr="Always on" Group="SystemVariables" RelocationRecord="%M0+11" OnDataBlock="true" DataBlockType="M" DBDataType="B" DataBlockNumber="0" DataBlockIndex="11" Access="1"/>
+		<Var Name="SysFFBUspt" OrigName="SysFFBUspt" Type="BOOL" OrigType="BOOL" Addr="0x8337EA0" Descr="Function or FB unsupported" Group="SystemVariables" RelocationRecord="%M0+12" OnDataBlock="true" DataBlockType="M" DBDataType="B" DataBlockNumber="0" DataBlockIndex="12" Access="1"/>
+		<Var Name="SysFFBPrt" OrigName="SysFFBPrt" Type="BOOL" OrigType="BOOL" Addr="0x8337EA1" Descr="Function or FB protected" Group="SystemVariables" RelocationRecord="%M0+13" OnDataBlock="true" DataBlockType="M" DBDataType="B" DataBlockNumber="0" DataBlockIndex="13" Access="1"/>
+		<Var Name="SysCfgChanged" OrigName="SysCfgChanged" Type="BOOL" OrigType="BOOL" Addr="0x8337EA2" Descr="System configuration changed" Group="SystemVariables" RelocationRecord="%M0+14" OnDataBlock="true" DataBlockType="M" DBDataType="B" DataBlockNumber="0" DataBlockIndex="14" Access="1"/>
+		<Var Name="SysActTaskID" OrigName="SysActTaskID" Type="USINT" OrigType="USINT" Addr="0x8337ED4" Descr="System active task ID" Group="SystemVariables" RelocationRecord="%M0+64" OnDataBlock="true" DataBlockType="M" DBDataType="B" DataBlockNumber="0" DataBlockIndex="64" Access="1"/>
+		<Var Name="SysErActTaskID" OrigName="SysErActTaskID" Type="USINT" OrigType="USINT" Addr="0x8337ED5" Descr="System task ID in error" Group="SystemVariables" RelocationRecord="%M0+65" OnDataBlock="true" DataBlockType="M" DBDataType="B" DataBlockNumber="0" DataBlockIndex="65" Access="1"/>
+		<Var Name="SysTimeZone" OrigName="SysTimeZone" Type="SINT" OrigType="SINT" Addr="0x8337ED6" Descr="Time zone" Group="SystemVariables" RelocationRecord="%M0+66" OnDataBlock="true" DataBlockType="M" DBDataType="B" DataBlockNumber="0" DataBlockIndex="66" Access="1"/>
+		<Var Name="SysModulesReady" OrigName="SysModulesReady" Type="WORD" OrigType="WORD" Addr="0x8337F14" Descr="Modules connected to Sline bus (bit index)" Group="SystemVariables" RelocationRecord="%M0+128" OnDataBlock="true" DataBlockType="M" DBDataType="B" DataBlockNumber="0" DataBlockIndex="128" Access="1"/>
+		<Var Name="SysApllVMajor" OrigName="SysApllVMajor" Type="UINT" OrigType="UINT" Addr="0x8337F16" Descr="Application major version number" Group="SystemVariables" RelocationRecord="%M0+130" OnDataBlock="true" DataBlockType="M" DBDataType="B" DataBlockNumber="0" DataBlockIndex="130" Access="1"/>
+		<Var Name="SysApllVMinor" OrigName="SysApllVMinor" Type="UINT" OrigType="UINT" Addr="0x8337F18" Descr="Application minor version number" Group="SystemVariables" RelocationRecord="%M0+132" OnDataBlock="true" DataBlockType="M" DBDataType="B" DataBlockNumber="0" DataBlockIndex="132" Access="1"/>
+		<Var Name="SysTBackLpTm" OrigName="SysTBackLpTm" Type="UDINT" OrigType="UDINT" Addr="0x8337F94" Descr="System Back task loop time (uS)" Group="SystemVariables" RelocationRecord="%M0+256" OnDataBlock="true" DataBlockType="M" DBDataType="B" DataBlockNumber="0" DataBlockIndex="256" Access="1"/>
+		<Var Name="SysTBackLpTmMin" OrigName="SysTBackLpTmMin" Type="UDINT" OrigType="UDINT" Addr="0x8337F98" Descr="System Back task loop time min (uS)" Group="SystemVariables" RelocationRecord="%M0+260" OnDataBlock="true" DataBlockType="M" DBDataType="B" DataBlockNumber="0" DataBlockIndex="260" Access="1"/>
+		<Var Name="SysTBackLpTmMax" OrigName="SysTBackLpTmMax" Type="UDINT" OrigType="UDINT" Addr="0x8337F9C" Descr="System Back task loop time max (uS)" Group="SystemVariables" RelocationRecord="%M0+264" OnDataBlock="true" DataBlockType="M" DBDataType="B" DataBlockNumber="0" DataBlockIndex="264" Access="1"/>
+		<Var Name="SysTBootExTm" OrigName="SysTBootExTm" Type="UDINT" OrigType="UDINT" Addr="0x8337FA0" Descr="System Boot task execution time (uS)" Group="SystemVariables" RelocationRecord="%M0+268" OnDataBlock="true" DataBlockType="M" DBDataType="B" DataBlockNumber="0" DataBlockIndex="268" Access="1"/>
+		<Var Name="SysTBootExTmMin" OrigName="SysTBootExTmMin" Type="UDINT" OrigType="UDINT" Addr="0x8337FA4" Descr="System Boot task execution time min (uS)" Group="SystemVariables" RelocationRecord="%M0+272" OnDataBlock="true" DataBlockType="M" DBDataType="B" DataBlockNumber="0" DataBlockIndex="272" Access="1"/>
+		<Var Name="SysTBootExTmMax" OrigName="SysTBootExTmMax" Type="UDINT" OrigType="UDINT" Addr="0x8337FA8" Descr="System Boot task execution time max (uS)" Group="SystemVariables" RelocationRecord="%M0+276" OnDataBlock="true" DataBlockType="M" DBDataType="B" DataBlockNumber="0" DataBlockIndex="276" Access="1"/>
+		<Var Name="SysTFastExTm" OrigName="SysTFastExTm" Type="UDINT" OrigType="UDINT" Addr="0x8337FAC" Descr="System Fast task execution time (uS)" Group="SystemVariables" RelocationRecord="%M0+280" OnDataBlock="true" DataBlockType="M" DBDataType="B" DataBlockNumber="0" DataBlockIndex="280" Access="1"/>
+		<Var Name="SysTFastExTmMin" OrigName="SysTFastExTmMin" Type="UDINT" OrigType="UDINT" Addr="0x8337FB0" Descr="System Fast task execution time min (uS)" Group="SystemVariables" RelocationRecord="%M0+284" OnDataBlock="true" DataBlockType="M" DBDataType="B" DataBlockNumber="0" DataBlockIndex="284" Access="1"/>
+		<Var Name="SysTFastExTmMax" OrigName="SysTFastExTmMax" Type="UDINT" OrigType="UDINT" Addr="0x8337FB4" Descr="System Fast task execution time max (uS)" Group="SystemVariables" RelocationRecord="%M0+288" OnDataBlock="true" DataBlockType="M" DBDataType="B" DataBlockNumber="0" DataBlockIndex="288" Access="1"/>
+		<Var Name="SysTSlowExTm" OrigName="SysTSlowExTm" Type="UDINT" OrigType="UDINT" Addr="0x8337FB8" Descr="System Slow task execution time (uS)" Group="SystemVariables" RelocationRecord="%M0+292" OnDataBlock="true" DataBlockType="M" DBDataType="B" DataBlockNumber="0" DataBlockIndex="292" Access="1"/>
+		<Var Name="SysTSlowExTmMin" OrigName="SysTSlowExTmMin" Type="UDINT" OrigType="UDINT" Addr="0x8337FBC" Descr="System Slow task execution time min (uS)" Group="SystemVariables" RelocationRecord="%M0+296" OnDataBlock="true" DataBlockType="M" DBDataType="B" DataBlockNumber="0" DataBlockIndex="296" Access="1"/>
+		<Var Name="SysTSlowExTmMax" OrigName="SysTSlowExTmMax" Type="UDINT" OrigType="UDINT" Addr="0x8337FC0" Descr="System Slow task execution time max (uS)" Group="SystemVariables" RelocationRecord="%M0+300" OnDataBlock="true" DataBlockType="M" DBDataType="B" DataBlockNumber="0" DataBlockIndex="300" Access="1"/>
+		<Var Name="SysTBackExTm" OrigName="SysTBackExTm" Type="UDINT" OrigType="UDINT" Addr="0x8337FC4" Descr="System Back task execution time (uS)" Group="SystemVariables" RelocationRecord="%M0+304" OnDataBlock="true" DataBlockType="M" DBDataType="B" DataBlockNumber="0" DataBlockIndex="304" Access="1"/>
+		<Var Name="SysTBackExTmMin" OrigName="SysTBackExTmMin" Type="UDINT" OrigType="UDINT" Addr="0x8337FC8" Descr="System Back task execution time min (uS)" Group="SystemVariables" RelocationRecord="%M0+308" OnDataBlock="true" DataBlockType="M" DBDataType="B" DataBlockNumber="0" DataBlockIndex="308" Access="1"/>
+		<Var Name="SysTBackExTmMax" OrigName="SysTBackExTmMax" Type="UDINT" OrigType="UDINT" Addr="0x8337FCC" Descr="System Back task execution time max (uS)" Group="SystemVariables" RelocationRecord="%M0+312" OnDataBlock="true" DataBlockType="M" DBDataType="B" DataBlockNumber="0" DataBlockIndex="312" Access="1"/>
+		<Var Name="SysStartTime" OrigName="SysStartTime" Type="UDINT" OrigType="UDINT" Addr="0x8337FD0" Descr="PLC run since Date/Time [Epoch time]" Group="SystemVariables" RelocationRecord="%M0+316" OnDataBlock="true" DataBlockType="M" DBDataType="B" DataBlockNumber="0" DataBlockIndex="316" Access="1"/>
+		<Var Name="SysTime" OrigName="SysTime" Type="UDINT" OrigType="UDINT" Addr="0x8337FD4" Descr="System time [mS]" Group="SystemVariables" RelocationRecord="%M0+320" OnDataBlock="true" DataBlockType="M" DBDataType="B" DataBlockNumber="0" DataBlockIndex="320" Access="1"/>
+		<Var Name="SysTFastLpTm" OrigName="SysTFastLpTm" Type="UDINT" OrigType="UDINT" Addr="0x8337FD8" Descr="System Fast task loop time (uS)" Group="SystemVariables" RelocationRecord="%M0+324" OnDataBlock="true" DataBlockType="M" DBDataType="B" DataBlockNumber="0" DataBlockIndex="324" Access="1"/>
+		<Var Name="SysTSlowLpTm" OrigName="SysTSlowLpTm" Type="UDINT" OrigType="UDINT" Addr="0x8337FDC" Descr="System Slow task loop time (uS)" Group="SystemVariables" RelocationRecord="%M0+328" OnDataBlock="true" DataBlockType="M" DBDataType="B" DataBlockNumber="0" DataBlockIndex="328" Access="1"/>
+		<Var Name="SysApplID" OrigName="SysApplID" Type="UDINT" OrigType="UDINT" Addr="0x8337FE0" Descr="Application ID" Group="SystemVariables" RelocationRecord="%M0+332" OnDataBlock="true" DataBlockType="M" DBDataType="B" DataBlockNumber="0" DataBlockIndex="332" Access="1"/>
+		<Var Name="SysMfcCode" OrigName="SysMfcCode" Type="UDINT" OrigType="UDINT" Addr="0x8337FE4" Descr="Manufacturer code" Group="SystemVariables" RelocationRecord="%M0+336" OnDataBlock="true" DataBlockType="M" DBDataType="B" DataBlockNumber="0" DataBlockIndex="336" Access="1"/>
+		<Var Name="SysCustomerCode" OrigName="SysCustomerCode" Type="UDINT" OrigType="UDINT" Addr="0x8337FE8" Descr="Customer code" Group="SystemVariables" RelocationRecord="%M0+340" OnDataBlock="true" DataBlockType="M" DBDataType="B" DataBlockNumber="0" DataBlockIndex="340" Access="1"/>
+		<Var Name="SysErCode" OrigName="SysErCode" Type="UDINT" OrigType="UDINT" Addr="0x8337FEC" Descr="System error code" Group="SystemVariables" RelocationRecord="%M0+344" OnDataBlock="true" DataBlockType="M" DBDataType="B" DataBlockNumber="0" DataBlockIndex="344" Access="1"/>
+		<Var Name="SysErTime" OrigName="SysErTime" Type="UDINT" OrigType="UDINT" Addr="0x8337FF0" Descr="System error time" Group="SystemVariables" RelocationRecord="%M0+348" OnDataBlock="true" DataBlockType="M" DBDataType="B" DataBlockNumber="0" DataBlockIndex="348" Access="1"/>
+		<Var Name="SysSerialNr" OrigName="SysSerialNr" Type="UDINT" OrigType="UDINT" Addr="0x8337FF4" Descr="Device serial number" Group="SystemVariables" RelocationRecord="%M0+352" OnDataBlock="true" DataBlockType="M" DBDataType="B" DataBlockNumber="0" DataBlockIndex="352" Access="1"/>
+		<Var Name="SysApllBTime" OrigName="SysApllBTime" Type="UDINT" OrigType="UDINT" Addr="0x8337FF8" Descr="Build time (Epoch)" Group="SystemVariables" RelocationRecord="%M0+356" OnDataBlock="true" DataBlockType="M" DBDataType="B" DataBlockNumber="0" DataBlockIndex="356" Access="1"/>
+		<Var Name="SysUniqueID" OrigName="SysUniqueID" Type="UDINT" OrigType="UDINT" Addr="0x8337FFC" Descr="Unique ID" Group="SystemVariables" RelocationRecord="%M0+360" OnDataBlock="true" DataBlockType="M" DBDataType="B" DataBlockNumber="0" DataBlockIndex="360" Access="1"/>
+		<Var Name="SysPLCUpTime" OrigName="SysPLCUpTime" Type="UDINT" OrigType="UDINT" Addr="0x8338000" Descr="PLC up time (S)" Group="SystemVariables" RelocationRecord="%M0+364" OnDataBlock="true" DataBlockType="M" DBDataType="B" DataBlockNumber="0" DataBlockIndex="364" Access="1"/>
+		<Var Name="SysLpWrNrDiskC" OrigName="SysLpWrNrDiskC" Type="UDINT" OrigType="UDINT" Addr="0x8338004" Descr="Disk C write nr every loop" Group="SystemVariables" RelocationRecord="%M0+368" OnDataBlock="true" DataBlockType="M" DBDataType="B" DataBlockNumber="0" DataBlockIndex="368" Access="1"/>
+		<Var Name="SysLpWrNrDiskD" OrigName="SysLpWrNrDiskD" Type="UDINT" OrigType="UDINT" Addr="0x8338008" Descr="Disk D write nr every loop" Group="SystemVariables" RelocationRecord="%M0+372" OnDataBlock="true" DataBlockType="M" DBDataType="B" DataBlockNumber="0" DataBlockIndex="372" Access="1"/>
+		<Var Name="SysLpWrNrDiskF" OrigName="SysLpWrNrDiskF" Type="UDINT" OrigType="UDINT" Addr="0x833800C" Descr="Disk F write nr every loop" Group="SystemVariables" RelocationRecord="%M0+376" OnDataBlock="true" DataBlockType="M" DBDataType="B" DataBlockNumber="0" DataBlockIndex="376" Access="1"/>
+		<Var Name="SysDaylightZone" OrigName="SysDaylightZone" Type="UDINT" OrigType="UDINT" Addr="0x8338010" Descr="Day light zone" Group="SystemVariables" RelocationRecord="%M0+380" OnDataBlock="true" DataBlockType="M" DBDataType="B" DataBlockNumber="0" DataBlockIndex="380" Access="1" Range="DAYLIGHT_ZONE"/>
+		<Var Name="SysCode" OrigName="SysCode" Type="STRING" OrigType="STRING" Addr="0x8338094" Descr="Device product code" Group="SystemVariables" RelocationRecord="%M0+512" OnDataBlock="true" DataBlockType="M" DBDataType="B" DataBlockNumber="0" DataBlockIndex="512" Access="1" length="10"/>
+		<Var Name="SysFVersion" OrigName="SysFVersion" Type="STRING" OrigType="STRING" Addr="0x833809F" Descr="Firmware version" Group="SystemVariables" RelocationRecord="%M0+523" OnDataBlock="true" DataBlockType="M" DBDataType="B" DataBlockNumber="0" DataBlockIndex="523" Access="1" length="10"/>
+		<Var Name="SysErInfos" OrigName="SysErInfos" Type="STRING" OrigType="STRING" Addr="0x83380AA" Descr="System error infos" Group="SystemVariables" RelocationRecord="%M0+534" OnDataBlock="true" DataBlockType="M" DBDataType="B" DataBlockNumber="0" DataBlockIndex="534" Access="1" length="32"/>
+		<Var Name="SysApllName" OrigName="SysApllName" Type="STRING" OrigType="STRING" Addr="0x83380CB" Descr="Application name" Group="SystemVariables" RelocationRecord="%M0+567" OnDataBlock="true" DataBlockType="M" DBDataType="B" DataBlockNumber="0" DataBlockIndex="567" Access="1" length="10"/>
+		<Var Name="SysUSetA" OrigName="SysUSetA" Type="STRING" OrigType="STRING" Addr="0x83380D6" Descr="User setting (A)" Group="SystemVariables" RelocationRecord="%M0+578" OnDataBlock="true" DataBlockType="M" DBDataType="B" DataBlockNumber="0" DataBlockIndex="578" Access="1" length="16"/>
+		<Var Name="SysUSetB" OrigName="SysUSetB" Type="STRING" OrigType="STRING" Addr="0x83380E7" Descr="User setting (B)" Group="SystemVariables" RelocationRecord="%M0+595" OnDataBlock="true" DataBlockType="M" DBDataType="B" DataBlockNumber="0" DataBlockIndex="595" Access="1" length="16"/>
+		<Var Name="SysUSetC" OrigName="SysUSetC" Type="STRING" OrigType="STRING" Addr="0x83380F8" Descr="User setting (C)" Group="SystemVariables" RelocationRecord="%M0+612" OnDataBlock="true" DataBlockType="M" DBDataType="B" DataBlockNumber="0" DataBlockIndex="612" Access="1" length="16"/>
+		<Var Name="SysUSetD" OrigName="SysUSetD" Type="STRING" OrigType="STRING" Addr="0x8338109" Descr="User setting (D)" Group="SystemVariables" RelocationRecord="%M0+629" OnDataBlock="true" DataBlockType="M" DBDataType="B" DataBlockNumber="0" DataBlockIndex="629" Access="1" length="16"/>
+		<Var Name="SysVRW" OrigName="SysVRW" Type="BYTE" OrigType="BYTE" Addr="0x83381AC" Descr="System read and write variables" Group="SystemVariables" RelocationRecord="%M1+0" OnDataBlock="true" DataBlockType="M" DBDataType="B" DataBlockNumber="1" DataBlockIndex="0" Access="3" Dims="640"/>
+		<Var Name="SysTimeInit" OrigName="SysTimeInit" Type="BOOL" OrigType="BOOL" Addr="0x83381AC" Descr="System timing calculation init" Group="SystemVariables" RelocationRecord="%M1+0" OnDataBlock="true" DataBlockType="M" DBDataType="B" DataBlockNumber="1" DataBlockIndex="0" Access="3"/>
+		<Var Name="SysDateTime" OrigName="SysDateTime" Type="UDINT" OrigType="UDINT" Addr="0x83382AC" Descr="System current local date time [Epoch time]" Group="SystemVariables" RelocationRecord="%M1+256" OnDataBlock="true" DataBlockType="M" DBDataType="B" DataBlockNumber="1" DataBlockIndex="256" Access="3"/>
+		<Var Name="SysLastError" OrigName="SysLastError" Type="UDINT" OrigType="UDINT" Addr="0x83382B0" Descr="Last error value" Group="SystemVariables" RelocationRecord="%M1+260" OnDataBlock="true" DataBlockType="M" DBDataType="B" DataBlockNumber="1" DataBlockIndex="260" Access="3"/>
+		<Var Name="SysUTCDateTime" OrigName="SysUTCDateTime" Type="UDINT" OrigType="UDINT" Addr="0x83382B4" Descr="System current UTC date time [Epoch time]" Group="SystemVariables" RelocationRecord="%M1+264" OnDataBlock="true" DataBlockType="M" DBDataType="B" DataBlockNumber="1" DataBlockIndex="264" Access="3"/>
+		<Var Name="SysUInfoA" OrigName="SysUInfoA" Type="STRING" OrigType="STRING" Addr="0x83383AC" Descr="User info (A)" Group="SystemVariables" RelocationRecord="%M1+512" OnDataBlock="true" DataBlockType="M" DBDataType="B" DataBlockNumber="1" DataBlockIndex="512" Access="3" length="16"/>
+		<Var Name="SysUInfoB" OrigName="SysUInfoB" Type="STRING" OrigType="STRING" Addr="0x83383BD" Descr="User info (B)" Group="SystemVariables" RelocationRecord="%M1+529" OnDataBlock="true" DataBlockType="M" DBDataType="B" DataBlockNumber="1" DataBlockIndex="529" Access="3" length="16"/>
+		<Var Name="SysUInfoC" OrigName="SysUInfoC" Type="STRING" OrigType="STRING" Addr="0x83383CE" Descr="User info (C)" Group="SystemVariables" RelocationRecord="%M1+546" OnDataBlock="true" DataBlockType="M" DBDataType="B" DataBlockNumber="1" DataBlockIndex="546" Access="3" length="16"/>
+		<Var Name="SysUInfoD" OrigName="SysUInfoD" Type="STRING" OrigType="STRING" Addr="0x83383DF" Descr="User info (D)" Group="SystemVariables" RelocationRecord="%M1+563" OnDataBlock="true" DataBlockType="M" DBDataType="B" DataBlockNumber="1" DataBlockIndex="563" Access="3" length="16"/>
+		<Var Name="SysData" OrigName="SysData" Type="BYTE" OrigType="BYTE" Addr="0x833842C" Descr="User data and backup" Group="UserData" RelocationRecord="%M100+0" OnDataBlock="true" DataBlockType="M" DBDataType="B" DataBlockNumber="100" DataBlockIndex="0" Access="3" Dims="4096"/>
+		<Var Name="SysDataBk" OrigName="SysDataBk" Type="BYTE" OrigType="BYTE" Addr="0x8338C2C" Descr="User data backup" Group="UserData" RelocationRecord="%M100+2048" OnDataBlock="true" DataBlockType="M" DBDataType="B" DataBlockNumber="100" DataBlockIndex="2048" Access="3" Dims="2048"/>
+		<Var Name="$$POUCBARRAY$$Boot" OrigName="$$POUCBARRAY$$Boot" Type="@$$STRUPOUTCB$$" OrigType="@$$STRUPOUTCB$$" Addr="0x8340010" RelocationRecord="$$DATA$$+16" Dims="2"/>
+		<Var Name="$$POUCBARRAY$$Slow" OrigName="$$POUCBARRAY$$Slow" Type="@$$STRUPOUTCB$$" OrigType="@$$STRUPOUTCB$$" Addr="0x8340018" RelocationRecord="$$DATA$$+24" Dims="2"/>
+		<Const Name="0" OrigName="0" Type="USINT" OrigType="USINT">0</Const>
+		<Const Name="0" OrigName="0" Type="USINT" OrigType="USINT">0</Const>
+		<Var Name="$$CODEBASE$$" OrigName="$$CODEBASE$$" Type="UDINT" OrigType="UDINT" Addr="0x8370000" RelocationRecord="$$CODE$$+0"/>
+		<Var Name="$$CODESTART$$" OrigName="$$CODESTART$$" Type="UDINT" OrigType="UDINT" Addr="0x83700C0" RelocationRecord="$$CODE$$+192"/>
+		<Var Name="$$CODESIZE$$" OrigName="$$CODESIZE$$" Type="UDINT" OrigType="UDINT" Addr="0x8370750" RelocationRecord="$$CODE$$+1872"/>
+		<Var Name="$$CODEEND$$" OrigName="$$CODEEND$$" Type="UDINT" OrigType="UDINT" Addr="0x837FFF0" RelocationRecord="$$CODE$$+65520"/>
+		<Var Name="$$DATASIZE$$" OrigName="$$DATASIZE$$" Type="UDINT" OrigType="UDINT" Addr="0x8340038" RelocationRecord="$$DATA$$+56"/>
+		<Var Name="$$AUXDATASIZE$$" OrigName="$$AUXDATASIZE$$" Type="UDINT" OrigType="UDINT" Addr="0x0" RelocationRecord="$$AUXDATA$$+0"/>
+		<Var Name="$$BITDATASIZE$$" OrigName="$$BITDATASIZE$$" Type="UDINT" OrigType="UDINT" Addr="0x0" RelocationRecord="$$BITDATA$$+0"/>
+		<Var Name="$$RITDATASIZE$$" OrigName="$$RITDATASIZE$$" Type="UDINT" OrigType="UDINT" Addr="0x8350000" RelocationRecord="$$RETDATA$$+0"/>
+	</GlobalVars>
+	<Programs>
+		<Prog Name="$$ElsistInit" OrigName="$$ElsistInit" SrcType="3" CodeAddr="0x83704D0" HashCode="0BB849C1">
+			<Var Name="dummy" OrigName="dummy" Type="BOOL" OrigType="BOOL" Addr="0x8340008" RelocationRecord="$$DATA$$+8"/>
+			<GenVar Name="$$POUCB$$" OrigName="$$POUCB$$" Type="$$STRUPOUTCB$$" OrigType="$$STRUPOUTCB$$" Addr="0x834002C" RelocationRecord="$$DATA$$+44"/>
+		</Prog>
+		<Prog Name="MyProgram" OrigName="MyProgram" SrcType="3" CodeAddr="0x8370530" HashCode="F726C6B0">
+			<Var Name="cnt" OrigName="cnt" Type="UDINT" OrigType="UDINT" Addr="0x834000C" RelocationRecord="$$DATA$$+12"/>
+			<Var Name="ingresso" OrigName="ingresso" Type="BOOL" OrigType="BOOL" Addr="0x8340009" RelocationRecord="$$DATA$$+9"/>
+			<Var Name="ingresso_old" OrigName="ingresso_old" Type="BOOL" OrigType="BOOL" Addr="0x834000B" RelocationRecord="$$DATA$$+11"/>
+			<Var Name="impulso_P" OrigName="impulso_P" Type="BOOL" OrigType="BOOL" Addr="0x834000A" RelocationRecord="$$DATA$$+10"/>
+			<GenVar Name="$$POUCB$$" OrigName="$$POUCB$$" Type="$$STRUPOUTCB$$" OrigType="$$STRUPOUTCB$$" Addr="0x8340032" RelocationRecord="$$DATA$$+50"/>
+		</Prog>
+	</Programs>
+	<FunctionBlocks/>
+	<Functions>
+		<Fun Name="eGetBYTE" OrigName="eGetBYTE" SrcType="3" CodeAddr="0x83700D0" HashCode="17B7076E">
+			<Res Name="eGetBYTE" OrigName="eGetBYTE" Type="BYTE" OrigType="BYTE" Addr="0x18[-4]" Attribs="relative,stack"/>
+			<VarI Name="RAddress" OrigName="RAddress" Type="DWORD" OrigType="DWORD" Addr="0x18[8]" Attribs="relative,stack" Descr="Read address"/>
+			<Var Name="Ptr" OrigName="Ptr" Type="@BYTE" OrigType="@BYTE" Addr="0x18[-8]" Attribs="relative,stack" Descr="Auxiliary pointer"/>
+		</Fun>
+		<Fun Name="eSetBYTE" OrigName="eSetBYTE" SrcType="3" CodeAddr="0x83700F4" HashCode="932129E9">
+			<Res Name="eSetBYTE" OrigName="eSetBYTE" Type="BOOL" OrigType="BOOL" Addr="0x18[-4]" Attribs="relative,stack"/>
+			<VarI Name="WAddress" OrigName="WAddress" Type="DWORD" OrigType="DWORD" Addr="0x18[8]" Attribs="relative,stack" Descr="Write address"/>
+			<VarI Name="WValue" OrigName="WValue" Type="BYTE" OrigType="BYTE" Addr="0x18[12]" Attribs="relative,stack" Descr="Write value"/>
+			<Var Name="Ptr" OrigName="Ptr" Type="@BYTE" OrigType="@BYTE" Addr="0x18[-8]" Attribs="relative,stack" Descr="Auxiliary pointer"/>
+		</Fun>
+		<Fun Name="StringConv" OrigName="StringConv" SrcType="3" CodeAddr="0x8370123" HashCode="6E3BDF92">
+			<Res Name="StringConv" OrigName="StringConv" Type="BOOL" OrigType="BOOL" Addr="0x18[-4]" Attribs="relative,stack"/>
+			<VarI Name="Destination" OrigName="Destination" Type="@STRING" OrigType="@STRING" Addr="0x18[8]" Attribs="relative,stack" Descr="Destination buffer"/>
+			<VarI Name="Source" OrigName="Source" Type="@STRING" OrigType="@STRING" Addr="0x18[12]" Attribs="relative,stack" Descr="Source buffer"/>
+			<VarI Name="DSize" OrigName="DSize" Type="UDINT" OrigType="UDINT" Addr="0x18[16]" Attribs="relative,stack" Descr="Destination size"/>
+			<VarI Name="Mode" OrigName="Mode" Type="USINT" OrigType="USINT" Addr="0x18[20]" Attribs="relative,stack" Descr="Conversion mode" Range="STR_CONV"/>
+			<Var Name="i" OrigName="i" Type="UDINT" OrigType="UDINT" Addr="0x18[-8]" Attribs="relative,stack" Descr="Auxiliary variable"/>
+			<Var Name="AyB" OrigName="AyB" Type="BYTE" OrigType="BYTE" Addr="0x18[-12]" Attribs="relative,stack" Descr="Auxiliary byte buffer"/>
+			<Var Name="IDx" OrigName="IDx" Type="UDINT" OrigType="UDINT" Addr="0x18[-16]" Attribs="relative,stack" Descr="Index"/>
+			<Var Name="DBSpace" OrigName="DBSpace" Type="UDINT" OrigType="UDINT" Addr="0x18[-20]" Attribs="relative,stack" Descr="Destination buffer space"/>
+			<Var Name="SLength" OrigName="SLength" Type="UDINT" OrigType="UDINT" Addr="0x18[-24]" Attribs="relative,stack"/>
+		</Fun>
+		<Fun Name="SysGetSysTime" OrigName="SysGetSysTime" SrcType="6" CodeAddr="0x692432D0" HashCode="00001505">
+			<Res Name="SysGetSysTime" OrigName="SysGetSysTime" Type="UDINT" OrigType="UDINT" Addr="0x18[-4]" Attribs="relative,stack"/>
+			<VarI Name="Cmd" OrigName="Cmd" Type="BOOL" OrigType="BOOL" Addr="0x18[8]" Attribs="relative,stack" Descr="Command"/>
+		</Fun>
+		<Fun Name="SysGetUTCDateTime" OrigName="SysGetUTCDateTime" SrcType="6" CodeAddr="0x69243330" HashCode="00001505">
+			<Res Name="SysGetUTCDateTime" OrigName="SysGetUTCDateTime" Type="UDINT" OrigType="UDINT" Addr="0x18[-4]" Attribs="relative,stack"/>
+			<VarI Name="Cmd" OrigName="Cmd" Type="BOOL" OrigType="BOOL" Addr="0x18[8]" Attribs="relative,stack" Descr="Command"/>
+		</Fun>
+		<Fun Name="SysSetUTCDateTime" OrigName="SysSetUTCDateTime" SrcType="6" CodeAddr="0x69243180" HashCode="00001505">
+			<Res Name="SysSetUTCDateTime" OrigName="SysSetUTCDateTime" Type="BOOL" OrigType="BOOL" Addr="0x18[-4]" Attribs="relative,stack"/>
+			<VarI Name="UTCDateTime" OrigName="UTCDateTime" Type="UDINT" OrigType="UDINT" Addr="0x18[8]" Attribs="relative,stack" Descr="UTC date and time to set"/>
+		</Fun>
+		<Fun Name="SysTimeZoneAdj" OrigName="SysTimeZoneAdj" SrcType="6" CodeAddr="0x692437A0" HashCode="00001505">
+			<Res Name="SysTimeZoneAdj" OrigName="SysTimeZoneAdj" Type="UDINT" OrigType="UDINT" Addr="0x18[-4]" Attribs="relative,stack"/>
+			<VarI Name="UTCDateTime" OrigName="UTCDateTime" Type="UDINT" OrigType="UDINT" Addr="0x18[8]" Attribs="relative,stack" Descr="UTC date and time to adjust"/>
+			<VarI Name="TimeZone" OrigName="TimeZone" Type="SINT" OrigType="SINT" Addr="0x18[12]" Attribs="relative,stack" Descr="Difference to Greenwich time (GMT) (H)"/>
+			<VarI Name="DaylightZone" OrigName="DaylightZone" Type="UDINT" OrigType="UDINT" Addr="0x18[16]" Attribs="relative,stack" Descr="Daylight saving zone" Range="DAYLIGHT_ZONE"/>
+		</Fun>
+		<Fun Name="Sysfclose" OrigName="Sysfclose" SrcType="6" CodeAddr="0x69243D30" HashCode="00001505">
+			<Res Name="Sysfclose" OrigName="Sysfclose" Type="INT" OrigType="INT" Addr="0x18[-4]" Attribs="relative,stack"/>
+			<VarI Name="File" OrigName="File" Type="DWORD" OrigType="DWORD" Addr="0x18[8]" Attribs="relative,stack" Descr="File"/>
+		</Fun>
+		<Fun Name="SysDateGetS" OrigName="SysDateGetS" SrcType="6" CodeAddr="0x69243120" HashCode="00001505">
+			<Res Name="SysDateGetS" OrigName="SysDateGetS" Type="UDINT" OrigType="UDINT" Addr="0x18[-4]" Attribs="relative,stack"/>
+		</Fun>
+		<Fun Name="SysDateSetS" OrigName="SysDateSetS" SrcType="6" CodeAddr="0x69243180" HashCode="00001505">
+			<Res Name="SysDateSetS" OrigName="SysDateSetS" Type="BOOL" OrigType="BOOL" Addr="0x18[-4]" Attribs="relative,stack"/>
+			<VarI Name="UTCDateTime" OrigName="UTCDateTime" Type="ULINT" OrigType="ULINT" Addr="0x18[8]" Attribs="relative,stack" Descr="UTC date and time to set"/>
+		</Fun>
+		<Fun Name="SysTimeGetMs" OrigName="SysTimeGetMs" SrcType="6" CodeAddr="0x69243770" HashCode="00001505">
+			<Res Name="SysTimeGetMs" OrigName="SysTimeGetMs" Type="UDINT" OrigType="UDINT" Addr="0x18[-4]" Attribs="relative,stack"/>
+		</Fun>
+		<Fun Name="SysTimeGetNs" OrigName="SysTimeGetNs" SrcType="6" CodeAddr="0x69243780" HashCode="00001505">
+			<Res Name="SysTimeGetNs" OrigName="SysTimeGetNs" Type="ULINT" OrigType="ULINT" Addr="0x18[-8]" Attribs="relative,stack"/>
+		</Fun>
+		<Fun Name="SysDateGetNs" OrigName="SysDateGetNs" SrcType="6" CodeAddr="0x69243100" HashCode="00001505">
+			<Res Name="SysDateGetNs" OrigName="SysDateGetNs" Type="ULINT" OrigType="ULINT" Addr="0x18[-8]" Attribs="relative,stack"/>
+		</Fun>
+		<Fun Name="SysDateLocalize" OrigName="SysDateLocalize" SrcType="6" CodeAddr="0x69243130" HashCode="00001505">
+			<Res Name="SysDateLocalize" OrigName="SysDateLocalize" Type="UDINT" OrigType="UDINT" Addr="0x18[-4]" Attribs="relative,stack"/>
+			<VarI Name="UTCDateTime" OrigName="UTCDateTime" Type="UDINT" OrigType="UDINT" Addr="0x18[8]" Attribs="relative,stack" Descr="UTC date and time"/>
+			<VarI Name="TimeZone" OrigName="TimeZone" Type="SINT" OrigType="SINT" Addr="0x18[12]" Attribs="relative,stack" Descr="Difference to Greenwich time (GMT) (H)"/>
+			<VarI Name="DaylightZone" OrigName="DaylightZone" Type="UDINT" OrigType="UDINT" Addr="0x18[16]" Attribs="relative,stack" Descr="Daylight saving zone" Range="DAYLIGHT_ZONE"/>
+		</Fun>
+		<Fun Name="SysTimeGetUs" OrigName="SysTimeGetUs" SrcType="6" CodeAddr="0x69243790" HashCode="00001505">
+			<Res Name="SysTimeGetUs" OrigName="SysTimeGetUs" Type="UDINT" OrigType="UDINT" Addr="0x18[-4]" Attribs="relative,stack"/>
+		</Fun>
+		<Fun Name="SysSetLastError" OrigName="SysSetLastError" SrcType="6" CodeAddr="0x692435B0" HashCode="00001505">
+			<Res Name="SysSetLastError" OrigName="SysSetLastError" Type="BOOL" OrigType="BOOL" Addr="0x18[-4]" Attribs="relative,stack"/>
+			<VarI Name="Error" OrigName="Error" Type="UDINT" OrigType="UDINT" Addr="0x18[8]" Attribs="relative,stack" Descr="Error number"/>
+		</Fun>
+		<Fun Name="SysGetLastError" OrigName="SysGetLastError" SrcType="6" CodeAddr="0x69243220" HashCode="00001505">
+			<Res Name="SysGetLastError" OrigName="SysGetLastError" Type="UDINT" OrigType="UDINT" Addr="0x18[-4]" Attribs="relative,stack"/>
+			<VarI Name="Cmd" OrigName="Cmd" Type="BOOL" OrigType="BOOL" Addr="0x18[8]" Attribs="relative,stack" Descr="Command"/>
+		</Fun>
+		<Fun Name="SysGetRandom" OrigName="SysGetRandom" SrcType="6" CodeAddr="0x69243270" HashCode="00001505">
+			<Res Name="SysGetRandom" OrigName="SysGetRandom" Type="REAL" OrigType="REAL" Addr="0x18[-4]" Attribs="relative,stack"/>
+			<VarI Name="Cmd" OrigName="Cmd" Type="BOOL" OrigType="BOOL" Addr="0x18[8]" Attribs="relative,stack" Descr="Command"/>
+		</Fun>
+		<Fun Name="SysOSIDValue" OrigName="SysOSIDValue" SrcType="6" CodeAddr="0x69243480" HashCode="00001505">
+			<Res Name="SysOSIDValue" OrigName="SysOSIDValue" Type="BOOL" OrigType="BOOL" Addr="0x18[-4]" Attribs="relative,stack"/>
+			<VarI Name="Wr" OrigName="Wr" Type="BOOL" OrigType="BOOL" Addr="0x18[8]" Attribs="relative,stack" Descr="Write command"/>
+			<VarI Name="OSID" OrigName="OSID" Type="UDINT" OrigType="UDINT" Addr="0x18[12]" Attribs="relative,stack" Descr="Variable ID" Range="SYS_ID"/>
+			<VarI Name="Val" OrigName="Val" Type="DWORD" OrigType="DWORD" Addr="0x18[16]" Attribs="relative,stack" Descr="Variable pointer"/>
+		</Fun>
+		<Fun Name="SysSetTaskLpTime" OrigName="SysSetTaskLpTime" SrcType="6" CodeAddr="0x69243610" HashCode="00001505">
+			<Res Name="SysSetTaskLpTime" OrigName="SysSetTaskLpTime" Type="BOOL" OrigType="BOOL" Addr="0x18[-4]" Attribs="relative,stack"/>
+			<VarI Name="TaskID" OrigName="TaskID" Type="USINT" OrigType="USINT" Addr="0x18[8]" Attribs="relative,stack" Descr="Task ID" Range="TASK_ID"/>
+			<VarI Name="TTime" OrigName="TTime" Type="UDINT" OrigType="UDINT" Addr="0x18[12]" Attribs="relative,stack" Descr="Task time [uSec]"/>
+		</Fun>
+		<Fun Name="SysGetEndianness" OrigName="SysGetEndianness" SrcType="6" CodeAddr="0x692431F0" HashCode="00001505">
+			<Res Name="SysGetEndianness" OrigName="SysGetEndianness" Type="BOOL" OrigType="BOOL" Addr="0x18[-4]" Attribs="relative,stack"/>
+			<VarI Name="Cmd" OrigName="Cmd" Type="BOOL" OrigType="BOOL" Addr="0x18[8]" Attribs="relative,stack" Descr="Command"/>
+		</Fun>
+		<Fun Name="SysFfopen" OrigName="SysFfopen" SrcType="6" CodeAddr="0x69243CE0" HashCode="00001505">
+			<Res Name="SysFfopen" OrigName="SysFfopen" Type="DWORD" OrigType="DWORD" Addr="0x18[-4]" Attribs="relative,stack"/>
+			<VarI Name="FName" OrigName="FName" Type="@STRING" OrigType="@STRING" Addr="0x18[8]" Attribs="relative,stack" Descr="File name"/>
+			<VarI Name="Mode" OrigName="Mode" Type="@STRING" OrigType="@STRING" Addr="0x18[12]" Attribs="relative,stack" Descr="Attribute"/>
+		</Fun>
+		<Fun Name="Sysfputc" OrigName="Sysfputc" SrcType="6" CodeAddr="0x69243DD0" HashCode="00001505">
+			<Res Name="Sysfputc" OrigName="Sysfputc" Type="INT" OrigType="INT" Addr="0x18[-4]" Attribs="relative,stack"/>
+			<VarI Name="Ch" OrigName="Ch" Type="INT" OrigType="INT" Addr="0x18[8]" Attribs="relative,stack" Descr="Character"/>
+			<VarI Name="File" OrigName="File" Type="DWORD" OrigType="DWORD" Addr="0x18[12]" Attribs="relative,stack" Descr="File"/>
+		</Fun>
+		<Fun Name="Sysfgetc" OrigName="Sysfgetc" SrcType="6" CodeAddr="0x69243D80" HashCode="00001505">
+			<Res Name="Sysfgetc" OrigName="Sysfgetc" Type="INT" OrigType="INT" Addr="0x18[-4]" Attribs="relative,stack"/>
+			<VarI Name="File" OrigName="File" Type="DWORD" OrigType="DWORD" Addr="0x18[8]" Attribs="relative,stack" Descr="File"/>
+		</Fun>
+		<Fun Name="SysFIsOpen" OrigName="SysFIsOpen" SrcType="6" CodeAddr="0x69243C20" HashCode="00001505">
+			<Res Name="SysFIsOpen" OrigName="SysFIsOpen" Type="BOOL" OrigType="BOOL" Addr="0x18[-4]" Attribs="relative,stack"/>
+			<VarI Name="File" OrigName="File" Type="DWORD" OrigType="DWORD" Addr="0x18[8]" Attribs="relative,stack" Descr="File"/>
+		</Fun>
+		<Fun Name="SysFGetIChars" OrigName="SysFGetIChars" SrcType="6" CodeAddr="0x69243AE0" HashCode="00001505">
+			<Res Name="SysFGetIChars" OrigName="SysFGetIChars" Type="INT" OrigType="INT" Addr="0x18[-4]" Attribs="relative,stack"/>
+			<VarI Name="File" OrigName="File" Type="DWORD" OrigType="DWORD" Addr="0x18[8]" Attribs="relative,stack" Descr="File"/>
+		</Fun>
+		<Fun Name="SysFGetOSpace" OrigName="SysFGetOSpace" SrcType="6" CodeAddr="0x69243B80" HashCode="00001505">
+			<Res Name="SysFGetOSpace" OrigName="SysFGetOSpace" Type="INT" OrigType="INT" Addr="0x18[-4]" Attribs="relative,stack"/>
+			<VarI Name="File" OrigName="File" Type="DWORD" OrigType="DWORD" Addr="0x18[8]" Attribs="relative,stack" Descr="File"/>
+		</Fun>
+		<Fun Name="SysFIBfClear" OrigName="SysFIBfClear" SrcType="6" CodeAddr="0x69243BD0" HashCode="00001505">
+			<Res Name="SysFIBfClear" OrigName="SysFIBfClear" Type="BOOL" OrigType="BOOL" Addr="0x18[-4]" Attribs="relative,stack"/>
+			<VarI Name="File" OrigName="File" Type="DWORD" OrigType="DWORD" Addr="0x18[8]" Attribs="relative,stack" Descr="File"/>
+		</Fun>
+		<Fun Name="SysFOBfClear" OrigName="SysFOBfClear" SrcType="6" CodeAddr="0x69243C40" HashCode="00001505">
+			<Res Name="SysFOBfClear" OrigName="SysFOBfClear" Type="BOOL" OrigType="BOOL" Addr="0x18[-4]" Attribs="relative,stack"/>
+			<VarI Name="File" OrigName="File" Type="DWORD" OrigType="DWORD" Addr="0x18[8]" Attribs="relative,stack" Descr="File"/>
+		</Fun>
+		<Fun Name="SysFOBfFlush" OrigName="SysFOBfFlush" SrcType="6" CodeAddr="0x69243C90" HashCode="00001505">
+			<Res Name="SysFOBfFlush" OrigName="SysFOBfFlush" Type="BOOL" OrigType="BOOL" Addr="0x18[-4]" Attribs="relative,stack"/>
+			<VarI Name="File" OrigName="File" Type="DWORD" OrigType="DWORD" Addr="0x18[8]" Attribs="relative,stack" Descr="File"/>
+		</Fun>
+		<Fun Name="SysFGetIBfSize" OrigName="SysFGetIBfSize" SrcType="6" CodeAddr="0x69243A90" HashCode="00001505">
+			<Res Name="SysFGetIBfSize" OrigName="SysFGetIBfSize" Type="UDINT" OrigType="UDINT" Addr="0x18[-4]" Attribs="relative,stack"/>
+			<VarI Name="File" OrigName="File" Type="DWORD" OrigType="DWORD" Addr="0x18[8]" Attribs="relative,stack" Descr="File"/>
+		</Fun>
+		<Fun Name="SysFGetOBfSize" OrigName="SysFGetOBfSize" SrcType="6" CodeAddr="0x69243B30" HashCode="00001505">
+			<Res Name="SysFGetOBfSize" OrigName="SysFGetOBfSize" Type="UDINT" OrigType="UDINT" Addr="0x18[-4]" Attribs="relative,stack"/>
+			<VarI Name="File" OrigName="File" Type="DWORD" OrigType="DWORD" Addr="0x18[8]" Attribs="relative,stack" Descr="File"/>
+		</Fun>
+		<Fun Name="Sysfread" OrigName="Sysfread" SrcType="6" CodeAddr="0x69243E20" HashCode="00001505">
+			<Res Name="Sysfread" OrigName="Sysfread" Type="INT" OrigType="INT" Addr="0x18[-4]" Attribs="relative,stack"/>
+			<VarI Name="Buf" OrigName="Buf" Type="DWORD" OrigType="DWORD" Addr="0x18[8]" Attribs="relative,stack" Descr="Buffer filled with read data"/>
+			<VarI Name="Size" OrigName="Size" Type="INT" OrigType="INT" Addr="0x18[12]" Attribs="relative,stack" Descr="Bytes per data block"/>
+			<VarI Name="Count" OrigName="Count" Type="INT" OrigType="INT" Addr="0x18[16]" Attribs="relative,stack" Descr="Nr of data blocks"/>
+			<VarI Name="File" OrigName="File" Type="DWORD" OrigType="DWORD" Addr="0x18[20]" Attribs="relative,stack" Descr="File"/>
+		</Fun>
+		<Fun Name="Sysfwrite" OrigName="Sysfwrite" SrcType="6" CodeAddr="0x69243E70" HashCode="00001505">
+			<Res Name="Sysfwrite" OrigName="Sysfwrite" Type="INT" OrigType="INT" Addr="0x18[-4]" Attribs="relative,stack"/>
+			<VarI Name="Buf" OrigName="Buf" Type="DWORD" OrigType="DWORD" Addr="0x18[8]" Attribs="relative,stack" Descr="Buffer of data to write"/>
+			<VarI Name="Size" OrigName="Size" Type="INT" OrigType="INT" Addr="0x18[12]" Attribs="relative,stack" Descr="Bytes per data block"/>
+			<VarI Name="Count" OrigName="Count" Type="INT" OrigType="INT" Addr="0x18[16]" Attribs="relative,stack" Descr="Nr of data blocks"/>
+			<VarI Name="File" OrigName="File" Type="DWORD" OrigType="DWORD" Addr="0x18[20]" Attribs="relative,stack" Descr="File"/>
+		</Fun>
+		<Fun Name="SysSetSerialDTR" OrigName="SysSetSerialDTR" SrcType="6" CodeAddr="0x692427C0" HashCode="00001505">
+			<Res Name="SysSetSerialDTR" OrigName="SysSetSerialDTR" Type="BOOL" OrigType="BOOL" Addr="0x18[-4]" Attribs="relative,stack"/>
+			<VarI Name="Status" OrigName="Status" Type="BOOL" OrigType="BOOL" Addr="0x18[8]" Attribs="relative,stack" Descr="DTR status"/>
+			<VarI Name="File" OrigName="File" Type="DWORD" OrigType="DWORD" Addr="0x18[12]" Attribs="relative,stack" Descr="File"/>
+		</Fun>
+		<Fun Name="SysGetSerialMode" OrigName="SysGetSerialMode" SrcType="6" CodeAddr="0x69242770" HashCode="00001505">
+			<Res Name="SysGetSerialMode" OrigName="SysGetSerialMode" Type="BOOL" OrigType="BOOL" Addr="0x18[-4]" Attribs="relative,stack"/>
+			<VarI Name="Mode" OrigName="Mode" Type="@SYSSERIALMODE" OrigType="@SYSSERIALMODE" Addr="0x18[8]" Attribs="relative,stack" Descr="SYSSERIALMODE data"/>
+			<VarI Name="File" OrigName="File" Type="DWORD" OrigType="DWORD" Addr="0x18[12]" Attribs="relative,stack" Descr="File"/>
+		</Fun>
+		<Fun Name="SysSetSerialMode" OrigName="SysSetSerialMode" SrcType="6" CodeAddr="0x692427D0" HashCode="00001505">
+			<Res Name="SysSetSerialMode" OrigName="SysSetSerialMode" Type="BOOL" OrigType="BOOL" Addr="0x18[-4]" Attribs="relative,stack"/>
+			<VarI Name="Mode" OrigName="Mode" Type="@SYSSERIALMODE" OrigType="@SYSSERIALMODE" Addr="0x18[8]" Attribs="relative,stack" Descr="SYSSERIALMODE data"/>
+			<VarI Name="File" OrigName="File" Type="DWORD" OrigType="DWORD" Addr="0x18[12]" Attribs="relative,stack" Descr="File"/>
+		</Fun>
+		<Fun Name="SysGetSerialCTS" OrigName="SysGetSerialCTS" SrcType="6" CodeAddr="0x69242760" HashCode="00001505">
+			<Res Name="SysGetSerialCTS" OrigName="SysGetSerialCTS" Type="BOOL" OrigType="BOOL" Addr="0x18[-4]" Attribs="relative,stack"/>
+			<VarI Name="File" OrigName="File" Type="DWORD" OrigType="DWORD" Addr="0x18[8]" Attribs="relative,stack" Descr="File"/>
+		</Fun>
+		<Fun Name="SysGetFileLen" OrigName="SysGetFileLen" SrcType="6" CodeAddr="0x69241B70" HashCode="00001505">
+			<Res Name="SysGetFileLen" OrigName="SysGetFileLen" Type="DINT" OrigType="DINT" Addr="0x18[-4]" Attribs="relative,stack"/>
+			<VarI Name="Name" OrigName="Name" Type="@STRING" OrigType="@STRING" Addr="0x18[8]" Attribs="relative,stack" Descr="File name"/>
+		</Fun>
+		<Fun Name="Sysfseek" OrigName="Sysfseek" SrcType="6" CodeAddr="0x69241B80" HashCode="00001505">
+			<Res Name="Sysfseek" OrigName="Sysfseek" Type="DINT" OrigType="DINT" Addr="0x18[-4]" Attribs="relative,stack"/>
+			<VarI Name="File" OrigName="File" Type="DWORD" OrigType="DWORD" Addr="0x18[8]" Attribs="relative,stack" Descr="File"/>
+			<VarI Name="Offset" OrigName="Offset" Type="DINT" OrigType="DINT" Addr="0x18[12]" Attribs="relative,stack" Descr="Offset"/>
+			<VarI Name="Origin" OrigName="Origin" Type="UDINT" OrigType="UDINT" Addr="0x18[16]" Attribs="relative,stack" Descr="Origin" Range="FSEEK_ORIGIN"/>
+		</Fun>
+		<Fun Name="SysFileRename" OrigName="SysFileRename" SrcType="6" CodeAddr="0x69241B60" HashCode="00001505">
+			<Res Name="SysFileRename" OrigName="SysFileRename" Type="BOOL" OrigType="BOOL" Addr="0x18[-4]" Attribs="relative,stack"/>
+			<VarI Name="OldName" OrigName="OldName" Type="@STRING" OrigType="@STRING" Addr="0x18[8]" Attribs="relative,stack" Descr="File to rename"/>
+			<VarI Name="NewName" OrigName="NewName" Type="@STRING" OrigType="@STRING" Addr="0x18[12]" Attribs="relative,stack" Descr="New name"/>
+		</Fun>
+		<Fun Name="SysFileRemove" OrigName="SysFileRemove" SrcType="6" CodeAddr="0x69241B50" HashCode="00001505">
+			<Res Name="SysFileRemove" OrigName="SysFileRemove" Type="BOOL" OrigType="BOOL" Addr="0x18[-4]" Attribs="relative,stack"/>
+			<VarI Name="Name" OrigName="Name" Type="@STRING" OrigType="@STRING" Addr="0x18[8]" Attribs="relative,stack" Descr="File to rename"/>
+		</Fun>
+		<Fun Name="SysStrFind" OrigName="SysStrFind" SrcType="6" CodeAddr="0x69243620" HashCode="00001505">
+			<Res Name="SysStrFind" OrigName="SysStrFind" Type="@STRING" OrigType="@STRING" Addr="0x18[-4]" Attribs="relative,stack"/>
+			<VarI Name="Haystack" OrigName="Haystack" Type="@STRING" OrigType="@STRING" Addr="0x18[8]" Attribs="relative,stack" Descr="String where to find"/>
+			<VarI Name="Needle" OrigName="Needle" Type="@STRING" OrigType="@STRING" Addr="0x18[12]" Attribs="relative,stack" Descr="String to find"/>
+			<VarI Name="Mode" OrigName="Mode" Type="UDINT" OrigType="UDINT" Addr="0x18[16]" Attribs="relative,stack" Descr="Find mode" Range="FIND_MODE"/>
+		</Fun>
+		<Fun Name="Sysstrlen" OrigName="Sysstrlen" SrcType="6" CodeAddr="0x69243980" HashCode="00001505">
+			<Res Name="Sysstrlen" OrigName="Sysstrlen" Type="UDINT" OrigType="UDINT" Addr="0x18[-4]" Attribs="relative,stack"/>
+			<VarI Name="Str" OrigName="Str" Type="@STRING" OrigType="@STRING" Addr="0x18[8]" Attribs="relative,stack" Descr="String"/>
+		</Fun>
+		<Fun Name="SysGetCheck" OrigName="SysGetCheck" SrcType="6" CodeAddr="0x692431A0" HashCode="00001505">
+			<Res Name="SysGetCheck" OrigName="SysGetCheck" Type="UDINT" OrigType="UDINT" Addr="0x18[-4]" Attribs="relative,stack"/>
+			<VarI Name="Buf" OrigName="Buf" Type="DWORD" OrigType="DWORD" Addr="0x18[8]" Attribs="relative,stack" Descr="Buffer filled with data"/>
+			<VarI Name="ByteNr" OrigName="ByteNr" Type="UDINT" OrigType="UDINT" Addr="0x18[12]" Attribs="relative,stack" Descr="Number of bytes to calculate"/>
+			<VarI Name="Init" OrigName="Init" Type="UDINT" OrigType="UDINT" Addr="0x18[16]" Attribs="relative,stack" Descr="Init value"/>
+			<VarI Name="Type" OrigName="Type" Type="UDINT" OrigType="UDINT" Addr="0x18[20]" Attribs="relative,stack" Descr="Check type" Range="CHECK_TYPE"/>
+		</Fun>
+		<Fun Name="SysVsscanf" OrigName="SysVsscanf" SrcType="6" CodeAddr="0x69242560" HashCode="00001505">
+			<Res Name="SysVsscanf" OrigName="SysVsscanf" Type="BOOL" OrigType="BOOL" Addr="0x18[-4]" Attribs="relative,stack"/>
+			<VarI Name="Str" OrigName="Str" Type="@STRING" OrigType="@STRING" Addr="0x18[8]" Attribs="relative,stack" Descr="String to scan"/>
+			<VarI Name="Format" OrigName="Format" Type="@STRING" OrigType="@STRING" Addr="0x18[12]" Attribs="relative,stack" Descr="Scan format"/>
+			<VarI Name="VarType" OrigName="VarType" Type="UDINT" OrigType="UDINT" Addr="0x18[16]" Attribs="relative,stack" Descr="Variable type" Range="VR_TYPE"/>
+			<VarI Name="VarAdd" OrigName="VarAdd" Type="DWORD" OrigType="DWORD" Addr="0x18[20]" Attribs="relative,stack" Descr="Variable address"/>
+		</Fun>
+		<Fun Name="SysVfprintf" OrigName="SysVfprintf" SrcType="6" CodeAddr="0x69242390" HashCode="00001505">
+			<Res Name="SysVfprintf" OrigName="SysVfprintf" Type="INT" OrigType="INT" Addr="0x18[-4]" Attribs="relative,stack"/>
+			<VarI Name="File" OrigName="File" Type="DWORD" OrigType="DWORD" Addr="0x18[8]" Attribs="relative,stack" Descr="File"/>
+			<VarI Name="Format" OrigName="Format" Type="@STRING" OrigType="@STRING" Addr="0x18[12]" Attribs="relative,stack" Descr="Print format"/>
+			<VarI Name="VarType" OrigName="VarType" Type="UDINT" OrigType="UDINT" Addr="0x18[16]" Attribs="relative,stack" Descr="Variable type" Range="VR_TYPE"/>
+			<VarI Name="VarAdd" OrigName="VarAdd" Type="DWORD" OrigType="DWORD" Addr="0x18[20]" Attribs="relative,stack" Descr="Variable address"/>
+		</Fun>
+		<Fun Name="SysVsnprintf" OrigName="SysVsnprintf" SrcType="6" CodeAddr="0x692423B0" HashCode="00001505">
+			<Res Name="SysVsnprintf" OrigName="SysVsnprintf" Type="INT" OrigType="INT" Addr="0x18[-4]" Attribs="relative,stack"/>
+			<VarI Name="Str" OrigName="Str" Type="@STRING" OrigType="@STRING" Addr="0x18[8]" Attribs="relative,stack" Descr="Return string"/>
+			<VarI Name="Size" OrigName="Size" Type="UDINT" OrigType="UDINT" Addr="0x18[12]" Attribs="relative,stack" Descr="Return size"/>
+			<VarI Name="Format" OrigName="Format" Type="@STRING" OrigType="@STRING" Addr="0x18[16]" Attribs="relative,stack" Descr="Print format"/>
+			<VarI Name="VarType" OrigName="VarType" Type="UDINT" OrigType="UDINT" Addr="0x18[20]" Attribs="relative,stack" Descr="Variable type" Range="VR_TYPE"/>
+			<VarI Name="VarAdd" OrigName="VarAdd" Type="DWORD" OrigType="DWORD" Addr="0x18[24]" Attribs="relative,stack" Descr="Variable address"/>
+		</Fun>
+		<Fun Name="SysCVsnprintf" OrigName="SysCVsnprintf" SrcType="6" CodeAddr="0x69242190" HashCode="00001505">
+			<Res Name="SysCVsnprintf" OrigName="SysCVsnprintf" Type="INT" OrigType="INT" Addr="0x18[-4]" Attribs="relative,stack"/>
+			<VarI Name="Str" OrigName="Str" Type="@STRING" OrigType="@STRING" Addr="0x18[8]" Attribs="relative,stack" Descr="Return string"/>
+			<VarI Name="Size" OrigName="Size" Type="UDINT" OrigType="UDINT" Addr="0x18[12]" Attribs="relative,stack" Descr="Return size"/>
+			<VarI Name="Format" OrigName="Format" Type="@STRING" OrigType="@STRING" Addr="0x18[16]" Attribs="relative,stack" Descr="Print format"/>
+			<VarI Name="VarType" OrigName="VarType" Type="UDINT" OrigType="UDINT" Addr="0x18[20]" Attribs="relative,stack" Descr="Variable type" Range="VR_TYPE"/>
+			<VarI Name="VarAdd" OrigName="VarAdd" Type="DWORD" OrigType="DWORD" Addr="0x18[24]" Attribs="relative,stack" Descr="Variable address"/>
+		</Fun>
+		<Fun Name="SysWrSpyData" OrigName="SysWrSpyData" SrcType="6" CodeAddr="0x69242820" HashCode="00001505">
+			<Res Name="SysWrSpyData" OrigName="SysWrSpyData" Type="BOOL" OrigType="BOOL" Addr="0x18[-4]" Attribs="relative,stack"/>
+			<VarI Name="Mode" OrigName="Mode" Type="UDINT" OrigType="UDINT" Addr="0x18[8]" Attribs="relative,stack" Descr="Spy mode" Range="SPY_MODE"/>
+			<VarI Name="Length" OrigName="Length" Type="UDINT" OrigType="UDINT" Addr="0x18[12]" Attribs="relative,stack" Descr="Data length"/>
+			<VarI Name="TFlags" OrigName="TFlags" Type="DWORD" OrigType="DWORD" Addr="0x18[16]" Attribs="relative,stack" Descr="Trigger flags"/>
+			<VarI Name="Label" OrigName="Label" Type="@STRING" OrigType="@STRING" Addr="0x18[20]" Attribs="relative,stack" Descr="Label pointer"/>
+			<VarI Name="DPtr" OrigName="DPtr" Type="DWORD" OrigType="DWORD" Addr="0x18[24]" Attribs="relative,stack" Descr="Data pointer"/>
+		</Fun>
+		<Fun Name="SysGetPhrInfos" OrigName="SysGetPhrInfos" SrcType="6" CodeAddr="0x69242D80" HashCode="00001505">
+			<Res Name="SysGetPhrInfos" OrigName="SysGetPhrInfos" Type="BOOL" OrigType="BOOL" Addr="0x18[-4]" Attribs="relative,stack"/>
+			<VarI Name="Module" OrigName="Module" Type="USINT" OrigType="USINT" Addr="0x18[8]" Attribs="relative,stack" Descr="Module address"/>
+			<VarI Name="InfoID" OrigName="InfoID" Type="UDINT" OrigType="UDINT" Addr="0x18[12]" Attribs="relative,stack" Descr="Info ID" Range="PHR_INFOS_ID"/>
+			<VarI Name="Info" OrigName="Info" Type="@STRING" OrigType="@STRING" Addr="0x18[16]" Attribs="relative,stack" Descr="Info report"/>
+		</Fun>
+		<Fun Name="SysPhrVRd" OrigName="SysPhrVRd" SrcType="6" CodeAddr="0x69242DB0" HashCode="00001505">
+			<Res Name="SysPhrVRd" OrigName="SysPhrVRd" Type="BOOL" OrigType="BOOL" Addr="0x18[-4]" Attribs="relative,stack"/>
+			<VarI Name="Module" OrigName="Module" Type="USINT" OrigType="USINT" Addr="0x18[8]" Attribs="relative,stack" Descr="Module address"/>
+			<VarI Name="RdAdd" OrigName="RdAdd" Type="UINT" OrigType="UINT" Addr="0x18[12]" Attribs="relative,stack" Descr="Read address"/>
+			<VarI Name="VarType" OrigName="VarType" Type="UDINT" OrigType="UDINT" Addr="0x18[16]" Attribs="relative,stack" Descr="Variable type" Range="VR_TYPE"/>
+			<VarI Name="VarAdd" OrigName="VarAdd" Type="DWORD" OrigType="DWORD" Addr="0x18[20]" Attribs="relative,stack" Descr="Variable address"/>
+		</Fun>
+		<Fun Name="SysPhrVWr" OrigName="SysPhrVWr" SrcType="6" CodeAddr="0x69242DE0" HashCode="00001505">
+			<Res Name="SysPhrVWr" OrigName="SysPhrVWr" Type="BOOL" OrigType="BOOL" Addr="0x18[-4]" Attribs="relative,stack"/>
+			<VarI Name="Module" OrigName="Module" Type="USINT" OrigType="USINT" Addr="0x18[8]" Attribs="relative,stack" Descr="Module address"/>
+			<VarI Name="WrAdd" OrigName="WrAdd" Type="UINT" OrigType="UINT" Addr="0x18[12]" Attribs="relative,stack" Descr="Write address"/>
+			<VarI Name="VarType" OrigName="VarType" Type="UDINT" OrigType="UDINT" Addr="0x18[16]" Attribs="relative,stack" Descr="Variable type" Range="VR_TYPE"/>
+			<VarI Name="VarAdd" OrigName="VarAdd" Type="DWORD" OrigType="DWORD" Addr="0x18[20]" Attribs="relative,stack" Descr="Variable address"/>
+		</Fun>
+		<Fun Name="SysI2CWrRd" OrigName="SysI2CWrRd" SrcType="6" CodeAddr="0x69241BA0" HashCode="00001505">
+			<Res Name="SysI2CWrRd" OrigName="SysI2CWrRd" Type="BOOL" OrigType="BOOL" Addr="0x18[-4]" Attribs="relative,stack"/>
+			<VarI Name="Address" OrigName="Address" Type="BYTE" OrigType="BYTE" Addr="0x18[8]" Attribs="relative,stack" Descr="I2c address"/>
+			<VarI Name="WrBytes" OrigName="WrBytes" Type="USINT" OrigType="USINT" Addr="0x18[12]" Attribs="relative,stack" Descr="Bytes to write"/>
+			<VarI Name="WrBuffer" OrigName="WrBuffer" Type="DWORD" OrigType="DWORD" Addr="0x18[16]" Attribs="relative,stack" Descr="Write data buffer"/>
+			<VarI Name="RdBytes" OrigName="RdBytes" Type="USINT" OrigType="USINT" Addr="0x18[20]" Attribs="relative,stack" Descr="Bytes to read"/>
+			<VarI Name="RdBuffer" OrigName="RdBuffer" Type="DWORD" OrigType="DWORD" Addr="0x18[24]" Attribs="relative,stack" Descr="Read data buffer"/>
+		</Fun>
+		<Fun Name="SysPCodeVerify" OrigName="SysPCodeVerify" SrcType="6" CodeAddr="0x69241B40" HashCode="00001505">
+			<Res Name="SysPCodeVerify" OrigName="SysPCodeVerify" Type="BOOL" OrigType="BOOL" Addr="0x18[-4]" Attribs="relative,stack"/>
+			<VarI Name="Code" OrigName="Code" Type="@STRING" OrigType="@STRING" Addr="0x18[8]" Attribs="relative,stack" Descr="Code"/>
+		</Fun>
+		<Fun Name="SysIDEnabled" OrigName="SysIDEnabled" SrcType="6" CodeAddr="0x69241B30" HashCode="00001505">
+			<Res Name="SysIDEnabled" OrigName="SysIDEnabled" Type="REAL" OrigType="REAL" Addr="0x18[-4]" Attribs="relative,stack"/>
+			<VarI Name="ID" OrigName="ID" Type="UINT" OrigType="UINT" Addr="0x18[8]" Attribs="relative,stack" Descr="ID to check"/>
+			<VarI Name="DTime" OrigName="DTime" Type="UDINT" OrigType="UDINT" Addr="0x18[12]" Attribs="relative,stack" Descr="Demo time"/>
+		</Fun>
+		<Fun Name="XUnifiedLibInit" OrigName="XUnifiedLibInit" SrcType="3" CodeAddr="0x8370445" HashCode="E3B84F44">
+			<Res Name="XUnifiedLibInit" OrigName="XUnifiedLibInit" Type="BOOL" OrigType="BOOL" Addr="0x18[-4]" Attribs="relative,stack"/>
+			<VarI Name="Cmd" OrigName="Cmd" Type="BOOL" OrigType="BOOL" Addr="0x18[8]" Attribs="relative,stack" Descr="Command"/>
+			<Var Name="Version" OrigName="Version" Type="STRING" OrigType="STRING" Addr="0x18[-16]" Attribs="relative,stack" Descr="Library version" length="10"/>
+			<TmpVar Name="$$TMP1" OrigName="$$TMP1" Type="@STRING" OrigType="@STRING" Addr="0x18[-20]" Attribs="relative,stack"/>
+		</Fun>
+		<Fun Name="SysXUnifiedValue" OrigName="SysXUnifiedValue" SrcType="6" CodeAddr="0x692437F0" HashCode="00001505">
+			<Res Name="SysXUnifiedValue" OrigName="SysXUnifiedValue" Type="BOOL" OrigType="BOOL" Addr="0x18[-4]" Attribs="relative,stack"/>
+			<VarI Name="Wr" OrigName="Wr" Type="BOOL" OrigType="BOOL" Addr="0x18[8]" Attribs="relative,stack" Descr="Write command"/>
+			<VarI Name="ID" OrigName="ID" Type="UDINT" OrigType="UDINT" Addr="0x18[12]" Attribs="relative,stack" Descr="Variable ID"/>
+			<VarI Name="Val" OrigName="Val" Type="DWORD" OrigType="DWORD" Addr="0x18[16]" Attribs="relative,stack" Descr="Variable pointer"/>
+		</Fun>
+		<Fun Name="SysMemFind" OrigName="SysMemFind" SrcType="6" CodeAddr="0x69243370" HashCode="00001505">
+			<Res Name="SysMemFind" OrigName="SysMemFind" Type="DWORD" OrigType="DWORD" Addr="0x18[-4]" Attribs="relative,stack"/>
+			<VarI Name="Haystack" OrigName="Haystack" Type="DWORD" OrigType="DWORD" Addr="0x18[8]" Attribs="relative,stack" Descr="Memory area where to find"/>
+			<VarI Name="HSize" OrigName="HSize" Type="UDINT" OrigType="UDINT" Addr="0x18[12]" Attribs="relative,stack" Descr="Haystack area size"/>
+			<VarI Name="Needle" OrigName="Needle" Type="DWORD" OrigType="DWORD" Addr="0x18[16]" Attribs="relative,stack" Descr="Memory area to find"/>
+			<VarI Name="NSize" OrigName="NSize" Type="UDINT" OrigType="UDINT" Addr="0x18[20]" Attribs="relative,stack" Descr="Needle area size"/>
+			<VarI Name="Mode" OrigName="Mode" Type="UDINT" OrigType="UDINT" Addr="0x18[24]" Attribs="relative,stack" Descr="Find mode" Range="FIND_MODE"/>
+		</Fun>
+		<Fun Name="Sysmemset" OrigName="Sysmemset" SrcType="6" CodeAddr="0x69243950" HashCode="00001505">
+			<Res Name="Sysmemset" OrigName="Sysmemset" Type="DWORD" OrigType="DWORD" Addr="0x18[-4]" Attribs="relative,stack"/>
+			<VarI Name="Buff" OrigName="Buff" Type="DWORD" OrigType="DWORD" Addr="0x18[8]" Attribs="relative,stack" Descr="Memory area"/>
+			<VarI Name="Ch" OrigName="Ch" Type="INT" OrigType="INT" Addr="0x18[12]" Attribs="relative,stack" Descr="Character to set"/>
+			<VarI Name="Size" OrigName="Size" Type="UDINT" OrigType="UDINT" Addr="0x18[16]" Attribs="relative,stack" Descr="Number of bytes to set"/>
+		</Fun>
+		<Fun Name="Sysmemmove" OrigName="Sysmemmove" SrcType="6" CodeAddr="0x69243920" HashCode="00001505">
+			<Res Name="Sysmemmove" OrigName="Sysmemmove" Type="DWORD" OrigType="DWORD" Addr="0x18[-4]" Attribs="relative,stack"/>
+			<VarI Name="Dest" OrigName="Dest" Type="DWORD" OrigType="DWORD" Addr="0x18[8]" Attribs="relative,stack" Descr="Destination area"/>
+			<VarI Name="Src" OrigName="Src" Type="DWORD" OrigType="DWORD" Addr="0x18[12]" Attribs="relative,stack" Descr="Source area"/>
+			<VarI Name="Size" OrigName="Size" Type="UDINT" OrigType="UDINT" Addr="0x18[16]" Attribs="relative,stack" Descr="Number of bytes to copy"/>
+		</Fun>
+		<Fun Name="SysMAlloc" OrigName="SysMAlloc" SrcType="6" CodeAddr="0x69243360" HashCode="00001505">
+			<Res Name="SysMAlloc" OrigName="SysMAlloc" Type="DWORD" OrigType="DWORD" Addr="0x18[-4]" Attribs="relative,stack"/>
+			<VarI Name="Size" OrigName="Size" Type="UDINT" OrigType="UDINT" Addr="0x18[8]" Attribs="relative,stack" Descr="Memory size"/>
+		</Fun>
+		<Fun Name="SysRMAlloc" OrigName="SysRMAlloc" SrcType="6" CodeAddr="0x69243490" HashCode="00001505">
+			<Res Name="SysRMAlloc" OrigName="SysRMAlloc" Type="BOOL" OrigType="BOOL" Addr="0x18[-4]" Attribs="relative,stack"/>
+			<VarI Name="Size" OrigName="Size" Type="UDINT" OrigType="UDINT" Addr="0x18[8]" Attribs="relative,stack" Descr="Memory size"/>
+			<VarI Name="DataPtr" OrigName="DataPtr" Type="DWORD" OrigType="DWORD" Addr="0x18[12]" Attribs="relative,stack" Descr="Memory buffer address pointer"/>
+		</Fun>
+		<Fun Name="SysRMFree" OrigName="SysRMFree" SrcType="6" CodeAddr="0x69243510" HashCode="00001505">
+			<Res Name="SysRMFree" OrigName="SysRMFree" Type="BOOL" OrigType="BOOL" Addr="0x18[-4]" Attribs="relative,stack"/>
+			<VarI Name="DataPtr" OrigName="DataPtr" Type="DWORD" OrigType="DWORD" Addr="0x18[8]" Attribs="relative,stack" Descr="Memory buffer address"/>
+		</Fun>
+		<Fun Name="SysRMGetSize" OrigName="SysRMGetSize" SrcType="6" CodeAddr="0x69243560" HashCode="00001505">
+			<Res Name="SysRMGetSize" OrigName="SysRMGetSize" Type="UDINT" OrigType="UDINT" Addr="0x18[-4]" Attribs="relative,stack"/>
+			<VarI Name="DataPtr" OrigName="DataPtr" Type="DWORD" OrigType="DWORD" Addr="0x18[8]" Attribs="relative,stack" Descr="Memory buffer address"/>
+		</Fun>
+		<Fun Name="SysCANSetMode" OrigName="SysCANSetMode" SrcType="6" CodeAddr="0x69241B00" HashCode="00001505">
+			<Res Name="SysCANSetMode" OrigName="SysCANSetMode" Type="BOOL" OrigType="BOOL" Addr="0x18[-4]" Attribs="relative,stack"/>
+			<VarI Name="BitRate" OrigName="BitRate" Type="UDINT" OrigType="UDINT" Addr="0x18[8]" Attribs="relative,stack" Descr="Bit rate" Range="CAN_SPEED"/>
+			<VarI Name="Filter" OrigName="Filter" Type="DWORD" OrigType="DWORD" Addr="0x18[12]" Attribs="relative,stack" Descr="Acceptance filter"/>
+			<VarI Name="Mask" OrigName="Mask" Type="DWORD" OrigType="DWORD" Addr="0x18[16]" Attribs="relative,stack" Descr="Acceptance mask"/>
+		</Fun>
+		<Fun Name="SysIsCANRxTxAv" OrigName="SysIsCANRxTxAv" SrcType="6" CodeAddr="0x69241B20" HashCode="00001505">
+			<Res Name="SysIsCANRxTxAv" OrigName="SysIsCANRxTxAv" Type="BOOL" OrigType="BOOL" Addr="0x18[-4]" Attribs="relative,stack"/>
+			<VarI Name="Select" OrigName="Select" Type="BOOL" OrigType="BOOL" Addr="0x18[8]" Attribs="relative,stack" Descr="eFALSE:Rx message selection, eTRUE:Tx space selection"/>
+		</Fun>
+		<Fun Name="SysCANRxMsg" OrigName="SysCANRxMsg" SrcType="6" CodeAddr="0x69241AF0" HashCode="00001505">
+			<Res Name="SysCANRxMsg" OrigName="SysCANRxMsg" Type="BOOL" OrigType="BOOL" Addr="0x18[-4]" Attribs="relative,stack"/>
+			<VarI Name="Mask" OrigName="Mask" Type="DWORD" OrigType="DWORD" Addr="0x18[8]" Attribs="relative,stack" Descr="Message ID mask"/>
+			<VarI Name="ID" OrigName="ID" Type="DWORD" OrigType="DWORD" Addr="0x18[12]" Attribs="relative,stack" Descr="Message ID (FF:Bit 31) (11 or 29 Bit)"/>
+			<VarI Name="Msg" OrigName="Msg" Type="@SYSCANMESSAGE" OrigType="@SYSCANMESSAGE" Addr="0x18[16]" Attribs="relative,stack" Descr="Message pointer"/>
+		</Fun>
+		<Fun Name="SysCANTxMsg" OrigName="SysCANTxMsg" SrcType="6" CodeAddr="0x69241B10" HashCode="00001505">
+			<Res Name="SysCANTxMsg" OrigName="SysCANTxMsg" Type="BOOL" OrigType="BOOL" Addr="0x18[-4]" Attribs="relative,stack"/>
+			<VarI Name="Msg" OrigName="Msg" Type="@SYSCANMESSAGE" OrigType="@SYSCANMESSAGE" Addr="0x18[8]" Attribs="relative,stack" Descr="Message pointer"/>
+		</Fun>
+	</Functions>
+	<Methods/>
+	<Structures>
+		<Stru Name="$$STRUPOUTCB$$" OrigName="$$STRUPOUTCB$$" Size="6">
+			<Var Name="phase" OrigName="phase" Type="UDINT" OrigType="UDINT" Addr="0x0[0]" Attribs="relative" Descr="Active phase of the POU (used with WAITING)"/>
+			<Var Name="reset" OrigName="reset" Type="BOOL" OrigType="BOOL" Addr="0x0[4]" Attribs="relative" Descr="Reset of the POU (used with SFC)"/>
+			<Var Name="freeze" OrigName="freeze" Type="BOOL" OrigType="BOOL" Addr="0x0[5]" Attribs="relative" Descr="Freeze of the POU (used with SFC)"/>
+		</Stru>
+		<Stru Name="SYSCANMESSAGE" OrigName="SYSCANMESSAGE" Size="14">
+			<Var Name="RmReq" OrigName="RmReq" Type="BOOL" OrigType="BOOL" Addr="0x0[0]" Attribs="relative" Descr="FALSE:Data frame, TRUE:Remote request"/>
+			<Var Name="Length" OrigName="Length" Type="USINT" OrigType="USINT" Addr="0x0[1]" Attribs="relative" Descr="Data length"/>
+			<Var Name="MsgID" OrigName="MsgID" Type="DWORD" OrigType="DWORD" Addr="0x0[2]" Attribs="relative" Descr="Message ID (FF:Bit 31) (11 or 29 Bit)"/>
+			<Var Name="Data" OrigName="Data" Type="BYTE" OrigType="BYTE" Addr="0x0[6]" Attribs="relative" Descr="Message data" Dims="8"/>
+		</Stru>
+		<Stru Name="SYSSERIALMODE" OrigName="SYSSERIALMODE" Size="18">
+			<Var Name="Baudrate" OrigName="Baudrate" Type="UDINT" OrigType="UDINT" Addr="0x0[0]" Attribs="relative" Descr="Baudrate"/>
+			<Var Name="Parity" OrigName="Parity" Type="STRING" OrigType="STRING" Addr="0x0[4]" Attribs="relative" Descr="Parity type" length="1"/>
+			<Var Name="DataBits" OrigName="DataBits" Type="USINT" OrigType="USINT" Addr="0x0[6]" Attribs="relative" Descr="Nr of data bits"/>
+			<Var Name="StopBits" OrigName="StopBits" Type="USINT" OrigType="USINT" Addr="0x0[7]" Attribs="relative" Descr="Nr of stop bits"/>
+			<Var Name="DTRManagement" OrigName="DTRManagement" Type="UDINT" OrigType="UDINT" Addr="0x0[8]" Attribs="relative" Descr="DTR management type" Range="DTR_MODE"/>
+			<Var Name="DTRComplement" OrigName="DTRComplement" Type="BOOL" OrigType="BOOL" Addr="0x0[12]" Attribs="relative" Descr="Complement the DTR signal"/>
+			<Var Name="EchoFlush" OrigName="EchoFlush" Type="BOOL" OrigType="BOOL" Addr="0x0[13]" Attribs="relative" Descr="Flush the echo"/>
+			<Var Name="DTROnTime" OrigName="DTROnTime" Type="UINT" OrigType="UINT" Addr="0x0[14]" Attribs="relative" Descr="DTR On wait time"/>
+			<Var Name="DTROffTime" OrigName="DTROffTime" Type="UINT" OrigType="UINT" Addr="0x0[16]" Attribs="relative" Descr="DTR Off wait time"/>
+		</Stru>
+	</Structures>
+	<Enums>
+		<Enum Name="OW_BSTATUS" OrigName="OW_BSTATUS" baseType="USINT">
+			<Var Name="OW_BSHORTED" OrigName="OW_BSHORTED" Value="0"/>
+			<Var Name="OW_BOK" OrigName="OW_BOK" Value="1"/>
+			<Var Name="OW_BPPULSE" OrigName="OW_BPPULSE" Value="2"/>
+			<Var Name="OW_BNODEVICES" OrigName="OW_BNODEVICES" Value="3"/>
+			<Var Name="OW_BNOTCHKD" OrigName="OW_BNOTCHKD" Value="4"/>
+		</Enum>
+		<Enum Name="OW_ITYPE" OrigName="OW_ITYPE" baseType="USINT">
+			<Var Name="OW_ITDS2480B" OrigName="OW_ITDS2480B" Value="0"/>
+			<Var Name="OW_ITDS2484" OrigName="OW_ITDS2484" Value="1"/>
+		</Enum>
+		<Enum Name="CO_NMT_STS" OrigName="CO_NMT_STS" baseType="USINT">
+			<Var Name="BOOTUP" OrigName="BOOTUP" Value="0"/>
+			<Var Name="STOPPED" OrigName="STOPPED" Value="4"/>
+			<Var Name="OPERATIONAL" OrigName="OPERATIONAL" Value="5"/>
+			<Var Name="PREOPERATIONAL" OrigName="PREOPERATIONAL" Value="127"/>
+		</Enum>
+		<Enum Name="SWAP_MODE" OrigName="SWAP_MODE" baseType="USINT">
+			<Var Name="SWAP_COPY" OrigName="SWAP_COPY" Value="0"/>
+			<Var Name="SWAP_HALF" OrigName="SWAP_HALF" Value="1"/>
+			<Var Name="SWAP_VARS" OrigName="SWAP_VARS" Value="2"/>
+			<Var Name="SWAP_ENDIAN" OrigName="SWAP_ENDIAN" Value="3"/>
+		</Enum>
+		<Enum Name="VAR_CHECK" OrigName="VAR_CHECK" baseType="USINT">
+			<Var Name="VCK_NORMAL" OrigName="VCK_NORMAL" Value="0"/>
+			<Var Name="VCK_ZERO" OrigName="VCK_ZERO" Value="1"/>
+			<Var Name="VCK_POSITIVE" OrigName="VCK_POSITIVE" Value="2"/>
+			<Var Name="VCK_NEGATIVE" OrigName="VCK_NEGATIVE" Value="3"/>
+			<Var Name="VCK_NAN" OrigName="VCK_NAN" Value="4"/>
+			<Var Name="VCK_INFINITE" OrigName="VCK_INFINITE" Value="5"/>
+		</Enum>
+		<Enum Name="STR_CONV" OrigName="STR_CONV" baseType="USINT">
+			<Var Name="SCV_NONE" OrigName="SCV_NONE" Value="0"/>
+			<Var Name="SCV_COPY" OrigName="SCV_COPY" Value="1"/>
+			<Var Name="SCV_TOLOWER" OrigName="SCV_TOLOWER" Value="2"/>
+			<Var Name="SCV_TOUPPER" OrigName="SCV_TOUPPER" Value="3"/>
+		</Enum>
+		<Enum Name="HTTP_REQUEST" OrigName="HTTP_REQUEST" baseType="USINT">
+			<Var Name="HTTP_GET" OrigName="HTTP_GET" Value="0"/>
+			<Var Name="HTTP_POST" OrigName="HTTP_POST" Value="1"/>
+			<Var Name="HTTP_PUT" OrigName="HTTP_PUT" Value="2"/>
+		</Enum>
+		<Enum Name="FILEMDUMP_MODE" OrigName="FILEMDUMP_MODE" baseType="USINT">
+			<Var Name="NONE" OrigName="NONE" Value="0"/>
+			<Var Name="BINARY" OrigName="BINARY" Value="1"/>
+			<Var Name="ASCII" OrigName="ASCII" Value="2"/>
+		</Enum>
+		<Enum Name="YOTTA_A1_MDEFS" OrigName="YOTTA_A1_MDEFS" baseType="USINT">
+			<Var Name="None" OrigName="None" Value="0"/>
+			<Var Name="A1012" OrigName="A1012" Value="10"/>
+			<Var Name="A1212" OrigName="A1212" Value="11"/>
+			<Var Name="A1218" OrigName="A1218" Value="12"/>
+			<Var Name="A1019" OrigName="A1019" Value="20"/>
+			<Var Name="A1219" OrigName="A1219" Value="21"/>
+			<Var Name="A1819" OrigName="A1819" Value="22"/>
+			<Var Name="A1051" OrigName="A1051" Value="30"/>
+			<Var Name="A1055" OrigName="A1055" Value="40"/>
+			<Var Name="A1255" OrigName="A1255" Value="41"/>
+			<Var Name="A1855" OrigName="A1855" Value="42"/>
+			<Var Name="A1055S" OrigName="A1055S" Value="45"/>
+			<Var Name="A1060" OrigName="A1060" Value="50"/>
+			<Var Name="A1260" OrigName="A1260" Value="51"/>
+			<Var Name="A1860" OrigName="A1860" Value="52"/>
+		</Enum>
+		<Enum Name="MODBUS_PROTOCOL" OrigName="MODBUS_PROTOCOL" baseType="USINT">
+			<Var Name="MDB_RTU" OrigName="MDB_RTU" Value="0"/>
+			<Var Name="MDB_ASCII" OrigName="MDB_ASCII" Value="1"/>
+			<Var Name="MDB_TCP" OrigName="MDB_TCP" Value="2"/>
+		</Enum>
+		<Enum Name="MODEM_TYPE" OrigName="MODEM_TYPE" baseType="DINT">
+			<Var Name="STANDARD" OrigName="STANDARD" Value="0"/>
+			<Var Name="CONEL" OrigName="CONEL" Value="1"/>
+			<Var Name="WLR220" OrigName="WLR220" Value="2"/>
+			<Var Name="WLM100" OrigName="WLM100" Value="3"/>
+			<Var Name="EGX81" OrigName="EGX81" Value="4"/>
+		</Enum>
+		<Enum Name="eMLDRIVERTYPE" OrigName="eMLDRIVERTYPE" baseType="USINT">
+			<Var Name="SPEEDCONTROL" OrigName="SPEEDCONTROL" Value="0"/>
+			<Var Name="STEPPER" OrigName="STEPPER" Value="1"/>
+		</Enum>
+		<Enum Name="CANOMMCTYPE" OrigName="CANOMMCTYPE" baseType="DINT">
+			<Var Name="NOOPR" OrigName="NOOPR" Value="0"/>
+			<Var Name="MODRST" OrigName="MODRST" Value="1"/>
+			<Var Name="MODOP" OrigName="MODOP" Value="2"/>
+			<Var Name="SDORD" OrigName="SDORD" Value="3"/>
+			<Var Name="SDOWR" OrigName="SDOWR" Value="4"/>
+			<Var Name="SDOWC" OrigName="SDOWC" Value="5"/>
+		</Enum>
+		<Enum Name="CANOMMODE" OrigName="CANOMMODE" baseType="DINT">
+			<Var Name="CANMRX" OrigName="CANMRX" Value="0"/>
+			<Var Name="CANMTX" OrigName="CANMTX" Value="1"/>
+			<Var Name="CANMRXTRACE" OrigName="CANMRXTRACE" Value="2"/>
+			<Var Name="CANMTXTRACE" OrigName="CANMTXTRACE" Value="3"/>
+		</Enum>
+		<Enum Name="SNMP_PDU" OrigName="SNMP_PDU" baseType="USINT">
+			<Var Name="NOTDEFINED" OrigName="NOTDEFINED" Value="0"/>
+			<Var Name="GETRQ" OrigName="GETRQ" Value="160"/>
+			<Var Name="GETNEXTRQ" OrigName="GETNEXTRQ" Value="161"/>
+			<Var Name="GETRESP" OrigName="GETRESP" Value="162"/>
+			<Var Name="SETRQ" OrigName="SETRQ" Value="163"/>
+		</Enum>
+		<Enum Name="SNMP_VT" OrigName="SNMP_VT" baseType="USINT">
+			<Var Name="INTEGER" OrigName="INTEGER" Value="2"/>
+			<Var Name="OSTRING" OrigName="OSTRING" Value="4"/>
+			<Var Name="NULLPTR" OrigName="NULLPTR" Value="5"/>
+			<Var Name="IPADDRESS" OrigName="IPADDRESS" Value="64"/>
+			<Var Name="COUNTER32" OrigName="COUNTER32" Value="65"/>
+			<Var Name="GAUGE32" OrigName="GAUGE32" Value="66"/>
+			<Var Name="TIMETICKS" OrigName="TIMETICKS" Value="67"/>
+		</Enum>
+		<Enum Name="SNMP_VERSION" OrigName="SNMP_VERSION" baseType="USINT">
+			<Var Name="SNMPv1" OrigName="SNMPv1" Value="0"/>
+			<Var Name="SNMPv2" OrigName="SNMPv2" Value="1"/>
+		</Enum>
+		<Enum Name="SNMP_ERROR" OrigName="SNMP_ERROR" baseType="USINT">
+			<Var Name="NOERROR" OrigName="NOERROR" Value="0"/>
+			<Var Name="TOOBIG" OrigName="TOOBIG" Value="1"/>
+			<Var Name="NOSUCHNAME" OrigName="NOSUCHNAME" Value="2"/>
+			<Var Name="BADVALUE" OrigName="BADVALUE" Value="3"/>
+			<Var Name="READONLY" OrigName="READONLY" Value="4"/>
+			<Var Name="GENERR" OrigName="GENERR" Value="5"/>
+			<Var Name="NOACCESS" OrigName="NOACCESS" Value="6"/>
+			<Var Name="WRONGTYPE" OrigName="WRONGTYPE" Value="7"/>
+			<Var Name="WRONGLENGTH" OrigName="WRONGLENGTH" Value="8"/>
+			<Var Name="WRONGENCODING" OrigName="WRONGENCODING" Value="9"/>
+			<Var Name="WRONGVALUE" OrigName="WRONGVALUE" Value="10"/>
+			<Var Name="NOCREATION" OrigName="NOCREATION" Value="11"/>
+			<Var Name="INCONSISTENTVALUE" OrigName="INCONSISTENTVALUE" Value="12"/>
+			<Var Name="RESOURCEUNAVAILABLE" OrigName="RESOURCEUNAVAILABLE" Value="13"/>
+			<Var Name="COMMITFAILED" OrigName="COMMITFAILED" Value="14"/>
+			<Var Name="UNDOFAILED" OrigName="UNDOFAILED" Value="15"/>
+			<Var Name="AUTHORIZATIONERROR" OrigName="AUTHORIZATIONERROR" Value="16"/>
+			<Var Name="NOTWRITABLE" OrigName="NOTWRITABLE" Value="17"/>
+			<Var Name="INCONSISTENTNAME" OrigName="INCONSISTENTNAME" Value="18"/>
+		</Enum>
+		<Enum Name="ARRAYBOOL" OrigName="ARRAYBOOL" baseType="USINT">
+			<Var Name="ABM_NOP" OrigName="ABM_NOP" Value="0"/>
+			<Var Name="ABM_BYTEBE" OrigName="ABM_BYTEBE" Value="1"/>
+			<Var Name="ABM_BYTELE" OrigName="ABM_BYTELE" Value="2"/>
+			<Var Name="ABM_WORDBE" OrigName="ABM_WORDBE" Value="3"/>
+			<Var Name="ABM_WORDLE" OrigName="ABM_WORDLE" Value="4"/>
+			<Var Name="ABM_DWORDBE" OrigName="ABM_DWORDBE" Value="5"/>
+			<Var Name="ABM_DWORDLE" OrigName="ABM_DWORDLE" Value="6"/>
+			<Var Name="ABM_LWORDBE" OrigName="ABM_LWORDBE" Value="7"/>
+			<Var Name="ABM_LWORDLE" OrigName="ABM_LWORDLE" Value="8"/>
+		</Enum>
+		<Enum Name="VR_TYPE" OrigName="VR_TYPE" baseType="UDINT">
+			<Var Name="NOTD_TYPE" OrigName="NOTD_TYPE" Value="0"/>
+			<Var Name="BOOL_TYPE" OrigName="BOOL_TYPE" Value="10"/>
+			<Var Name="BYTE_TYPE" OrigName="BYTE_TYPE" Value="20"/>
+			<Var Name="SINT_TYPE" OrigName="SINT_TYPE" Value="21"/>
+			<Var Name="USINT_TYPE" OrigName="USINT_TYPE" Value="22"/>
+			<Var Name="WORD_TYPE" OrigName="WORD_TYPE" Value="30"/>
+			<Var Name="INT_TYPE" OrigName="INT_TYPE" Value="31"/>
+			<Var Name="UINT_TYPE" OrigName="UINT_TYPE" Value="32"/>
+			<Var Name="DWORD_TYPE" OrigName="DWORD_TYPE" Value="40"/>
+			<Var Name="DINT_TYPE" OrigName="DINT_TYPE" Value="41"/>
+			<Var Name="UDINT_TYPE" OrigName="UDINT_TYPE" Value="42"/>
+			<Var Name="REAL_TYPE" OrigName="REAL_TYPE" Value="43"/>
+			<Var Name="STRING_TYPE" OrigName="STRING_TYPE" Value="50"/>
+			<Var Name="LWORD_TYPE" OrigName="LWORD_TYPE" Value="60"/>
+			<Var Name="LINT_TYPE" OrigName="LINT_TYPE" Value="61"/>
+			<Var Name="ULINT_TYPE" OrigName="ULINT_TYPE" Value="62"/>
+			<Var Name="LREAL_TYPE" OrigName="LREAL_TYPE" Value="63"/>
+			<Var Name="TIME_TYPE" OrigName="TIME_TYPE" Value="70"/>
+			<Var Name="LTIME_TYPE" OrigName="LTIME_TYPE" Value="71"/>
+			<Var Name="TIME_OF_DAY_TYPE" OrigName="TIME_OF_DAY_TYPE" Value="72"/>
+			<Var Name="LTIME_OF_DAY_TYPE" OrigName="LTIME_OF_DAY_TYPE" Value="73"/>
+			<Var Name="DATE_TYPE" OrigName="DATE_TYPE" Value="80"/>
+			<Var Name="LDATE_TYPE" OrigName="LDATE_TYPE" Value="81"/>
+			<Var Name="DATE_AND_TIME_TYPE" OrigName="DATE_AND_TIME_TYPE" Value="82"/>
+			<Var Name="LDATE_AND_TIME_TYPE" OrigName="LDATE_AND_TIME_TYPE" Value="83"/>
+			<Var Name="PVOID_TYPE" OrigName="PVOID_TYPE" Value="100"/>
+		</Enum>
+		<Enum Name="CHECK_TYPE" OrigName="CHECK_TYPE" baseType="UDINT">
+			<Var Name="CRC_16_MODBUS" OrigName="CRC_16_MODBUS" Value="1"/>
+			<Var Name="LRC_ISO1155" OrigName="LRC_ISO1155" Value="2"/>
+		</Enum>
+		<Enum Name="FIND_MODE" OrigName="FIND_MODE" baseType="UDINT">
+			<Var Name="FIND_DEFAULT" OrigName="FIND_DEFAULT" Value="0"/>
+			<Var Name="FIND_FROM_END" OrigName="FIND_FROM_END" Value="1"/>
+			<Var Name="FIND_NO_CASE" OrigName="FIND_NO_CASE" Value="2"/>
+			<Var Name="FIND_GET_END" OrigName="FIND_GET_END" Value="4"/>
+		</Enum>
+		<Enum Name="FSEEK_ORIGIN" OrigName="FSEEK_ORIGIN" baseType="UDINT">
+			<Var Name="ID_SEEK_SET" OrigName="ID_SEEK_SET" Value="0"/>
+			<Var Name="ID_SEEK_CUR" OrigName="ID_SEEK_CUR" Value="1"/>
+			<Var Name="ID_SEEK_END" OrigName="ID_SEEK_END" Value="2"/>
+		</Enum>
+		<Enum Name="AI_MODE" OrigName="AI_MODE" baseType="UDINT">
+			<Var Name="AD_IDLE" OrigName="AD_IDLE" Value="0"/>
+			<Var Name="AD_VOLT_0_125_COMMON" OrigName="AD_VOLT_0_125_COMMON" Value="1"/>
+			<Var Name="AD_VOLT_0_10_COMMON" OrigName="AD_VOLT_0_10_COMMON" Value="2"/>
+			<Var Name="AD_CURR_0_20_COMMON" OrigName="AD_CURR_0_20_COMMON" Value="3"/>
+			<Var Name="AD_CURR_4_20_COMMON" OrigName="AD_CURR_4_20_COMMON" Value="4"/>
+			<Var Name="AD_VOLT_0_1_COMMON" OrigName="AD_VOLT_0_1_COMMON" Value="5"/>
+			<Var Name="AD_CURR_0_20_DIFFER" OrigName="AD_CURR_0_20_DIFFER" Value="6"/>
+			<Var Name="AD_VOLT_0_1_DIFFER" OrigName="AD_VOLT_0_1_DIFFER" Value="7"/>
+			<Var Name="AD_VOLT_0_125_DIFFER" OrigName="AD_VOLT_0_125_DIFFER" Value="8"/>
+			<Var Name="AD_VOLT_0_10_DIFFER" OrigName="AD_VOLT_0_10_DIFFER" Value="9"/>
+			<Var Name="AD_PT100_DIFFER" OrigName="AD_PT100_DIFFER" Value="10"/>
+			<Var Name="AD_PT1000_DIFFER" OrigName="AD_PT1000_DIFFER" Value="11"/>
+			<Var Name="AD_NI1000_DIFFER" OrigName="AD_NI1000_DIFFER" Value="12"/>
+			<Var Name="AD_CURR_4_20_DIFFER" OrigName="AD_CURR_4_20_DIFFER" Value="13"/>
+			<Var Name="AD_PT100_DIN_43760" OrigName="AD_PT100_DIN_43760" Value="32"/>
+			<Var Name="AD_PT100_AMERICAN" OrigName="AD_PT100_AMERICAN" Value="33"/>
+			<Var Name="AD_PT100_ITS_90" OrigName="AD_PT100_ITS_90" Value="34"/>
+			<Var Name="AD_PT100_IEC_60751" OrigName="AD_PT100_IEC_60751" Value="35"/>
+			<Var Name="AD_PT1000_DIN_43760" OrigName="AD_PT1000_DIN_43760" Value="40"/>
+			<Var Name="AD_PT1000_AMERICAN" OrigName="AD_PT1000_AMERICAN" Value="41"/>
+			<Var Name="AD_PT1000_ITS_90" OrigName="AD_PT1000_ITS_90" Value="42"/>
+			<Var Name="AD_PT1000_IEC_60751" OrigName="AD_PT1000_IEC_60751" Value="43"/>
+			<Var Name="AD_NI1000_DIN_43760" OrigName="AD_NI1000_DIN_43760" Value="48"/>
+			<Var Name="AD_THERMOCOUPLE_B" OrigName="AD_THERMOCOUPLE_B" Value="64"/>
+			<Var Name="AD_THERMOCOUPLE_E" OrigName="AD_THERMOCOUPLE_E" Value="65"/>
+			<Var Name="AD_THERMOCOUPLE_J" OrigName="AD_THERMOCOUPLE_J" Value="66"/>
+			<Var Name="AD_THERMOCOUPLE_K" OrigName="AD_THERMOCOUPLE_K" Value="67"/>
+			<Var Name="AD_THERMOCOUPLE_N" OrigName="AD_THERMOCOUPLE_N" Value="68"/>
+			<Var Name="AD_THERMOCOUPLE_R" OrigName="AD_THERMOCOUPLE_R" Value="69"/>
+			<Var Name="AD_THERMOCOUPLE_S" OrigName="AD_THERMOCOUPLE_S" Value="70"/>
+			<Var Name="AD_THERMOCOUPLE_T" OrigName="AD_THERMOCOUPLE_T" Value="71"/>
+			<Var Name="AD_VIN_VREF_G_1" OrigName="AD_VIN_VREF_G_1" Value="90"/>
+			<Var Name="AD_VIN_VREF_G_2" OrigName="AD_VIN_VREF_G_2" Value="91"/>
+			<Var Name="AD_VIN_VREF_G_4" OrigName="AD_VIN_VREF_G_4" Value="92"/>
+			<Var Name="AD_VIN_VREF_G_8" OrigName="AD_VIN_VREF_G_8" Value="93"/>
+			<Var Name="AD_VIN_VREF_G_16" OrigName="AD_VIN_VREF_G_16" Value="94"/>
+			<Var Name="AD_VIN_VREF_G_32" OrigName="AD_VIN_VREF_G_32" Value="95"/>
+			<Var Name="AD_VIN_VREF_G_64" OrigName="AD_VIN_VREF_G_64" Value="96"/>
+			<Var Name="AD_VIN_VREF_G_128" OrigName="AD_VIN_VREF_G_128" Value="97"/>
+			<Var Name="AD_RESISTOR_300_OHM" OrigName="AD_RESISTOR_300_OHM" Value="110"/>
+			<Var Name="AD_RESISTOR_5000_OHM" OrigName="AD_RESISTOR_5000_OHM" Value="111"/>
+		</Enum>
+		<Enum Name="AO_MODE" OrigName="AO_MODE" baseType="UDINT">
+			<Var Name="DA_IDLE" OrigName="DA_IDLE" Value="0"/>
+			<Var Name="DA_VOLT_0_10" OrigName="DA_VOLT_0_10" Value="1"/>
+			<Var Name="DA_VOLT_0_5" OrigName="DA_VOLT_0_5" Value="2"/>
+			<Var Name="DA_VOLT_M10_10" OrigName="DA_VOLT_M10_10" Value="3"/>
+			<Var Name="DA_VOLT_M5_5" OrigName="DA_VOLT_M5_5" Value="4"/>
+			<Var Name="DA_CURR_0_20" OrigName="DA_CURR_0_20" Value="5"/>
+			<Var Name="DA_CURR_4_20" OrigName="DA_CURR_4_20" Value="6"/>
+		</Enum>
+		<Enum Name="DI_MODE" OrigName="DI_MODE" baseType="UDINT">
+			<Var Name="DI_8_LL" OrigName="DI_8_LL" Value="1"/>
+			<Var Name="DI_8_L" OrigName="DI_8_L" Value="2"/>
+			<Var Name="DI_8_M" OrigName="DI_8_M" Value="3"/>
+			<Var Name="DI_8_MM" OrigName="DI_8_MM" Value="4"/>
+			<Var Name="DI_16_L" OrigName="DI_16_L" Value="5"/>
+			<Var Name="DI_16_M" OrigName="DI_16_M" Value="6"/>
+			<Var Name="DI_32" OrigName="DI_32" Value="7"/>
+			<Var Name="DI_I_8_LL" OrigName="DI_I_8_LL" Value="11"/>
+			<Var Name="DI_I_8_L" OrigName="DI_I_8_L" Value="12"/>
+			<Var Name="DI_I_8_M" OrigName="DI_I_8_M" Value="13"/>
+			<Var Name="DI_I_8_MM" OrigName="DI_I_8_MM" Value="14"/>
+			<Var Name="DI_I_16_L" OrigName="DI_I_16_L" Value="15"/>
+			<Var Name="DI_I_16_M" OrigName="DI_I_16_M" Value="16"/>
+			<Var Name="DI_I_32" OrigName="DI_I_32" Value="17"/>
+		</Enum>
+		<Enum Name="DO_MODE" OrigName="DO_MODE" baseType="UDINT">
+			<Var Name="DO_8_LL" OrigName="DO_8_LL" Value="1"/>
+			<Var Name="DO_8_L" OrigName="DO_8_L" Value="2"/>
+			<Var Name="DO_8_M" OrigName="DO_8_M" Value="3"/>
+			<Var Name="DO_8_MM" OrigName="DO_8_MM" Value="4"/>
+			<Var Name="DO_16_L" OrigName="DO_16_L" Value="5"/>
+			<Var Name="DO_16_M" OrigName="DO_16_M" Value="6"/>
+			<Var Name="DO_32" OrigName="DO_32" Value="7"/>
+		</Enum>
+		<Enum Name="PHR_INFOS_ID" OrigName="PHR_INFOS_ID" baseType="UDINT">
+			<Var Name="PRODUCT_CODE" OrigName="PRODUCT_CODE" Value="0"/>
+			<Var Name="PROGRAM_CODE" OrigName="PROGRAM_CODE" Value="1"/>
+			<Var Name="PRODUCT_SERNR" OrigName="PRODUCT_SERNR" Value="2"/>
+			<Var Name="PRODUCT_UID" OrigName="PRODUCT_UID" Value="3"/>
+		</Enum>
+		<Enum Name="DTR_MODE" OrigName="DTR_MODE" baseType="UDINT">
+			<Var Name="DTR_OFF" OrigName="DTR_OFF" Value="0"/>
+			<Var Name="DTR_ON" OrigName="DTR_ON" Value="1"/>
+			<Var Name="DTR_AUTO_WO_TIMES" OrigName="DTR_AUTO_WO_TIMES" Value="2"/>
+			<Var Name="DTR_AUTO_W_TIMES" OrigName="DTR_AUTO_W_TIMES" Value="3"/>
+		</Enum>
+		<Enum Name="SPY_MODE" OrigName="SPY_MODE" baseType="UDINT">
+			<Var Name="SPY_CHECK" OrigName="SPY_CHECK" Value="0"/>
+			<Var Name="SPY_ASCII" OrigName="SPY_ASCII" Value="1"/>
+			<Var Name="SPY_ASCII_L" OrigName="SPY_ASCII_L" Value="2"/>
+			<Var Name="SPY_ASCHEX" OrigName="SPY_ASCHEX" Value="10"/>
+			<Var Name="SPY_ASCHEX_L" OrigName="SPY_ASCHEX_L" Value="11"/>
+			<Var Name="SPY_BINARY" OrigName="SPY_BINARY" Value="100"/>
+		</Enum>
+		<Enum Name="SYS_ID" OrigName="SYS_ID" baseType="UDINT">
+			<Var Name="OSID_CFG_WRITE" OrigName="OSID_CFG_WRITE" Value="1"/>
+			<Var Name="OSID_PLC_COMMAND" OrigName="OSID_PLC_COMMAND" Value="2"/>
+			<Var Name="OSID_UNIQUE_ID" OrigName="OSID_UNIQUE_ID" Value="10"/>
+			<Var Name="OSID_DEVICE_NAME" OrigName="OSID_DEVICE_NAME" Value="14"/>
+			<Var Name="OSID_PRODUCT_CODE" OrigName="OSID_PRODUCT_CODE" Value="30"/>
+			<Var Name="OSID_PRODUCT_SERIAL" OrigName="OSID_PRODUCT_SERIAL" Value="31"/>
+			<Var Name="OSID_FIRMWARE_VER" OrigName="OSID_FIRMWARE_VER" Value="40"/>
+			<Var Name="OSID_UPDATE_EXECUTED" OrigName="OSID_UPDATE_EXECUTED" Value="56"/>
+			<Var Name="OSID_ETH0_IP" OrigName="OSID_ETH0_IP" Value="100"/>
+			<Var Name="OSID_ETH0_MASK" OrigName="OSID_ETH0_MASK" Value="101"/>
+			<Var Name="OSID_ETH0_GATEWAY" OrigName="OSID_ETH0_GATEWAY" Value="102"/>
+			<Var Name="OSID_ETH0_MAC" OrigName="OSID_ETH0_MAC" Value="103"/>
+			<Var Name="OSID_ETH0_DNS_PRIMARY" OrigName="OSID_ETH0_DNS_PRIMARY" Value="104"/>
+			<Var Name="OSID_ETH0_DNS_SECONDARY" OrigName="OSID_ETH0_DNS_SECONDARY" Value="105"/>
+			<Var Name="OSID_ETH0_DHCP_EN" OrigName="OSID_ETH0_DHCP_EN" Value="107"/>
+			<Var Name="OSID_ETH0_DHCP_DNS" OrigName="OSID_ETH0_DHCP_DNS" Value="108"/>
+			<Var Name="OSID_ETH0_ACT_IP" OrigName="OSID_ETH0_ACT_IP" Value="120"/>
+			<Var Name="OSID_ETH0_ACT_MASK" OrigName="OSID_ETH0_ACT_MASK" Value="121"/>
+			<Var Name="OSID_ETH0_ACT_GATEWAY" OrigName="OSID_ETH0_ACT_GATEWAY" Value="122"/>
+			<Var Name="OSID_ETH0_ACT_DNS_PRIMARY" OrigName="OSID_ETH0_ACT_DNS_PRIMARY" Value="123"/>
+			<Var Name="OSID_ETH0_ACT_DNS_SECONDARY" OrigName="OSID_ETH0_ACT_DNS_SECONDARY" Value="124"/>
+			<Var Name="OSID_I2C_EXT_BUS_FREQ" OrigName="OSID_I2C_EXT_BUS_FREQ" Value="2800"/>
+		</Enum>
+		<Enum Name="TASK_ID" OrigName="TASK_ID" baseType="USINT">
+			<Var Name="ID_TASK_BOOT" OrigName="ID_TASK_BOOT" Value="0"/>
+			<Var Name="ID_TASK_BACK" OrigName="ID_TASK_BACK" Value="1"/>
+			<Var Name="ID_TASK_SLOW" OrigName="ID_TASK_SLOW" Value="2"/>
+			<Var Name="ID_TASK_FAST" OrigName="ID_TASK_FAST" Value="3"/>
+		</Enum>
+		<Enum Name="CAN_SPEED" OrigName="CAN_SPEED" baseType="UDINT">
+			<Var Name="CAN_50KBIT" OrigName="CAN_50KBIT" Value="0"/>
+			<Var Name="CAN_100KBIT" OrigName="CAN_100KBIT" Value="1"/>
+			<Var Name="CAN_125KBIT" OrigName="CAN_125KBIT" Value="2"/>
+			<Var Name="CAN_250KBIT" OrigName="CAN_250KBIT" Value="3"/>
+			<Var Name="CAN_500KBIT" OrigName="CAN_500KBIT" Value="4"/>
+			<Var Name="CAN_1MBIT" OrigName="CAN_1MBIT" Value="5"/>
+		</Enum>
+		<Enum Name="DAYLIGHT_ZONE" OrigName="DAYLIGHT_ZONE" baseType="UDINT">
+			<Var Name="DLZ_OFF" OrigName="DLZ_OFF" Value="0"/>
+			<Var Name="DLZ_EUROPE" OrigName="DLZ_EUROPE" Value="1"/>
+			<Var Name="DLZ_USA" OrigName="DLZ_USA" Value="2"/>
+		</Enum>
+		<Enum Name="TLS_CERT_VERIFY" OrigName="TLS_CERT_VERIFY" baseType="UDINT">
+			<Var Name="TLS_CA_NONE" OrigName="TLS_CA_NONE" Value="0"/>
+			<Var Name="TLS_CA_REQUIRED" OrigName="TLS_CA_REQUIRED" Value="1"/>
+		</Enum>
+		<Enum Name="TLS_MODE" OrigName="TLS_MODE" baseType="UDINT">
+			<Var Name="TLS_MODE_UDP" OrigName="TLS_MODE_UDP" Value="0"/>
+			<Var Name="TLS_MODE_TCP" OrigName="TLS_MODE_TCP" Value="1"/>
+		</Enum>
+		<Enum Name="TLS_CHIPER_SUITE" OrigName="TLS_CHIPER_SUITE" baseType="UDINT">
+			<Var Name="TLS_CS_NULL_WITH_NULL_NULL" OrigName="TLS_CS_NULL_WITH_NULL_NULL" Value="0"/>
+			<Var Name="TLS_DHE_RSA_WITH_AES_128_GCM_SHA256" OrigName="TLS_DHE_RSA_WITH_AES_128_GCM_SHA256" Value="158"/>
+			<Var Name="TLS_DHE_RSA_WITH_AES_256_GCM_SHA384" OrigName="TLS_DHE_RSA_WITH_AES_256_GCM_SHA384" Value="159"/>
+			<Var Name="TLS_DHE_PSK_WITH_AES_128_GCM_SHA256" OrigName="TLS_DHE_PSK_WITH_AES_128_GCM_SHA256" Value="170"/>
+			<Var Name="TLS_DHE_PSK_WITH_AES_256_GCM_SHA384" OrigName="TLS_DHE_PSK_WITH_AES_256_GCM_SHA384" Value="171"/>
+			<Var Name="TLS_AES_128_GCM_SHA256" OrigName="TLS_AES_128_GCM_SHA256" Value="4865"/>
+			<Var Name="TLS_AES_256_GCM_SHA384" OrigName="TLS_AES_256_GCM_SHA384" Value="4866"/>
+			<Var Name="TLS_CHACHA20_POLY1305_SHA256" OrigName="TLS_CHACHA20_POLY1305_SHA256" Value="4867"/>
+			<Var Name="TLS_AES_128_CCM_SHA256" OrigName="TLS_AES_128_CCM_SHA256" Value="4868"/>
+			<Var Name="TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256" OrigName="TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256" Value="49195"/>
+			<Var Name="TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384" OrigName="TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384" Value="49196"/>
+			<Var Name="TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256" OrigName="TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256" Value="49199"/>
+			<Var Name="TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384" OrigName="TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384" Value="49200"/>
+			<Var Name="TLS_DHE_RSA_WITH_AES_128_CCM" OrigName="TLS_DHE_RSA_WITH_AES_128_CCM" Value="49310"/>
+			<Var Name="TLS_DHE_RSA_WITH_AES_256_CCM" OrigName="TLS_DHE_RSA_WITH_AES_256_CCM" Value="49311"/>
+			<Var Name="TLS_DHE_PSK_WITH_AES_128_CCM" OrigName="TLS_DHE_PSK_WITH_AES_128_CCM" Value="49318"/>
+			<Var Name="TLS_DHE_PSK_WITH_AES_256_CCM" OrigName="TLS_DHE_PSK_WITH_AES_256_CCM" Value="49319"/>
+			<Var Name="TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256" OrigName="TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256" Value="52392"/>
+			<Var Name="TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256" OrigName="TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256" Value="52393"/>
+			<Var Name="TLS_DHE_RSA_WITH_CHACHA20_POLY1305_SHA256" OrigName="TLS_DHE_RSA_WITH_CHACHA20_POLY1305_SHA256" Value="52394"/>
+			<Var Name="TLS_ECDHE_PSK_WITH_CHACHA20_POLY1305_SHA256" OrigName="TLS_ECDHE_PSK_WITH_CHACHA20_POLY1305_SHA256" Value="52396"/>
+			<Var Name="TLS_DHE_PSK_WITH_CHACHA20_POLY1305_SHA256" OrigName="TLS_DHE_PSK_WITH_CHACHA20_POLY1305_SHA256" Value="52397"/>
+			<Var Name="TLS_ECDHE_PSK_WITH_AES_128_GCM_SHA256" OrigName="TLS_ECDHE_PSK_WITH_AES_128_GCM_SHA256" Value="53249"/>
+			<Var Name="TLS_ECDHE_PSK_WITH_AES_256_GCM_SHA384" OrigName="TLS_ECDHE_PSK_WITH_AES_256_GCM_SHA384" Value="53250"/>
+			<Var Name="TLS_ECDHE_PSK_WITH_AES_128_CCM_SHA256" OrigName="TLS_ECDHE_PSK_WITH_AES_128_CCM_SHA256" Value="53253"/>
+		</Enum>
+		<Enum Name="SYS_ARCH" OrigName="SYS_ARCH" baseType="USINT">
+			<Var Name="ARCH_UNKNOWN" OrigName="ARCH_UNKNOWN" Value="0"/>
+			<Var Name="ARCH_32BITs" OrigName="ARCH_32BITs" Value="1"/>
+			<Var Name="ARCH_64BITs" OrigName="ARCH_64BITs" Value="2"/>
+		</Enum>
+	</Enums>
+	<Interfaces/>
+	<Labels/>
+	<DataBlocks>
+		<DBlock Imgc="0" Type="M" DbId="65535" Addr="0x8330000" NEl="544" DataSize="4" RW="RW"/>
+		<DBlock Imgc="0" Type="M" DbId="65534" Addr="0x8330880" NEl="544" DataSize="4" RW="RW"/>
+		<DBlock Imgc="0" Type="M" DbId="60000" Addr="0x8331100" NEl="36" DataSize="1" RW="R"/>
+		<DBlock Imgc="0" Type="M" DbId="60001" Addr="0x8331124" NEl="100" DataSize="280" RW="R"/>
+		<DBlock Imgc="0" Type="M" DbId="60002" Addr="0x8337E84" NEl="12" DataSize="1" RW="R"/>
+		<DBlock Imgc="0" Type="M" DbId="60101" Addr="0x693799C8" NEl="1" DataSize="4" RW="R"/>
+		<DBlock Imgc="0" Type="M" DbId="60102" Addr="0x693799C4" NEl="1" DataSize="4" RW="R"/>
+		<DBlock Imgc="0" Type="M" DbId="60008" Addr="0x8337E90" NEl="1" DataSize="1" RW="R"/>
+		<DBlock Imgc="0" Type="M" DbId="0" Addr="0x8337E94" NEl="792" DataSize="1" RW="R"/>
+		<DBlock Imgc="0" Type="M" DbId="1" Addr="0x83381AC" NEl="640" DataSize="1" RW="RW"/>
+		<DBlock Imgc="0" Type="M" DbId="100" Addr="0x833842C" NEl="4096" DataSize="1" RW="RW"/>
+		<DBlock Imgc="1" Type="I" DbId="0" Addr="0x833942C" NEl="32" DataSize="1" RW="R"/>
+		<DBlock Imgc="1" Type="I" DbId="1" Addr="0x833944C" NEl="32" DataSize="1" RW="R"/>
+		<DBlock Imgc="1" Type="I" DbId="2" Addr="0x833946C" NEl="32" DataSize="1" RW="R"/>
+		<DBlock Imgc="1" Type="I" DbId="3" Addr="0x833948C" NEl="32" DataSize="1" RW="R"/>
+		<DBlock Imgc="1" Type="I" DbId="4" Addr="0x83394AC" NEl="32" DataSize="1" RW="R"/>
+		<DBlock Imgc="1" Type="I" DbId="5" Addr="0x83394CC" NEl="32" DataSize="1" RW="R"/>
+		<DBlock Imgc="1" Type="I" DbId="6" Addr="0x83394EC" NEl="32" DataSize="1" RW="R"/>
+		<DBlock Imgc="1" Type="I" DbId="7" Addr="0x833950C" NEl="32" DataSize="1" RW="R"/>
+		<DBlock Imgc="1" Type="I" DbId="8" Addr="0x833952C" NEl="32" DataSize="1" RW="R"/>
+		<DBlock Imgc="1" Type="I" DbId="9" Addr="0x833954C" NEl="32" DataSize="1" RW="R"/>
+		<DBlock Imgc="1" Type="I" DbId="10" Addr="0x833956C" NEl="32" DataSize="1" RW="R"/>
+		<DBlock Imgc="1" Type="I" DbId="11" Addr="0x833958C" NEl="32" DataSize="1" RW="R"/>
+		<DBlock Imgc="1" Type="I" DbId="12" Addr="0x83395AC" NEl="32" DataSize="1" RW="R"/>
+		<DBlock Imgc="1" Type="I" DbId="13" Addr="0x83395CC" NEl="32" DataSize="1" RW="R"/>
+		<DBlock Imgc="1" Type="I" DbId="14" Addr="0x83395EC" NEl="32" DataSize="1" RW="R"/>
+		<DBlock Imgc="1" Type="I" DbId="15" Addr="0x833960C" NEl="32" DataSize="1" RW="R"/>
+		<DBlock Imgc="1" Type="I" DbId="255" Addr="0x833962C" NEl="32" DataSize="1" RW="R"/>
+		<DBlock Imgc="1" Type="O" DbId="0" Addr="0x833964C" NEl="32" DataSize="1" RW="RW"/>
+		<DBlock Imgc="1" Type="O" DbId="1" Addr="0x833966C" NEl="32" DataSize="1" RW="RW"/>
+		<DBlock Imgc="1" Type="O" DbId="2" Addr="0x833968C" NEl="32" DataSize="1" RW="RW"/>
+		<DBlock Imgc="1" Type="O" DbId="3" Addr="0x83396AC" NEl="32" DataSize="1" RW="RW"/>
+		<DBlock Imgc="1" Type="O" DbId="4" Addr="0x83396CC" NEl="32" DataSize="1" RW="RW"/>
+		<DBlock Imgc="1" Type="O" DbId="5" Addr="0x83396EC" NEl="32" DataSize="1" RW="RW"/>
+		<DBlock Imgc="1" Type="O" DbId="6" Addr="0x833970C" NEl="32" DataSize="1" RW="RW"/>
+		<DBlock Imgc="1" Type="O" DbId="7" Addr="0x833972C" NEl="32" DataSize="1" RW="RW"/>
+		<DBlock Imgc="1" Type="O" DbId="8" Addr="0x833974C" NEl="32" DataSize="1" RW="RW"/>
+		<DBlock Imgc="1" Type="O" DbId="9" Addr="0x833976C" NEl="32" DataSize="1" RW="RW"/>
+		<DBlock Imgc="1" Type="O" DbId="10" Addr="0x833978C" NEl="32" DataSize="1" RW="RW"/>
+		<DBlock Imgc="1" Type="O" DbId="11" Addr="0x83397AC" NEl="32" DataSize="1" RW="RW"/>
+		<DBlock Imgc="1" Type="O" DbId="12" Addr="0x83397CC" NEl="32" DataSize="1" RW="RW"/>
+		<DBlock Imgc="1" Type="O" DbId="13" Addr="0x83397EC" NEl="32" DataSize="1" RW="RW"/>
+		<DBlock Imgc="1" Type="O" DbId="14" Addr="0x833980C" NEl="32" DataSize="1" RW="RW"/>
+		<DBlock Imgc="1" Type="O" DbId="15" Addr="0x833982C" NEl="32" DataSize="1" RW="RW"/>
+		<DBlock Imgc="1" Type="O" DbId="255" Addr="0x833984C" NEl="32" DataSize="1" RW="RW"/>
+		<DBlock Imgc="0" Type="M" DbId="65000" Addr="0x69284A60" NEl="124" DataSize="1" RW="R"/>
+		<DBlock Imgc="0" Type="M" DbId="65001" Addr="0x69281700" NEl="113" DataSize="1" RW="R"/>
+		<DBlock Imgc="0" Type="M" DbId="65002" Addr="0x69281798" NEl="200" DataSize="1" RW="W"/>
+		<DBlock Imgc="0" Type="M" DbId="65003" Addr="0x69281674" NEl="16" DataSize="1" RW="R"/>
+		<DBlock Imgc="0" Type="M" DbId="65004" Addr="0x3217E00" NEl="45" DataSize="16" RW="R"/>
+		<DBlock Imgc="0" Type="M" DbId="65005" Addr="0x3228D38" NEl="231" DataSize="36" RW="R"/>
+		<DBlock Imgc="0" Type="M" DbId="65006" Addr="0x318D7C8" NEl="4" DataSize="44" RW="R"/>
+		<DBlock Imgc="0" Type="M" DbId="65007" Addr="0x8360000" NEl="65520" DataSize="1" RW="RW"/>
+		<DBlock Imgc="0" Type="M" DbId="65008" Addr="0x8370000" NEl="65520" DataSize="1" RW="RW"/>
+		<DBlock Imgc="0" Type="M" DbId="65009" Addr="0x8340000" NEl="8192" DataSize="1" RW="RW"/>
+		<DBlock Imgc="0" Type="M" DbId="65010" Addr="0x8350000" NEl="1000" DataSize="1" RW="RW"/>
+		<DBlock Imgc="0" Type="M" DbId="65013" Addr="0x0" NEl="0" DataSize="1" RW="RW"/>
+		<DBlock Imgc="0" Type="M" DbId="65014" Addr="0x0" NEl="0" DataSize="1" RW="RW"/>
+		<DBlock Imgc="0" Type="M" DbId="65015" Addr="0x320F558" NEl="4" DataSize="20" RW="R"/>
+		<DBlock Imgc="0" Type="M" DbId="65016" Addr="0x0" NEl="0" DataSize="1" RW="RW"/>
+		<DBlock Imgc="0" Type="M" DbId="65021" Addr="0x69281774" NEl="32" DataSize="1" RW="R"/>
+		<DBlock Imgc="0" Type="M" DbId="65020" Addr="0x69284C68" NEl="16384" DataSize="1" RW="RW"/>
+		<DBlock Imgc="0" Type="M" DbId="65019" Addr="0x69281860" NEl="100" DataSize="128" RW="R"/>
+	</DataBlocks>
+	<VirtualTables/>
+	<UnspecAddrs/>
+</LLSymbolTable>

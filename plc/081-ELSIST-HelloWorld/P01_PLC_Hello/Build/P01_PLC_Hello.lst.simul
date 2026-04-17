@@ -1,0 +1,435 @@
+***********************************************************************
+*
+*	CODE GENERATION LISTING FOR: P01_PLC_Hello
+*	COMPILER VERSION: 5.22.0.24
+*
+***********************************************************************
+
+**************************************************
+	List function: eGetBYTE
+**************************************************
+
+FUNCTION eGetBYTE : BYTE
+
+	{ DE:"(Sfr108a240) eLLabCommonLib - Get BYTE value from void pointer" }
+
+        VAR_INPUT
+RAddress : DWORD;	{ DE:"Read address" }
+	END_VAR
+
+        VAR
+Ptr : @BYTE;	{ DE:"Auxiliary pointer" }
+	END_VAR
+
+END_FUNCTION
+
+	*** Function data allocation
+
+	Res eGetBYTE: LOCAL STACK FRAME AT -4(ebp)
+	Par RAddress: CALLER STACK FRAME AT 8(ebp)
+	Var Ptr: LOCAL STACK FRAME AT -8(ebp)
+
+067400D0  55                            push ebp
+067400D1  8B EC                         mov ebp, esp
+067400D3  81 EC 0C 00 00 00             sub esp, 12
+067400D9  57                            push edi
+
+067400DA  8B 45 08                      mov eax, 8[ebp]
+067400DD  89 45 F8                      mov -8[ebp], eax
+
+067400E0  8B 55 F8                      mov edx, -8[ebp]
+067400E3  33 C0                         xor eax, eax
+067400E5  8A 02                         mov al, [edx]
+067400E7  88 45 FC                      mov -4[ebp], al
+
+067400EA  33 C0                         xor eax, eax
+067400EC  8A 45 FC                      mov al, -4[ebp]
+067400EF  5F                            pop edi
+067400F0  8B E5                         mov esp, ebp
+067400F2  5D                            pop ebp
+
+067400F3  C3                            ret
+
+END_FUNCTION
+**************************************************
+	List function: eSetBYTE
+**************************************************
+
+FUNCTION eSetBYTE : BOOL
+
+	{ DE:"(Sfr108a240) eLLabCommonLib - Set BYTE value to void pointer" }
+
+        VAR_INPUT
+WAddress : DWORD;	{ DE:"Write address" }
+WValue : BYTE;	{ DE:"Write value" }
+	END_VAR
+
+        VAR
+Ptr : @BYTE;	{ DE:"Auxiliary pointer" }
+	END_VAR
+
+END_FUNCTION
+
+	*** Function data allocation
+
+	Res eSetBYTE: LOCAL STACK FRAME AT -4(ebp)
+	Par WAddress: CALLER STACK FRAME AT 8(ebp)
+	Par WValue: CALLER STACK FRAME AT 12(ebp)
+	Var Ptr: LOCAL STACK FRAME AT -8(ebp)
+
+067400F4  55                            push ebp
+067400F5  8B EC                         mov ebp, esp
+067400F7  81 EC 0C 00 00 00             sub esp, 12
+067400FD  57                            push edi
+
+067400FE  8B 45 08                      mov eax, 8[ebp]
+06740101  89 45 F8                      mov -8[ebp], eax
+
+06740104  33 C0                         xor eax, eax
+06740106  8A 45 0C                      mov al, 12[ebp]
+06740109  8B 55 F8                      mov edx, -8[ebp]
+0674010C  88 02                         mov [edx], al
+
+0674010E  B8 01 00 00 00                mov eax, 01H
+06740113  84 C0                         test al, al
+06740115  0F 95 45 FC                   setne -4[ebp]
+
+06740119  33 C0                         xor eax, eax
+0674011B  8A 45 FC                      mov al, -4[ebp]
+0674011E  5F                            pop edi
+0674011F  8B E5                         mov esp, ebp
+06740121  5D                            pop ebp
+
+06740122  C3                            ret
+
+END_FUNCTION
+**************************************************
+	List function: XUnifiedLibInit
+**************************************************
+
+FUNCTION XUnifiedLibInit : BOOL
+
+	{ DE:"(Sfr094a070) eLLabXUnified12Lib - XUnified library init" }
+
+        VAR_INPUT
+Cmd : BOOL;	{ DE:"Command" }
+	END_VAR
+
+        VAR
+i : UDINT;	{ DE:"Auxiliary variable" }
+Version : STRING[ 10 ] := 'Sfr094a070';	{ DE:"Library version" }
+	END_VAR
+
+END_FUNCTION
+
+	*** Function data allocation
+
+	Res XUnifiedLibInit: LOCAL STACK FRAME AT -4(ebp)
+	Par Cmd: CALLER STACK FRAME AT 8(ebp)
+	Var i: LOCAL STACK FRAME AT -8(ebp)
+	Var Version: LOCAL STACK FRAME AT -20(ebp)
+
+06740123  55                            push ebp
+06740124  8B EC                         mov ebp, esp
+06740126  81 EC 20 00 00 00             sub esp, 32
+0674012C  57                            push edi
+
+0674012D  C7 45 EC 53 66 72 30          mov -20[ebp], 30726653H
+06740134  C7 45 F0 39 34 61 30          mov -16[ebp], 30613439H
+0674013B  66 C7 45 F4 37 30             mov word ptr -12[ebp], 3037H
+06740141  C6 45 F6 00                   mov byte ptr -10[ebp], 00H
+
+06740145  B8 00 00 00 00                mov eax, 00H
+
+0674014A  89 45 F8                      mov -8[ebp], eax
+
+0674014D  8B 45 F8                      mov eax, -8[ebp]
+
+06740150  50                            push eax
+06740151  B8 0B 00 00 00                mov eax, 0000000BH
+
+06740156  2D 02 00 00 00                sub eax, 2
+
+0674015B  8B C8                         mov ecx, eax
+0674015D  58                            pop eax
+0674015E  3B C1                         cmp eax, ecx
+06740160  0F 97 C0                      seta al
+06740163  25 FF 00 00 00                and eax, 0FFh
+
+06740168  84 C0                         test al, al
+0674016A  90 75 59 90 90 90             jne 067401C6H
+
+06740170  8D 45 EC                      lea eax, -20[ebp]
+
+06740173  03 45 F8                      add eax, [ebp+-8]
+
+06740176  8B C8                         mov ecx, eax
+06740178  51                            push ecx
+06740179  E8 52 FF FF FF                call 067400D0H ; $$CODE$$+208
+0674017E  81 C4 04 00 00 00             add esp, 4
+
+06740184  8B C8                         mov ecx, eax
+06740186  51                            push ecx
+06740187  B9 CC CC CC CC                mov ecx, CCCCCCCCH ; Systoupper
+0674018C  FF D1                         call ecx
+0674018E  81 C4 04 00 00 00             add esp, 4
+
+06740194  88 45 E8                      mov -24[ebp], al
+
+06740197  8D 45 EC                      lea eax, -20[ebp]
+
+0674019A  03 45 F8                      add eax, [ebp+-8]
+
+0674019D  0F B6 4D E8                   movzx ecx, byte ptr -24[ebp]
+067401A1  51                            push ecx
+067401A2  8B C8                         mov ecx, eax
+067401A4  51                            push ecx
+067401A5  E8 4A FF FF FF                call 067400F4H ; $$CODE$$+244
+067401AA  81 C4 08 00 00 00             add esp, 8
+
+067401B0  84 C0                         test al, al
+067401B2  0F 95 45 FC                   setne -4[ebp]
+
+067401B6  8B 45 F8                      mov eax, -8[ebp]
+
+067401B9  05 01 00 00 00                add eax, 1
+
+067401BE  89 45 F8                      mov -8[ebp], eax
+
+067401C1  EB 8A 90 90 90                jmp 0674014DH
+
+067401C6  8D 45 EC                      lea eax, -20[ebp]
+
+067401C9  89 45 E4                      mov -28[ebp], eax
+
+067401CC  8B 4D E4                      mov ecx, -28[ebp]
+067401CF  51                            push ecx
+067401D0  68 01 00 00 00                push 1
+067401D5  68 01 00 00 00                push 1
+067401DA  B9 CC CC CC CC                mov ecx, CCCCCCCCH ; SysXUnifiedValue
+067401DF  FF D1                         call ecx
+067401E1  81 C4 0C 00 00 00             add esp, 12
+
+067401E7  89 45 F8                      mov -8[ebp], eax
+
+067401EA  B8 01 00 00 00                mov eax, 01H
+067401EF  84 C0                         test al, al
+067401F1  0F 95 45 FC                   setne -4[ebp]
+
+067401F5  33 C0                         xor eax, eax
+067401F7  8A 45 FC                      mov al, -4[ebp]
+067401FA  5F                            pop edi
+067401FB  8B E5                         mov esp, ebp
+067401FD  5D                            pop ebp
+
+067401FE  C3                            ret
+
+END_FUNCTION
+**************************************************
+	List program: $$ElsistInit
+**************************************************
+
+PROGRAM $$ElsistInit
+
+        VAR
+dummy : BOOL;
+	END_VAR
+
+END_PROGRAM
+
+06740200  55                            push ebp
+06740201  8B EC                         mov ebp, esp
+06740203  60                            pushad
+
+#0		{SRC:$$ElsistInit}
+#1		(*$WAITSWITCH$*)
+#2		
+#3			(* dummy:=XUnifiedLibInit(TRUE); *)
+#4			LDP0		TRUE	{LNXT:2|2|-1}
+(*) UDINT
+#5			XUnifiedLibInit	{LNXT:2|2|-1}
+(*) UDINT
+06740204  68 01 00 00 00                push 1
+06740209  E8 15 FF FF FF                call 06740123H ; $$CODE$$+291
+0674020E  81 C4 04 00 00 00             add esp, 4
+
+#6			ST		dummy	{LNXT:2|2|-1}
+(*) BOOL
+06740214  84 C0                         test al, al
+06740216  0F 95 05 CC CC CC CC          setne [CCCCCCCCH] ; $$DATA$$+12
+
+0674021D  61                            popad
+0674021E  5D                            pop ebp
+
+0674021F  C3                            ret
+
+END_PROGRAM
+
+
+**************************************************
+	Target variable image generation
+**************************************************
+
+
+*** INPUT:
+06740220  C3                            ret
+
+
+*** OUTPUT:
+06740221  C3                            ret
+
+
+
+**************************************************
+	Task Boot init code
+**************************************************
+
+06740222  55                            push ebp
+06740223  8B EC                         mov ebp, esp
+
+06740225  8B E5                         mov esp, ebp
+06740227  5D                            pop ebp
+
+06740228  C3                            ret
+
+**************************************************
+	List program: Main
+**************************************************
+
+PROGRAM Main
+
+END_PROGRAM
+
+06740240  55                            push ebp
+06740241  8B EC                         mov ebp, esp
+06740243  60                            pushad
+
+#0			{SRC:Main}
+#1		 
+#2		  
+#3			(* Network 1 *)
+#4			LD		START {R:1$0}
+(*) UNDEF
+06740244  33 C0                         xor eax, eax
+06740246  8A 05 CC CC CC CC             mov al, [CCCCCCCCH] ; %I255+0
+
+#5			ST		LED {R:1$1}
+(*) BOOL
+0674024C  84 C0                         test al, al
+0674024E  0F 95 05 CC CC CC CC          setne [CCCCCCCCH] ; %Q255+1
+
+06740255  61                            popad
+06740256  5D                            pop ebp
+
+06740257  C3                            ret
+
+END_PROGRAM
+
+
+**************************************************
+	Target variable image generation
+**************************************************
+
+
+*** INPUT:
+06740258  C3                            ret
+
+
+*** OUTPUT:
+06740259  C3                            ret
+
+
+
+**************************************************
+	Task Slow init code
+**************************************************
+
+0674025A  55                            push ebp
+0674025B  8B EC                         mov ebp, esp
+
+0674025D  8B E5                         mov esp, ebp
+0674025F  5D                            pop ebp
+
+06740260  C3                            ret
+
+
+
+**************************************************
+	Global init code
+**************************************************
+
+06740270  55                            push ebp
+06740271  8B EC                         mov ebp, esp
+
+Var init: V:EmbeddedElements:$$POUCBARRAY$$Boot = 0
+06740273  B9 CC CC CC CC                mov ecx, CCCCCCCCH ; $$DATA$$+44
+06740278  89 0D CC CC CC CC             mov [CCCCCCCCH], ecx ; $$DATA$$+16
+
+Var init: V:EmbeddedElements:$$POUCBARRAY$$Slow = 0
+0674027E  B9 CC CC CC CC                mov ecx, CCCCCCCCH ; $$DATA$$+50
+06740283  89 0D CC CC CC CC             mov [CCCCCCCCH], ecx ; $$DATA$$+24
+
+06740289  8B E5                         mov esp, ebp
+0674028B  5D                            pop ebp
+
+0674028C  C3                            ret
+
+
+
+**************************************************
+	Global RETAIN init code
+**************************************************
+
+0674028D  55                            push ebp
+0674028E  8B EC                         mov ebp, esp
+
+06740290  8B E5                         mov esp, ebp
+06740292  5D                            pop ebp
+
+06740293  C3                            ret
+
+
+
+**************************************************
+	Task $$VirtualTables init code
+**************************************************
+
+06740294  55                            push ebp
+06740295  8B EC                         mov ebp, esp
+
+06740297  8B E5                         mov esp, ebp
+06740299  5D                            pop ebp
+
+0674029A  C3                            ret
+
+
+
+********************************************
+MEMORY MAP
+********************************************
+
+Code area type:          		       main code
+Start code area:          		0000000006740000h
+End code area:            		0000000006740388h
+Code size:                		00000388h
+
+Start local data area:    		0000000006710000h
+End local data area:      		0000000006710038h
+Local data size:          		00000038h
+
+Start retentive data area:		0000000006720000h
+End retentive data area:  		0000000006720000h
+Retentive data size:      		00000000h
+
+Start bit data area:      		0000000000000000h
+End bit data area:        		0000000000000000h
+Bit data size:            		00000000h
+
+
+
+********************************************
+CODE ID:                                A2FE095B
+DEBUG MEMO ID:                          00008BF5
+FULL MEMO ID:                           0000FCC4
+RELOCATION ADDR:                        0000000006740000
+********************************************

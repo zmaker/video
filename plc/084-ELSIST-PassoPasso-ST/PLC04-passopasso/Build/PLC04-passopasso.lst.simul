@@ -1,0 +1,885 @@
+***********************************************************************
+*
+*	CODE GENERATION LISTING FOR: PLC04-passopasso
+*	COMPILER VERSION: 6.2.0.18
+*
+***********************************************************************
+
+**************************************************
+	List function: eGetBYTE
+**************************************************
+
+FUNCTION eGetBYTE : BYTE
+
+	{ DE:"(Sfr108a300) eLLabCommonLib - Get BYTE value from void pointer" }
+
+	VAR_INPUT
+		RAddress : DWORD;	{ DE:"Read address" }
+	END_VAR
+
+	VAR
+		Ptr : @BYTE;	{ DE:"Auxiliary pointer" }
+	END_VAR
+
+END_FUNCTION
+
+	*** Function data allocation
+
+	[Res] eGetBYTE: LOCAL STACK FRAME AT -4(ebp)
+	[Inp] RAddress: CALLER STACK FRAME AT 8(ebp)
+	[Var] Ptr: LOCAL STACK FRAME AT -8(ebp)
+
+083700D0  55                            push ebp
+083700D1  8B EC                         mov ebp, esp
+083700D3  81 EC 08 00 00 00             sub esp, 8
+083700D9  57                            push edi
+
+083700DA  8B 45 08                      mov eax, 8[ebp]
+083700DD  89 45 F8                      mov -8[ebp], eax
+
+083700E0  8B 55 F8                      mov edx, -8[ebp]
+083700E3  33 C0                         xor eax, eax
+083700E5  8A 02                         mov al, [edx]
+083700E7  88 45 FC                      mov -4[ebp], al
+
+083700EA  33 C0                         xor eax, eax
+083700EC  8A 45 FC                      mov al, -4[ebp]
+083700EF  5F                            pop edi
+083700F0  8B E5                         mov esp, ebp
+083700F2  5D                            pop ebp
+
+083700F3  C3                            ret
+
+END_FUNCTION
+**************************************************
+	List function: eSetBYTE
+**************************************************
+
+FUNCTION eSetBYTE : BOOL
+
+	{ DE:"(Sfr108a300) eLLabCommonLib - Set BYTE value to void pointer" }
+
+	VAR_INPUT
+		WAddress : DWORD;	{ DE:"Write address" }
+		WValue : BYTE;	{ DE:"Write value" }
+	END_VAR
+
+	VAR
+		Ptr : @BYTE;	{ DE:"Auxiliary pointer" }
+	END_VAR
+
+END_FUNCTION
+
+	*** Function data allocation
+
+	[Res] eSetBYTE: LOCAL STACK FRAME AT -4(ebp)
+	[Inp] WAddress: CALLER STACK FRAME AT 8(ebp)
+	[Inp] WValue: CALLER STACK FRAME AT 12(ebp)
+	[Var] Ptr: LOCAL STACK FRAME AT -8(ebp)
+
+083700F4  55                            push ebp
+083700F5  8B EC                         mov ebp, esp
+083700F7  81 EC 08 00 00 00             sub esp, 8
+083700FD  57                            push edi
+
+083700FE  8B 45 08                      mov eax, 8[ebp]
+08370101  89 45 F8                      mov -8[ebp], eax
+
+08370104  33 C0                         xor eax, eax
+08370106  8A 45 0C                      mov al, 12[ebp]
+08370109  8B 55 F8                      mov edx, -8[ebp]
+0837010C  88 02                         mov [edx], al
+
+0837010E  B8 01 00 00 00                mov eax, 01H
+08370113  84 C0                         test al, al
+08370115  0F 95 45 FC                   setne -4[ebp]
+
+08370119  33 C0                         xor eax, eax
+0837011B  8A 45 FC                      mov al, -4[ebp]
+0837011E  5F                            pop edi
+0837011F  8B E5                         mov esp, ebp
+08370121  5D                            pop ebp
+
+08370122  C3                            ret
+
+END_FUNCTION
+**************************************************
+	List function: StringConv
+**************************************************
+
+FUNCTION StringConv : BOOL
+
+	{ DE:"(Sfr094b000) eLLabXUnified12Lib - To void pointer cast" }
+
+	VAR_INPUT
+		Destination : @STRING;	{ DE:"Destination buffer" }
+		Source : @STRING;	{ DE:"Source buffer" }
+		DSize : UDINT;	{ DE:"Destination size" }
+		Mode : USINT;	{ DE:"Conversion mode" }
+	END_VAR
+
+	VAR
+		i : UDINT;	{ DE:"Auxiliary variable" }
+		AyB : BYTE;	{ DE:"Auxiliary byte buffer" }
+		IDx : UDINT;	{ DE:"Index" }
+		DBSpace : UDINT;	{ DE:"Destination buffer space" }
+		SLength : UDINT;
+	END_VAR
+
+END_FUNCTION
+
+	*** Function data allocation
+
+	[Res] StringConv: LOCAL STACK FRAME AT -4(ebp)
+	[Inp] Destination: CALLER STACK FRAME AT 8(ebp)
+	[Inp] Source: CALLER STACK FRAME AT 12(ebp)
+	[Inp] DSize: CALLER STACK FRAME AT 16(ebp)
+	[Inp] Mode: CALLER STACK FRAME AT 20(ebp)
+	[Var] i: LOCAL STACK FRAME AT -8(ebp)
+	[Var] AyB: LOCAL STACK FRAME AT -12(ebp)
+	[Var] IDx: LOCAL STACK FRAME AT -16(ebp)
+	[Var] DBSpace: LOCAL STACK FRAME AT -20(ebp)
+	[Var] SLength: LOCAL STACK FRAME AT -24(ebp)
+
+08370123  55                            push ebp
+08370124  8B EC                         mov ebp, esp
+08370126  81 EC 18 00 00 00             sub esp, 24
+0837012C  57                            push edi
+
+0837012D  8B 45 10                      mov eax, 16[ebp]
+
+08370130  2D 02 00 00 00                sub eax, 2
+
+08370135  89 45 EC                      mov -20[ebp], eax
+
+08370138  B8 01 00 00 00                mov eax, 01H
+0837013D  84 C0                         test al, al
+0837013F  0F 95 45 FC                   setne -4[ebp]
+
+08370143  8B 45 10                      mov eax, 16[ebp]
+
+08370146  50                            push eax
+08370147  B8 00 00 00 00                mov eax, 00H
+
+0837014C  FF 75 0C                      push 12[ebp]
+0837014F  B9 CC CC CC CC                mov ecx, CCCCCCCCH ; Sysstrlen
+08370154  FF D1                         call ecx
+08370156  81 C4 04 00 00 00             add esp, 4
+
+0837015C  05 01 00 00 00                add eax, 1
+
+08370161  8B C8                         mov ecx, eax
+08370163  58                            pop eax
+08370164  3B C1                         cmp eax, ecx
+08370166  0F 92 C0                      setb al
+08370169  25 FF 00 00 00                and eax, 0FFh
+
+0837016E  84 C0                         test al, al
+08370170  90 74 0E 90 90 90             je 08370181H
+
+08370176  B8 00 00 00 00                mov eax, 00H
+0837017B  84 C0                         test al, al
+0837017D  0F 95 45 FC                   setne -4[ebp]
+
+08370181  33 C0                         xor eax, eax
+08370183  8A 45 14                      mov al, 20[ebp]
+
+08370186  3D 00 00 00 00                cmp eax, 0
+0837018B  0F 94 C0                      sete al
+0837018E  25 FF 00 00 00                and eax, 0FFh
+
+08370193  84 C0                         test al, al
+08370195  90 75 56 90 90 90             jne 083701EEH
+
+0837019B  33 C0                         xor eax, eax
+0837019D  8A 45 14                      mov al, 20[ebp]
+
+083701A0  3D 01 00 00 00                cmp eax, 1
+083701A5  0F 94 C0                      sete al
+083701A8  25 FF 00 00 00                and eax, 0FFh
+
+083701AD  84 C0                         test al, al
+083701AF  90 75 51 90 90 90             jne 08370203H
+
+083701B5  33 C0                         xor eax, eax
+083701B7  8A 45 14                      mov al, 20[ebp]
+
+083701BA  3D 02 00 00 00                cmp eax, 2
+083701BF  0F 94 C0                      sete al
+083701C2  25 FF 00 00 00                and eax, 0FFh
+
+083701C7  84 C0                         test al, al
+083701C9  0F 85 BE 00 00 00             jne 0837028DH
+
+083701CF  33 C0                         xor eax, eax
+083701D1  8A 45 14                      mov al, 20[ebp]
+
+083701D4  3D 03 00 00 00                cmp eax, 3
+083701D9  0F 94 C0                      sete al
+083701DC  25 FF 00 00 00                and eax, 0FFh
+
+083701E1  84 C0                         test al, al
+083701E3  0F 85 6D 01 00 00             jne 08370356H
+
+083701E9  E9 2C 02 00 00                jmp 0837041AH
+
+083701EE  B8 01 00 00 00                mov eax, 01H
+083701F3  84 C0                         test al, al
+083701F5  0F 95 45 FC                   setne -4[ebp]
+
+083701F9  E9 3D 02 00 00                jmp 0837043BH
+
+083701FE  E9 17 02 00 00                jmp 0837041AH
+
+08370203  B8 00 00 00 00                mov eax, 00H
+
+08370208  89 45 F0                      mov -16[ebp], eax
+
+0837020B  8B 45 F0                      mov eax, -16[ebp]
+
+0837020E  3B 45 EC                      cmp eax, [ebp+-20]
+08370211  0F 97 C0                      seta al
+08370214  25 FF 00 00 00                and eax, 0FFh
+
+08370219  84 C0                         test al, al
+0837021B  90 75 6A 90 90 90             jne 08370288H
+
+08370221  8B 45 0C                      mov eax, 12[ebp]
+
+08370224  03 45 F0                      add eax, [ebp+-16]
+
+08370227  8B C8                         mov ecx, eax
+08370229  51                            push ecx
+0837022A  E8 A1 FE FF FF                call 083700D0H ; $$CODE$$+208
+0837022F  81 C4 04 00 00 00             add esp, 4
+
+08370235  88 45 F4                      mov -12[ebp], al
+
+08370238  33 C0                         xor eax, eax
+0837023A  8A 45 F4                      mov al, -12[ebp]
+
+0837023D  3D 00 00 00 00                cmp eax, 0
+08370242  0F 94 C0                      sete al
+08370245  25 FF 00 00 00                and eax, 0FFh
+
+0837024A  84 C0                         test al, al
+0837024C  90 74 08 90 90 90             je 08370257H
+
+08370252  EB 34 90 90 90                jmp 08370288H
+
+08370257  8B 45 08                      mov eax, 8[ebp]
+
+0837025A  03 45 F0                      add eax, [ebp+-16]
+
+0837025D  0F B6 4D F4                   movzx ecx, byte ptr -12[ebp]
+08370261  51                            push ecx
+08370262  8B C8                         mov ecx, eax
+08370264  51                            push ecx
+08370265  E8 8A FE FF FF                call 083700F4H ; $$CODE$$+244
+0837026A  81 C4 08 00 00 00             add esp, 8
+
+08370270  84 C0                         test al, al
+08370272  90 74 03 90 90 90             je 08370278H
+
+08370278  8B 45 F0                      mov eax, -16[ebp]
+
+0837027B  05 01 00 00 00                add eax, 1
+
+08370280  89 45 F0                      mov -16[ebp], eax
+
+08370283  EB 86 90 90 90                jmp 0837020BH
+
+08370288  E9 8D 01 00 00                jmp 0837041AH
+
+0837028D  B8 00 00 00 00                mov eax, 00H
+
+08370292  89 45 F0                      mov -16[ebp], eax
+
+08370295  8B 45 F0                      mov eax, -16[ebp]
+
+08370298  3B 45 EC                      cmp eax, [ebp+-20]
+0837029B  0F 97 C0                      seta al
+0837029E  25 FF 00 00 00                and eax, 0FFh
+
+083702A3  84 C0                         test al, al
+083702A5  0F 85 A6 00 00 00             jne 08370351H
+
+083702AB  8B 45 0C                      mov eax, 12[ebp]
+
+083702AE  03 45 F0                      add eax, [ebp+-16]
+
+083702B1  8B C8                         mov ecx, eax
+083702B3  51                            push ecx
+083702B4  E8 17 FE FF FF                call 083700D0H ; $$CODE$$+208
+083702B9  81 C4 04 00 00 00             add esp, 4
+
+083702BF  88 45 F4                      mov -12[ebp], al
+
+083702C2  33 C0                         xor eax, eax
+083702C4  8A 45 F4                      mov al, -12[ebp]
+
+083702C7  3D 00 00 00 00                cmp eax, 0
+083702CC  0F 94 C0                      sete al
+083702CF  25 FF 00 00 00                and eax, 0FFh
+
+083702D4  84 C0                         test al, al
+083702D6  90 74 08 90 90 90             je 083702E1H
+
+083702DC  EB 73 90 90 90                jmp 08370351H
+
+083702E1  33 C0                         xor eax, eax
+083702E3  8A 45 F4                      mov al, -12[ebp]
+
+083702E6  3D 5A 00 00 00                cmp eax, 90
+083702EB  0F 9E C0                      setle al
+083702EE  25 FF 00 00 00                and eax, 0FFh
+
+083702F3  50                            push eax
+083702F4  33 C0                         xor eax, eax
+083702F6  8A 45 F4                      mov al, -12[ebp]
+
+083702F9  3D 41 00 00 00                cmp eax, 65
+083702FE  0F 9D C0                      setge al
+08370301  25 FF 00 00 00                and eax, 0FFh
+
+08370306  8B C8                         mov ecx, eax
+08370308  58                            pop eax
+08370309  23 C1                         and eax, ecx
+
+0837030B  84 C0                         test al, al
+0837030D  90 74 10 90 90 90             je 08370320H
+
+08370313  33 C0                         xor eax, eax
+08370315  8A 45 F4                      mov al, -12[ebp]
+
+08370318  05 20 00 00 00                add eax, 32
+
+0837031D  88 45 F4                      mov -12[ebp], al
+
+08370320  8B 45 08                      mov eax, 8[ebp]
+
+08370323  03 45 F0                      add eax, [ebp+-16]
+
+08370326  0F B6 4D F4                   movzx ecx, byte ptr -12[ebp]
+0837032A  51                            push ecx
+0837032B  8B C8                         mov ecx, eax
+0837032D  51                            push ecx
+0837032E  E8 C1 FD FF FF                call 083700F4H ; $$CODE$$+244
+08370333  81 C4 08 00 00 00             add esp, 8
+
+08370339  84 C0                         test al, al
+0837033B  90 74 03 90 90 90             je 08370341H
+
+08370341  8B 45 F0                      mov eax, -16[ebp]
+
+08370344  05 01 00 00 00                add eax, 1
+
+08370349  89 45 F0                      mov -16[ebp], eax
+
+0837034C  E9 44 FF FF FF                jmp 08370295H
+
+08370351  E9 C4 00 00 00                jmp 0837041AH
+
+08370356  B8 00 00 00 00                mov eax, 00H
+
+0837035B  89 45 F0                      mov -16[ebp], eax
+
+0837035E  8B 45 F0                      mov eax, -16[ebp]
+
+08370361  3B 45 EC                      cmp eax, [ebp+-20]
+08370364  0F 97 C0                      seta al
+08370367  25 FF 00 00 00                and eax, 0FFh
+
+0837036C  84 C0                         test al, al
+0837036E  0F 85 A6 00 00 00             jne 0837041AH
+
+08370374  8B 45 0C                      mov eax, 12[ebp]
+
+08370377  03 45 F0                      add eax, [ebp+-16]
+
+0837037A  8B C8                         mov ecx, eax
+0837037C  51                            push ecx
+0837037D  E8 4E FD FF FF                call 083700D0H ; $$CODE$$+208
+08370382  81 C4 04 00 00 00             add esp, 4
+
+08370388  88 45 F4                      mov -12[ebp], al
+
+0837038B  33 C0                         xor eax, eax
+0837038D  8A 45 F4                      mov al, -12[ebp]
+
+08370390  3D 00 00 00 00                cmp eax, 0
+08370395  0F 94 C0                      sete al
+08370398  25 FF 00 00 00                and eax, 0FFh
+
+0837039D  84 C0                         test al, al
+0837039F  90 74 08 90 90 90             je 083703AAH
+
+083703A5  EB 73 90 90 90                jmp 0837041AH
+
+083703AA  33 C0                         xor eax, eax
+083703AC  8A 45 F4                      mov al, -12[ebp]
+
+083703AF  3D 7A 00 00 00                cmp eax, 122
+083703B4  0F 9E C0                      setle al
+083703B7  25 FF 00 00 00                and eax, 0FFh
+
+083703BC  50                            push eax
+083703BD  33 C0                         xor eax, eax
+083703BF  8A 45 F4                      mov al, -12[ebp]
+
+083703C2  3D 61 00 00 00                cmp eax, 97
+083703C7  0F 9D C0                      setge al
+083703CA  25 FF 00 00 00                and eax, 0FFh
+
+083703CF  8B C8                         mov ecx, eax
+083703D1  58                            pop eax
+083703D2  23 C1                         and eax, ecx
+
+083703D4  84 C0                         test al, al
+083703D6  90 74 10 90 90 90             je 083703E9H
+
+083703DC  33 C0                         xor eax, eax
+083703DE  8A 45 F4                      mov al, -12[ebp]
+
+083703E1  2D 20 00 00 00                sub eax, 32
+
+083703E6  88 45 F4                      mov -12[ebp], al
+
+083703E9  8B 45 08                      mov eax, 8[ebp]
+
+083703EC  03 45 F0                      add eax, [ebp+-16]
+
+083703EF  0F B6 4D F4                   movzx ecx, byte ptr -12[ebp]
+083703F3  51                            push ecx
+083703F4  8B C8                         mov ecx, eax
+083703F6  51                            push ecx
+083703F7  E8 F8 FC FF FF                call 083700F4H ; $$CODE$$+244
+083703FC  81 C4 08 00 00 00             add esp, 8
+
+08370402  84 C0                         test al, al
+08370404  90 74 03 90 90 90             je 0837040AH
+
+0837040A  8B 45 F0                      mov eax, -16[ebp]
+
+0837040D  05 01 00 00 00                add eax, 1
+
+08370412  89 45 F0                      mov -16[ebp], eax
+
+08370415  E9 44 FF FF FF                jmp 0837035EH
+
+0837041A  8B 45 08                      mov eax, 8[ebp]
+
+0837041D  03 45 F0                      add eax, [ebp+-16]
+
+08370420  68 00 00 00 00                push 0
+08370425  8B C8                         mov ecx, eax
+08370427  51                            push ecx
+08370428  E8 C7 FC FF FF                call 083700F4H ; $$CODE$$+244
+0837042D  81 C4 08 00 00 00             add esp, 8
+
+08370433  84 C0                         test al, al
+08370435  90 74 03 90 90 90             je 0837043BH
+
+0837043B  33 C0                         xor eax, eax
+0837043D  8A 45 FC                      mov al, -4[ebp]
+08370440  5F                            pop edi
+08370441  8B E5                         mov esp, ebp
+08370443  5D                            pop ebp
+
+08370444  C3                            ret
+
+END_FUNCTION
+**************************************************
+	List function: XUnifiedLibInit
+**************************************************
+
+FUNCTION XUnifiedLibInit : BOOL
+
+	{ DE:"(Sfr094a100) eLLabXUnified12Lib - XUnified library init" }
+
+	VAR_INPUT
+		Cmd : BOOL;	{ DE:"Command" }
+	END_VAR
+
+	VAR
+		Version : STRING[ 10 ] := 'Sfr094a100';	{ DE:"Library version" }
+	END_VAR
+
+END_FUNCTION
+
+	*** Function data allocation
+
+	[Res] XUnifiedLibInit: LOCAL STACK FRAME AT -4(ebp)
+	[Inp] Cmd: CALLER STACK FRAME AT 8(ebp)
+	[Var] Version: LOCAL STACK FRAME AT -16(ebp)
+
+08370445  55                            push ebp
+08370446  8B EC                         mov ebp, esp
+08370448  81 EC 14 00 00 00             sub esp, 20
+0837044E  57                            push edi
+
+Var init: V::XUnifiedLibInit.Version = 'Sfr094a100'
+0837044F  C7 45 F0 53 66 72 30          mov -16[ebp], 30726653H
+08370456  C7 45 F4 39 34 61 31          mov -12[ebp], 31613439H
+0837045D  66 C7 45 F8 30 30             mov word ptr -8[ebp], 3030H
+08370463  C6 45 FA 00                   mov byte ptr -6[ebp], 00H
+
+08370467  8D 45 F0                      lea eax, -16[ebp]
+
+0837046A  89 45 EC                      mov -20[ebp], eax
+
+0837046D  8D 45 F0                      lea eax, -16[ebp]
+
+08370470  68 03 00 00 00                push 3
+08370475  68 0B 00 00 00                push 11
+0837047A  FF 75 EC                      push -20[ebp]
+0837047D  50                            push eax
+0837047E  E8 A0 FC FF FF                call 08370123H ; $$CODE$$+291
+08370483  81 C4 10 00 00 00             add esp, 16
+
+08370489  84 C0                         test al, al
+0837048B  90 74 03 90 90 90             je 08370491H
+
+08370491  8D 45 F0                      lea eax, -16[ebp]
+
+08370494  89 45 EC                      mov -20[ebp], eax
+
+08370497  8B 4D EC                      mov ecx, -20[ebp]
+0837049A  51                            push ecx
+0837049B  68 01 00 00 00                push 1
+083704A0  68 01 00 00 00                push 1
+083704A5  B9 CC CC CC CC                mov ecx, CCCCCCCCH ; SysXUnifiedValue
+083704AA  FF D1                         call ecx
+083704AC  81 C4 0C 00 00 00             add esp, 12
+
+083704B2  84 C0                         test al, al
+083704B4  0F 95 45 FC                   setne -4[ebp]
+
+083704B8  B8 01 00 00 00                mov eax, 01H
+083704BD  84 C0                         test al, al
+083704BF  0F 95 45 FC                   setne -4[ebp]
+
+083704C3  33 C0                         xor eax, eax
+083704C5  8A 45 FC                      mov al, -4[ebp]
+083704C8  5F                            pop edi
+083704C9  8B E5                         mov esp, ebp
+083704CB  5D                            pop ebp
+
+083704CC  C3                            ret
+
+END_FUNCTION
+**************************************************
+	List program: $$ElsistInit
+**************************************************
+
+PROGRAM $$ElsistInit
+
+	VAR
+		dummy : BOOL;
+	END_VAR
+
+END_PROGRAM
+
+083704D0  55                            push ebp
+083704D1  8B EC                         mov ebp, esp
+083704D3  60                            pushad
+
+__Float_handling_mode_TRUNCATION::Start
+083704D4  81 EC 04 00 00 00             sub esp, 4
+083704DA  D9 3C 24                      fnstcw [esp]
+083704DD  8B 0C 24                      mov ecx, [esp]
+083704E0  66 81 E1 FF F3                and cx, F3FFH
+083704E5  80 CD 0C                      or ch, 0CH
+083704E8  89 0C 24                      mov [esp], ecx
+083704EB  D9 2C 24                      fldcw [esp]
+083704EE  81 C4 04 00 00 00             add esp, 4
+__Float_handling_mode_TRUNCATION::End
+
+#0		{SRC:$$ElsistInit}
+#1		(*$WAITSWITCH$*)
+#2		
+#3			(* dummy:=XUnifiedLibInit(TRUE); *)
+#4			LDP0		TRUE	{LNXT:2|2|-1}
+(*) UDINT
+#5			XUnifiedLibInit	{LNXT:2|2|-1}
+(*) BOOL
+083704F4  68 01 00 00 00                push 1
+083704F9  E8 47 FF FF FF                call 08370445H ; $$CODE$$+1093
+083704FE  81 C4 04 00 00 00             add esp, 4
+
+#6			ST		dummy	{LNXT:2|2|-1}
+(*) BOOL
+08370504  84 C0                         test al, al
+08370506  0F 95 05 CC CC CC CC          setne [CCCCCCCCH] ; $$DATA$$+8 ; <0x8340008>
+
+0837050D  61                            popad
+0837050E  5D                            pop ebp
+
+0837050F  C3                            ret
+
+END_PROGRAM
+
+
+**************************************************
+	Target variable image generation
+**************************************************
+
+
+*** INPUT:
+08370510  C3                            ret
+
+
+*** OUTPUT:
+08370511  C3                            ret
+
+
+
+**************************************************
+	Task Boot init code
+**************************************************
+
+08370512  55                            push ebp
+08370513  8B EC                         mov ebp, esp
+
+08370515  8B E5                         mov esp, ebp
+08370517  5D                            pop ebp
+
+08370518  C3                            ret
+
+**************************************************
+	List program: MyProgram
+**************************************************
+
+PROGRAM MyProgram
+
+	VAR
+		cnt : UDINT;
+		ingresso : BOOL;
+		ingresso_old : BOOL;
+		impulso_P : BOOL;
+	END_VAR
+
+END_PROGRAM
+
+08370530  55                            push ebp
+08370531  8B EC                         mov ebp, esp
+08370533  60                            pushad
+
+__Float_handling_mode_TRUNCATION::Start
+08370534  81 EC 04 00 00 00             sub esp, 4
+0837053A  D9 3C 24                      fnstcw [esp]
+0837053D  8B 0C 24                      mov ecx, [esp]
+08370540  66 81 E1 FF F3                and cx, F3FFH
+08370545  80 CD 0C                      or ch, 0CH
+08370548  89 0C 24                      mov [esp], ecx
+0837054B  D9 2C 24                      fldcw [esp]
+0837054E  81 C4 04 00 00 00             add esp, 4
+__Float_handling_mode_TRUNCATION::End
+
+#0		{SRC:MyProgram}
+#1		(*$WAITSWITCH$*)
+#2		
+#3			(* cnt := cnt + 1; *)
+#4			LD		cnt	{LNXT:2|4|-1}
+(*) UNDEF
+08370554  8B 05 CC CC CC CC             mov eax, [CCCCCCCCH] ; $$DATA$$+12 ; <0x834000C>
+
+#5			ADD		1	{LNXT:2|4|-1}
+(*) UDINT
+0837055A  05 01 00 00 00                add eax, 1
+
+#6			ST		cnt	{LNXT:2|4|-1}
+(*) UDINT
+0837055F  89 05 CC CC CC CC             mov [CCCCCCCCH], eax ; $$DATA$$+12 ; <0x834000C>
+
+#7		
+#8			(* ingresso := BT1; *)
+#9			MOVE		BT1,ingresso	{LNXT:4|6|-1}
+(*) UDINT
+08370565  33 C0                         xor eax, eax
+08370567  8A 05 CC CC CC CC             mov al, [CCCCCCCCH] ; %I255+0 ; <0x833962C>
+0837056D  84 C0                         test al, al
+0837056F  0F 95 05 CC CC CC CC          setne [CCCCCCCCH] ; $$DATA$$+9 ; <0x8340009>
+
+#10		
+#11			(* impulso_P := ingresso AND NOT ingresso_old; *)
+#12			LD		ingresso_old	{LNXT:6|8|-1}
+(*) UNDEF
+08370576  33 C0                         xor eax, eax
+08370578  8A 05 CC CC CC CC             mov al, [CCCCCCCCH] ; $$DATA$$+11 ; <0x834000B>
+
+#13			NOT	{LNXT:6|8|-1}
+(*) BOOL
+0837057E  84 C0                         test al, al
+08370580  0F 94 C0                      sete al
+
+#14			AND		ingresso	{LNXT:6|8|-1}
+(*) BOOL
+08370583  33 C9                         xor ecx, ecx
+08370585  8A 0D CC CC CC CC             mov cl, [CCCCCCCCH] ; $$DATA$$+9 ; <0x8340009>
+0837058B  23 C1                         and eax, ecx
+
+#15			ST		impulso_P	{LNXT:6|8|-1}
+(*) BOOL
+0837058D  84 C0                         test al, al
+0837058F  0F 95 05 CC CC CC CC          setne [CCCCCCCCH] ; $$DATA$$+10 ; <0x834000A>
+
+#16		
+#17		
+#18			(* IF impulso_P *)
+#19			LD		impulso_P	{LNXT:8|-1|-1}
+(*) UNDEF
+08370596  33 C0                         xor eax, eax
+08370598  8A 05 CC CC CC CC             mov al, [CCCCCCCCH] ; $$DATA$$+10 ; <0x834000A>
+
+#20			JMPCN	$label0	{LNXT:8|9|13}
+(-) BOOL
+0837059E  84 C0                         test al, al
+083705A0  90 74 19 90 90 90             je 083705BCH
+
+#21		
+#22			(* THEN *)
+#23		
+#24				(* OUT := NOT OUT; *)
+#25				LD		OUT	{LNXT:9|13|-1}
+(*) UNDEF
+083705A6  33 C0                         xor eax, eax
+083705A8  8A 05 CC CC CC CC             mov al, [CCCCCCCCH] ; %Q255+0 ; <0x833984C>
+
+#26				NOT	{LNXT:9|13|-1}
+(*) BOOL
+083705AE  84 C0                         test al, al
+083705B0  0F 94 C0                      sete al
+
+#27				ST		OUT	{LNXT:9|13|-1}
+(*) BOOL
+083705B3  84 C0                         test al, al
+083705B5  0F 95 05 CC CC CC CC          setne [CCCCCCCCH] ; %Q255+0 ; <0x833984C>
+
+#28		
+#29		$label0:
+#30			(* END_IF *)
+#31		
+#32			(* ingresso_old := ingresso; *)
+#33			MOVE		ingresso,ingresso_old	{LNXT:13|2|-1}
+(*) BOOL
+083705BC  33 C0                         xor eax, eax
+083705BE  8A 05 CC CC CC CC             mov al, [CCCCCCCCH] ; $$DATA$$+9 ; <0x8340009>
+083705C4  84 C0                         test al, al
+083705C6  0F 95 05 CC CC CC CC          setne [CCCCCCCCH] ; $$DATA$$+11 ; <0x834000B>
+
+083705CD  61                            popad
+083705CE  5D                            pop ebp
+
+083705CF  C3                            ret
+
+END_PROGRAM
+
+
+**************************************************
+	Target variable image generation
+**************************************************
+
+
+*** INPUT:
+083705D0  C3                            ret
+
+
+*** OUTPUT:
+083705D1  C3                            ret
+
+
+
+**************************************************
+	Task Slow init code
+**************************************************
+
+083705D2  55                            push ebp
+083705D3  8B EC                         mov ebp, esp
+
+083705D5  8B E5                         mov esp, ebp
+083705D7  5D                            pop ebp
+
+083705D8  C3                            ret
+
+
+
+**************************************************
+	Global init code
+**************************************************
+
+083705F0  55                            push ebp
+083705F1  8B EC                         mov ebp, esp
+
+Var init: V:EmbeddedElements:$$POUCBARRAY$$Boot = [?$$ElsistInit.$$POUCB$$, 0]
+083705F3  B9 CC CC CC CC                mov ecx, CCCCCCCCH ; $$DATA$$+44 ; <0x834002C>
+083705F8  89 0D CC CC CC CC             mov [CCCCCCCCH], ecx ; $$DATA$$+16 ; <0x8340010>
+
+Var init: V:EmbeddedElements:$$POUCBARRAY$$Slow = [?MyProgram.$$POUCB$$, 0]
+083705FE  B9 CC CC CC CC                mov ecx, CCCCCCCCH ; $$DATA$$+50 ; <0x8340032>
+08370603  89 0D CC CC CC CC             mov [CCCCCCCCH], ecx ; $$DATA$$+24 ; <0x8340018>
+
+08370609  8B E5                         mov esp, ebp
+0837060B  5D                            pop ebp
+
+0837060C  C3                            ret
+
+
+
+**************************************************
+	Global RETAIN init code
+**************************************************
+
+0837060D  55                            push ebp
+0837060E  8B EC                         mov ebp, esp
+
+08370610  8B E5                         mov esp, ebp
+08370612  5D                            pop ebp
+
+08370613  C3                            ret
+
+
+
+**************************************************
+	Task $$VirtualTables init code
+**************************************************
+
+08370614  55                            push ebp
+08370615  8B EC                         mov ebp, esp
+
+08370617  8B E5                         mov esp, ebp
+08370619  5D                            pop ebp
+
+0837061A  C3                            ret
+
+
+
+********************************************
+MEMORY MAP
+********************************************
+
+Code area type:          		       main code
+Start code area:          		0000000008370000h
+End code area:            		0000000008370750h
+Code size:                		00000750h
+
+Start local data area:    		0000000008340000h
+End local data area:      		0000000008340038h
+Local data size:          		00000038h
+
+Start retentive data area:		0000000008350000h
+End retentive data area:  		0000000008350000h
+Retentive data size:      		00000000h
+
+Start bit data area:      		0000000000000000h
+End bit data area:        		0000000000000000h
+Bit data size:            		00000000h
+
+
+
+********************************************
+CODE ID:                                5A9F6285
+DEBUG MEMO ID:                          00008BF5
+FULL MEMO ID:                           0000558E
+RELOCATION ADDR:                        0000000008370000
+********************************************

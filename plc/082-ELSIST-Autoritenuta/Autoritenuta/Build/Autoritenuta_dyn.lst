@@ -1,0 +1,122 @@
+***********************************************************************
+*
+*	DYNAMIC LINK AND INDIRECT ALLOCATION LISTING FOR: Autoritenuta
+*
+***********************************************************************
+
+
+***************************************************
+	 FIRST CODE AREA
+***************************************************
+
+***************************************************
+	 DATABLOCK PATCHES
+***************************************************
+*
+* List of data blocks that will be checked run-time for consistency with
+* their definition available at compile-time
+*
+*
+*	REQUIREMENTS for DATA BLOCK %I255
+*		Process image: 1
+*		Number of elements: 32
+*		Data size (bytes): 1
+0000	01 01 FF 00 20 00 00 00 01 00 00 00 
+
+*
+*	REQUIREMENTS for DATA BLOCK %Q255
+*		Process image: 1
+*		Number of elements: 32
+*		Data size (bytes): 1
+000C	01 02 FF 00 20 00 00 00 01 00 00 00 
+
+*
+* List of all references to data allocated on data blocks
+* along with the whole information required by the run-time linker
+*
+*
+*	1 REFERENCE(S) TO 8-BIT VAR AT BYTE #0 OF DATA BLOCK %I255
+0000	00 00 FF 00 00 00 00 00 01 01 01 00 
+
+*		Instruction type: 0x00
+*		Code offset: 0x00000558
+000C	58 05 00 00 
+
+*
+*	2 REFERENCE(S) TO 8-BIT VAR AT BYTE #0 OF DATA BLOCK %Q255
+0010	00 00 FF 00 00 00 00 00 02 01 02 00 
+
+*		Instruction type: 0x00
+*		Code offset: 0x00000560
+001C	60 05 00 00 
+
+*		Instruction type: 0x00
+*		Code offset: 0x0000057A
+0020	7A 05 00 00 
+
+*
+*	1 REFERENCE(S) TO 8-BIT VAR AT BYTE #1 OF DATA BLOCK %I255
+0024	00 00 FF 00 01 00 00 00 01 01 01 00 
+
+*		Instruction type: 0x00
+*		Code offset: 0x0000056A
+0030	6A 05 00 00 
+
+
+***************************************************
+	 FUNCTION PATCHES
+***************************************************
+
+NAME: Sysstrlen  - NUM: 1
+	 Patch - TYPE: 0x0 - CODE OFFSET: 0x00000150
+
+NAME: SysXUnifiedValue  - NUM: 1
+	 Patch - TYPE: 0x0 - CODE OFFSET: 0x000004A6
+
+***************************************************
+	MEMORY AREA ACCESS PATCH
+***************************************************
+*
+* List of all references to data allocated in memory areas
+* along with the whole information required by the run-time linker
+*
+*
+*	1 REFERENCE(S) TO 8-BIT VAR AT BYTE #8 OF DATA AREA
+0000	44 01 01 00 08 00 00 00 
+
+*		Instruction type: 0x00
+*		Code offset: 0x00000509
+0008	09 05 00 00 
+
+*
+*	1 REFERENCE(S) TO 64-BIT VAR AT BYTE #12 OF DATA AREA
+000C	44 08 01 00 0C 00 00 00 
+
+*		Instruction type: 0x00
+*		Code offset: 0x0000059A
+0014	9A 05 00 00 
+
+*
+*	1 REFERENCE(S) TO 64-BIT VAR AT BYTE #20 OF DATA AREA
+0018	44 08 01 00 14 00 00 00 
+
+*		Instruction type: 0x00
+*		Code offset: 0x000005A5
+0020	A5 05 00 00 
+
+*
+*	1 REFERENCE(S) TO 48-BIT VAR AT BYTE #28 OF DATA AREA
+0024	44 06 01 00 1C 00 00 00 
+
+*		Instruction type: 0x00
+*		Code offset: 0x00000594
+002C	94 05 00 00 
+
+*
+*	1 REFERENCE(S) TO 48-BIT VAR AT BYTE #34 OF DATA AREA
+0030	44 06 01 00 22 00 00 00 
+
+*		Instruction type: 0x00
+*		Code offset: 0x0000059F
+0038	9F 05 00 00 
+

@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<crossReference sourceID="0x1799D4BD" module="Autoritenuta" optionsMask="0x3000001D">
+	<unknownObjs/>
+	<programs>
+		<program name="main" sid="P::main"/>
+	</programs>
+	<functions>
+		<function name="eGetBYTE" source="eLLabCommonLib" sid="F:eLLabCommonLib:eGetBYTE"/>
+		<function name="eSetBYTE" source="eLLabCommonLib" sid="F:eLLabCommonLib:eSetBYTE"/>
+		<function name="StringConv" source="eLLabCommonLib" sid="F:eLLabCommonLib:StringConv"/>
+		<function name="SysGetSysTime" source="eLLabDTimeAdjLib" sid="F:eLLabDTimeAdjLib:SysGetSysTime"/>
+		<function name="SysGetUTCDateTime" source="eLLabDTimeAdjLib" sid="F:eLLabDTimeAdjLib:SysGetUTCDateTime"/>
+		<function name="SysSetUTCDateTime" source="eLLabDTimeAdjLib" sid="F:eLLabDTimeAdjLib:SysSetUTCDateTime"/>
+		<function name="SysTimeZoneAdj" source="eLLabDTimeAdjLib" sid="F:eLLabDTimeAdjLib:SysTimeZoneAdj"/>
+		<function name="Sysfclose" source="eLLabObsoleteLib" sid="F:eLLabObsoleteLib:Sysfclose"/>
+		<function name="SysDateGetS" source="eLLabXUnified12Lib" sid="F:eLLabXUnified12Lib:SysDateGetS"/>
+		<function name="SysDateSetS" source="eLLabXUnified12Lib" sid="F:eLLabXUnified12Lib:SysDateSetS"/>
+		<function name="SysTimeGetMs" source="eLLabXUnified12Lib" sid="F:eLLabXUnified12Lib:SysTimeGetMs"/>
+		<function name="SysTimeGetNs" source="eLLabXUnified12Lib" sid="F:eLLabXUnified12Lib:SysTimeGetNs"/>
+		<function name="SysDateGetNs" source="eLLabXUnified12Lib" sid="F:eLLabXUnified12Lib:SysDateGetNs"/>
+		<function name="SysDateLocalize" source="eLLabXUnified12Lib" sid="F:eLLabXUnified12Lib:SysDateLocalize"/>
+		<function name="SysTimeGetUs" source="eLLabXUnified12Lib" sid="F:eLLabXUnified12Lib:SysTimeGetUs"/>
+		<function name="SysGetLastError" source="eLLabXUnified12Lib" sid="F:eLLabXUnified12Lib:SysGetLastError"/>
+		<function name="SysGetRandom" source="eLLabXUnified12Lib" sid="F:eLLabXUnified12Lib:SysGetRandom"/>
+		<function name="SysOSIDValue" source="eLLabXUnified12Lib" sid="F:eLLabXUnified12Lib:SysOSIDValue"/>
+		<function name="SysSetTaskLpTime" source="eLLabXUnified12Lib" sid="F:eLLabXUnified12Lib:SysSetTaskLpTime"/>
+		<function name="SysGetEndianness" source="eLLabXUnified12Lib" sid="F:eLLabXUnified12Lib:SysGetEndianness"/>
+		<function name="SysFfopen" source="eLLabXUnified12Lib" sid="F:eLLabXUnified12Lib:SysFfopen"/>
+		<function name="Sysfputc" source="eLLabXUnified12Lib" sid="F:eLLabXUnified12Lib:Sysfputc"/>
+		<function name="Sysfgetc" source="eLLabXUnified12Lib" sid="F:eLLabXUnified12Lib:Sysfgetc"/>
+		<function name="SysFIsOpen" source="eLLabXUnified12Lib" sid="F:eLLabXUnified12Lib:SysFIsOpen"/>
+		<function name="SysFGetIChars" source="eLLabXUnified12Lib" sid="F:eLLabXUnified12Lib:SysFGetIChars"/>
+		<function name="SysFGetOSpace" source="eLLabXUnified12Lib" sid="F:eLLabXUnified12Lib:SysFGetOSpace"/>
+		<function name="SysFIBfClear" source="eLLabXUnified12Lib" sid="F:eLLabXUnified12Lib:SysFIBfClear"/>
+		<function name="SysFOBfClear" source="eLLabXUnified12Lib" sid="F:eLLabXUnified12Lib:SysFOBfClear"/>
+		<function name="SysFOBfFlush" source="eLLabXUnified12Lib" sid="F:eLLabXUnified12Lib:SysFOBfFlush"/>
+		<function name="SysFGetIBfSize" source="eLLabXUnified12Lib" sid="F:eLLabXUnified12Lib:SysFGetIBfSize"/>
+		<function name="SysFGetOBfSize" source="eLLabXUnified12Lib" sid="F:eLLabXUnified12Lib:SysFGetOBfSize"/>
+		<function name="Sysfread" source="eLLabXUnified12Lib" sid="F:eLLabXUnified12Lib:Sysfread"/>
+		<function name="Sysfwrite" source="eLLabXUnified12Lib" sid="F:eLLabXUnified12Lib:Sysfwrite"/>
+		<function name="SysSetSerialDTR" source="eLLabXUnified12Lib" sid="F:eLLabXUnified12Lib:SysSetSerialDTR"/>
+		<function name="SysGetSerialMode" source="eLLabXUnified12Lib" sid="F:eLLabXUnified12Lib:SysGetSerialMode"/>
+		<function name="SysSetSerialMode" source="eLLabXUnified12Lib" sid="F:eLLabXUnified12Lib:SysSetSerialMode"/>
+		<function name="SysGetSerialCTS" source="eLLabXUnified12Lib" sid="F:eLLabXUnified12Lib:SysGetSerialCTS"/>
+		<function name="SysGetFileLen" source="eLLabXUnified12Lib" sid="F:eLLabXUnified12Lib:SysGetFileLen"/>
+		<function name="Sysfseek" source="eLLabXUnified12Lib" sid="F:eLLabXUnified12Lib:Sysfseek"/>
+		<function name="SysFileRename" source="eLLabXUnified12Lib" sid="F:eLLabXUnified12Lib:SysFileRename"/>
+		<function name="SysFileRemove" source="eLLabXUnified12Lib" sid="F:eLLabXUnified12Lib:SysFileRemove"/>
+		<function name="SysStrFind" source="eLLabXUnified12Lib" sid="F:eLLabXUnified12Lib:SysStrFind"/>
+		<function name="Sysstrlen" source="eLLabXUnified12Lib" sid="F:eLLabXUnified12Lib:Sysstrlen"/>
+		<function name="SysGetCheck" source="eLLabXUnified12Lib" sid="F:eLLabXUnified12Lib:SysGetCheck"/>
+		<function name="SysVsscanf" source="eLLabXUnified12Lib" sid="F:eLLabXUnified12Lib:SysVsscanf"/>
+		<function name="SysVfprintf" source="eLLabXUnified12Lib" sid="F:eLLabXUnified12Lib:SysVfprintf"/>
+		<function name="SysVsnprintf" source="eLLabXUnified12Lib" sid="F:eLLabXUnified12Lib:SysVsnprintf"/>
+		<function name="SysCVsnprintf" source="eLLabXUnified12Lib" sid="F:eLLabXUnified12Lib:SysCVsnprintf"/>
+		<function name="SysWrSpyData" source="eLLabXUnified12Lib" sid="F:eLLabXUnified12Lib:SysWrSpyData"/>
+		<function name="SysGetPhrInfos" source="eLLabXUnified12Lib" sid="F:eLLabXUnified12Lib:SysGetPhrInfos"/>
+		<function name="SysPhrVRd" source="eLLabXUnified12Lib" sid="F:eLLabXUnified12Lib:SysPhrVRd"/>
+		<function name="SysPhrVWr" source="eLLabXUnified12Lib" sid="F:eLLabXUnified12Lib:SysPhrVWr"/>
+		<function name="SysI2CWrRd" source="eLLabXUnified12Lib" sid="F:eLLabXUnified12Lib:SysI2CWrRd"/>
+		<function name="SysPCodeVerify" source="eLLabXUnified12Lib" sid="F:eLLabXUnified12Lib:SysPCodeVerify"/>
+		<function name="SysXUnifiedValue" source="eLLabXUnified12Lib" sid="F:eLLabXUnified12Lib:SysXUnifiedValue"/>
+		<function name="SysMemFind" source="eLLabXUnified12Lib" sid="F:eLLabXUnified12Lib:SysMemFind"/>
+		<function name="Sysmemset" source="eLLabXUnified12Lib" sid="F:eLLabXUnified12Lib:Sysmemset"/>
+		<function name="Sysmemmove" source="eLLabXUnified12Lib" sid="F:eLLabXUnified12Lib:Sysmemmove"/>
+		<function name="SysMAlloc" source="eLLabXUnified12Lib" sid="F:eLLabXUnified12Lib:SysMAlloc"/>
+		<function name="SysRMAlloc" source="eLLabXUnified12Lib" sid="F:eLLabXUnified12Lib:SysRMAlloc"/>
+		<function name="SysRMFree" source="eLLabXUnified12Lib" sid="F:eLLabXUnified12Lib:SysRMFree"/>
+		<function name="SysRMGetSize" source="eLLabXUnified12Lib" sid="F:eLLabXUnified12Lib:SysRMGetSize"/>
+		<function name="SysCANSetMode" source="eLLabXUnified12Lib" sid="F:eLLabXUnified12Lib:SysCANSetMode"/>
+		<function name="SysIsCANRxTxAv" source="eLLabXUnified12Lib" sid="F:eLLabXUnified12Lib:SysIsCANRxTxAv"/>
+		<function name="SysCANRxMsg" source="eLLabXUnified12Lib" sid="F:eLLabXUnified12Lib:SysCANRxMsg"/>
+		<function name="SysCANTxMsg" source="eLLabXUnified12Lib" sid="F:eLLabXUnified12Lib:SysCANTxMsg"/>
+	</functions>
+	<functionBlocks>
+		<functionBlock name="SysDateToETime" source="eLLabDTimeAdjLib" sid="FB:eLLabDTimeAdjLib:SysDateToETime"/>
+		<functionBlock name="SysETimeToDate" source="eLLabDTimeAdjLib" sid="FB:eLLabDTimeAdjLib:SysETimeToDate"/>
+		<functionBlock name="SysSerialPort" source="eLLabXUnified12Lib" sid="FB:eLLabXUnified12Lib:SysSerialPort"/>
+		<functionBlock name="SysDMXMng" source="eLLabXUnified12Lib" sid="FB:eLLabXUnified12Lib:SysDMXMng"/>
+		<functionBlock name="SysTCPClient" source="eLLabXUnified12Lib" sid="FB:eLLabXUnified12Lib:SysTCPClient"/>
+		<functionBlock name="SysPing" source="eLLabXUnified12Lib" sid="FB:eLLabXUnified12Lib:SysPing"/>
+		<functionBlock name="SysTCPServer" source="eLLabXUnified12Lib" sid="FB:eLLabXUnified12Lib:SysTCPServer"/>
+		<functionBlock name="SysGetPeerInfos" source="eLLabXUnified12Lib" sid="FB:eLLabXUnified12Lib:SysGetPeerInfos"/>
+		<functionBlock name="SysUDPClient" source="eLLabXUnified12Lib" sid="FB:eLLabXUnified12Lib:SysUDPClient"/>
+		<functionBlock name="SysUDPServer" source="eLLabXUnified12Lib" sid="FB:eLLabXUnified12Lib:SysUDPServer"/>
+		<functionBlock name="SysTLSClient" source="eLLabXUnified12Lib" sid="FB:eLLabXUnified12Lib:SysTLSClient"/>
+		<functionBlock name="SysGetFileInfos" source="eLLabXUnified12Lib" sid="FB:eLLabXUnified12Lib:SysGetFileInfos"/>
+		<functionBlock name="SysSetPhrDO" source="eLLabXUnified12Lib" sid="FB:eLLabXUnified12Lib:SysSetPhrDO"/>
+		<functionBlock name="SysGetPhrDI" source="eLLabXUnified12Lib" sid="FB:eLLabXUnified12Lib:SysGetPhrDI"/>
+		<functionBlock name="SysGetAnInp" source="eLLabXUnified12Lib" sid="FB:eLLabXUnified12Lib:SysGetAnInp"/>
+		<functionBlock name="SysSetAnOut" source="eLLabXUnified12Lib" sid="FB:eLLabXUnified12Lib:SysSetAnOut"/>
+		<functionBlock name="SysGetCounter" source="eLLabXUnified12Lib" sid="FB:eLLabXUnified12Lib:SysGetCounter"/>
+		<functionBlock name="SysGetEncoder" source="eLLabXUnified12Lib" sid="FB:eLLabXUnified12Lib:SysGetEncoder"/>
+		<functionBlock name="SysSetPWMOut" source="eLLabXUnified12Lib" sid="FB:eLLabXUnified12Lib:SysSetPWMOut"/>
+	</functionBlocks>
+	<vars>
+		<var name="START" sid="V::START">
+			<ref op="RD" pos="P::main^1$0"/>
+		</var>
+		<var name="STOP" sid="V::STOP">
+			<ref op="RD" pos="P::main^1$2"/>
+		</var>
+		<var name="MOTOR" sid="V::MOTOR">
+			<ref op="RD" pos="P::main^1$4"/>
+			<ref op="WR" pos="P::main^1$1"/>
+		</var>
+		<var name="SysDI00" source="TGT" sid="V:TGT:SysDI00"/>
+		<var name="SysDI01" source="TGT" sid="V:TGT:SysDI01"/>
+		<var name="SysDI02" source="TGT" sid="V:TGT:SysDI02"/>
+		<var name="SysDI03" source="TGT" sid="V:TGT:SysDI03"/>
+		<var name="SysDI04" source="TGT" sid="V:TGT:SysDI04"/>
+		<var name="SysDI05" source="TGT" sid="V:TGT:SysDI05"/>
+		<var name="SysDI06" source="TGT" sid="V:TGT:SysDI06"/>
+		<var name="SysDI07" source="TGT" sid="V:TGT:SysDI07"/>
+		<var name="SysDI08" source="TGT" sid="V:TGT:SysDI08"/>
+		<var name="SysDI09" source="TGT" sid="V:TGT:SysDI09"/>
+		<var name="SysDI10" source="TGT" sid="V:TGT:SysDI10"/>
+		<var name="SysDI11" source="TGT" sid="V:TGT:SysDI11"/>
+		<var name="SysDI12" source="TGT" sid="V:TGT:SysDI12"/>
+		<var name="SysDI13" source="TGT" sid="V:TGT:SysDI13"/>
+		<var name="SysDI14" source="TGT" sid="V:TGT:SysDI14"/>
+		<var name="SysDI15" source="TGT" sid="V:TGT:SysDI15"/>
+		<var name="SysCPUDI" source="TGT" sid="V:TGT:SysCPUDI"/>
+		<var name="SysDO00" source="TGT" sid="V:TGT:SysDO00"/>
+		<var name="SysDO01" source="TGT" sid="V:TGT:SysDO01"/>
+		<var name="SysDO02" source="TGT" sid="V:TGT:SysDO02"/>
+		<var name="SysDO03" source="TGT" sid="V:TGT:SysDO03"/>
+		<var name="SysDO04" source="TGT" sid="V:TGT:SysDO04"/>
+		<var name="SysDO05" source="TGT" sid="V:TGT:SysDO05"/>
+		<var name="SysDO06" source="TGT" sid="V:TGT:SysDO06"/>
+		<var name="SysDO07" source="TGT" sid="V:TGT:SysDO07"/>
+		<var name="SysDO08" source="TGT" sid="V:TGT:SysDO08"/>
+		<var name="SysDO09" source="TGT" sid="V:TGT:SysDO09"/>
+		<var name="SysDO10" source="TGT" sid="V:TGT:SysDO10"/>
+		<var name="SysDO11" source="TGT" sid="V:TGT:SysDO11"/>
+		<var name="SysDO12" source="TGT" sid="V:TGT:SysDO12"/>
+		<var name="SysDO13" source="TGT" sid="V:TGT:SysDO13"/>
+		<var name="SysDO14" source="TGT" sid="V:TGT:SysDO14"/>
+		<var name="SysDO15" source="TGT" sid="V:TGT:SysDO15"/>
+		<var name="SysCPUDO" source="TGT" sid="V:TGT:SysCPUDO"/>
+		<var name="SysVR" source="eLLabXUnified12Lib" sid="V:eLLabXUnified12Lib:SysVR"/>
+		<var name="SysClock100" source="eLLabXUnified12Lib" sid="V:eLLabXUnified12Lib:SysClock100"/>
+		<var name="SysClock1000" source="eLLabXUnified12Lib" sid="V:eLLabXUnified12Lib:SysClock1000"/>
+		<var name="SysBackupEnd" source="eLLabXUnified12Lib" sid="V:eLLabXUnified12Lib:SysBackupEnd"/>
+		<var name="SysRestoreFault" source="eLLabXUnified12Lib" sid="V:eLLabXUnified12Lib:SysRestoreFault"/>
+		<var name="SysPLCInRun" source="eLLabXUnified12Lib" sid="V:eLLabXUnified12Lib:SysPLCInRun"/>
+		<var name="SysFirstLoop" source="eLLabXUnified12Lib" sid="V:eLLabXUnified12Lib:SysFirstLoop"/>
+		<var name="SysLLabCn" source="eLLabXUnified12Lib" sid="V:eLLabXUnified12Lib:SysLLabCn"/>
+		<var name="SysIsDST" source="eLLabXUnified12Lib" sid="V:eLLabXUnified12Lib:SysIsDST"/>
+		<var name="SysDTSet" source="eLLabXUnified12Lib" sid="V:eLLabXUnified12Lib:SysDTSet"/>
+		<var name="SysUVSet" source="eLLabXUnified12Lib" sid="V:eLLabXUnified12Lib:SysUVSet"/>
+		<var name="SysAlwaysOff" source="eLLabXUnified12Lib" sid="V:eLLabXUnified12Lib:SysAlwaysOff"/>
+		<var name="SysAlwaysOn" source="eLLabXUnified12Lib" sid="V:eLLabXUnified12Lib:SysAlwaysOn"/>
+		<var name="SysFFBUspt" source="eLLabXUnified12Lib" sid="V:eLLabXUnified12Lib:SysFFBUspt"/>
+		<var name="SysFFBPrt" source="eLLabXUnified12Lib" sid="V:eLLabXUnified12Lib:SysFFBPrt"/>
+		<var name="SysCfgChanged" source="eLLabXUnified12Lib" sid="V:eLLabXUnified12Lib:SysCfgChanged"/>
+		<var name="SysActTaskID" source="eLLabXUnified12Lib" sid="V:eLLabXUnified12Lib:SysActTaskID"/>
+		<var name="SysErActTaskID" source="eLLabXUnified12Lib" sid="V:eLLabXUnified12Lib:SysErActTaskID"/>
+		<var name="SysTimeZone" source="eLLabXUnified12Lib" sid="V:eLLabXUnified12Lib:SysTimeZone"/>
+		<var name="SysModulesReady" source="eLLabXUnified12Lib" sid="V:eLLabXUnified12Lib:SysModulesReady"/>
+		<var name="SysApllVMajor" source="eLLabXUnified12Lib" sid="V:eLLabXUnified12Lib:SysApllVMajor"/>
+		<var name="SysApllVMinor" source="eLLabXUnified12Lib" sid="V:eLLabXUnified12Lib:SysApllVMinor"/>
+		<var name="SysTBackLpTm" source="eLLabXUnified12Lib" sid="V:eLLabXUnified12Lib:SysTBackLpTm"/>
+		<var name="SysTBackLpTmMin" source="eLLabXUnified12Lib" sid="V:eLLabXUnified12Lib:SysTBackLpTmMin"/>
+		<var name="SysTBackLpTmMax" source="eLLabXUnified12Lib" sid="V:eLLabXUnified12Lib:SysTBackLpTmMax"/>
+		<var name="SysTBootExTm" source="eLLabXUnified12Lib" sid="V:eLLabXUnified12Lib:SysTBootExTm"/>
+		<var name="SysTBootExTmMin" source="eLLabXUnified12Lib" sid="V:eLLabXUnified12Lib:SysTBootExTmMin"/>
+		<var name="SysTBootExTmMax" source="eLLabXUnified12Lib" sid="V:eLLabXUnified12Lib:SysTBootExTmMax"/>
+		<var name="SysTFastExTm" source="eLLabXUnified12Lib" sid="V:eLLabXUnified12Lib:SysTFastExTm"/>
+		<var name="SysTFastExTmMin" source="eLLabXUnified12Lib" sid="V:eLLabXUnified12Lib:SysTFastExTmMin"/>
+		<var name="SysTFastExTmMax" source="eLLabXUnified12Lib" sid="V:eLLabXUnified12Lib:SysTFastExTmMax"/>
+		<var name="SysTSlowExTm" source="eLLabXUnified12Lib" sid="V:eLLabXUnified12Lib:SysTSlowExTm"/>
+		<var name="SysTSlowExTmMin" source="eLLabXUnified12Lib" sid="V:eLLabXUnified12Lib:SysTSlowExTmMin"/>
+		<var name="SysTSlowExTmMax" source="eLLabXUnified12Lib" sid="V:eLLabXUnified12Lib:SysTSlowExTmMax"/>
+		<var name="SysTBackExTm" source="eLLabXUnified12Lib" sid="V:eLLabXUnified12Lib:SysTBackExTm"/>
+		<var name="SysTBackExTmMin" source="eLLabXUnified12Lib" sid="V:eLLabXUnified12Lib:SysTBackExTmMin"/>
+		<var name="SysTBackExTmMax" source="eLLabXUnified12Lib" sid="V:eLLabXUnified12Lib:SysTBackExTmMax"/>
+		<var name="SysStartTime" source="eLLabXUnified12Lib" sid="V:eLLabXUnified12Lib:SysStartTime"/>
+		<var name="SysTime" source="eLLabXUnified12Lib" sid="V:eLLabXUnified12Lib:SysTime"/>
+		<var name="SysTFastLpTm" source="eLLabXUnified12Lib" sid="V:eLLabXUnified12Lib:SysTFastLpTm"/>
+		<var name="SysTSlowLpTm" source="eLLabXUnified12Lib" sid="V:eLLabXUnified12Lib:SysTSlowLpTm"/>
+		<var name="SysApplID" source="eLLabXUnified12Lib" sid="V:eLLabXUnified12Lib:SysApplID"/>
+		<var name="SysMfcCode" source="eLLabXUnified12Lib" sid="V:eLLabXUnified12Lib:SysMfcCode"/>
+		<var name="SysCustomerCode" source="eLLabXUnified12Lib" sid="V:eLLabXUnified12Lib:SysCustomerCode"/>
+		<var name="SysErCode" source="eLLabXUnified12Lib" sid="V:eLLabXUnified12Lib:SysErCode"/>
+		<var name="SysErTime" source="eLLabXUnified12Lib" sid="V:eLLabXUnified12Lib:SysErTime"/>
+		<var name="SysSerialNr" source="eLLabXUnified12Lib" sid="V:eLLabXUnified12Lib:SysSerialNr"/>
+		<var name="SysApllBTime" source="eLLabXUnified12Lib" sid="V:eLLabXUnified12Lib:SysApllBTime"/>
+		<var name="SysUniqueID" source="eLLabXUnified12Lib" sid="V:eLLabXUnified12Lib:SysUniqueID"/>
+		<var name="SysPLCUpTime" source="eLLabXUnified12Lib" sid="V:eLLabXUnified12Lib:SysPLCUpTime"/>
+		<var name="SysLpWrNrDiskC" source="eLLabXUnified12Lib" sid="V:eLLabXUnified12Lib:SysLpWrNrDiskC"/>
+		<var name="SysLpWrNrDiskD" source="eLLabXUnified12Lib" sid="V:eLLabXUnified12Lib:SysLpWrNrDiskD"/>
+		<var name="SysLpWrNrDiskF" source="eLLabXUnified12Lib" sid="V:eLLabXUnified12Lib:SysLpWrNrDiskF"/>
+		<var name="SysDaylightZone" source="eLLabXUnified12Lib" sid="V:eLLabXUnified12Lib:SysDaylightZone"/>
+		<var name="SysCode" source="eLLabXUnified12Lib" sid="V:eLLabXUnified12Lib:SysCode"/>
+		<var name="SysFVersion" source="eLLabXUnified12Lib" sid="V:eLLabXUnified12Lib:SysFVersion"/>
+		<var name="SysErInfos" source="eLLabXUnified12Lib" sid="V:eLLabXUnified12Lib:SysErInfos"/>
+		<var name="SysApllName" source="eLLabXUnified12Lib" sid="V:eLLabXUnified12Lib:SysApllName"/>
+		<var name="SysUSetA" source="eLLabXUnified12Lib" sid="V:eLLabXUnified12Lib:SysUSetA"/>
+		<var name="SysUSetB" source="eLLabXUnified12Lib" sid="V:eLLabXUnified12Lib:SysUSetB"/>
+		<var name="SysUSetC" source="eLLabXUnified12Lib" sid="V:eLLabXUnified12Lib:SysUSetC"/>
+		<var name="SysUSetD" source="eLLabXUnified12Lib" sid="V:eLLabXUnified12Lib:SysUSetD"/>
+		<var name="SysVRW" source="eLLabXUnified12Lib" sid="V:eLLabXUnified12Lib:SysVRW"/>
+		<var name="SysTimeInit" source="eLLabXUnified12Lib" sid="V:eLLabXUnified12Lib:SysTimeInit"/>
+		<var name="SysDateTime" source="eLLabXUnified12Lib" sid="V:eLLabXUnified12Lib:SysDateTime"/>
+		<var name="SysLastError" source="eLLabXUnified12Lib" sid="V:eLLabXUnified12Lib:SysLastError"/>
+		<var name="SysUTCDateTime" source="eLLabXUnified12Lib" sid="V:eLLabXUnified12Lib:SysUTCDateTime"/>
+		<var name="SysUInfoA" source="eLLabXUnified12Lib" sid="V:eLLabXUnified12Lib:SysUInfoA"/>
+		<var name="SysUInfoB" source="eLLabXUnified12Lib" sid="V:eLLabXUnified12Lib:SysUInfoB"/>
+		<var name="SysUInfoC" source="eLLabXUnified12Lib" sid="V:eLLabXUnified12Lib:SysUInfoC"/>
+		<var name="SysUInfoD" source="eLLabXUnified12Lib" sid="V:eLLabXUnified12Lib:SysUInfoD"/>
+		<var name="SysData" source="eLLabXUnified12Lib" sid="V:eLLabXUnified12Lib:SysData"/>
+		<var name="SysDataBk" source="eLLabXUnified12Lib" sid="V:eLLabXUnified12Lib:SysDataBk"/>
+		<var name="$$POUCBARRAY$$Boot" source="EmbeddedElements" sid="V:EmbeddedElements:$$POUCBARRAY$$Boot"/>
+		<var name="$$POUCBARRAY$$Slow" source="EmbeddedElements" sid="V:EmbeddedElements:$$POUCBARRAY$$Slow"/>
+		<var name="$$STKPOINTER$$" sid="V::$$STKPOINTER$$"/>
+		<var name="$$DEBUGID$$" sid="V::$$DEBUGID$$"/>
+	</vars>
+</crossReference>

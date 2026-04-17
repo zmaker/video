@@ -1,0 +1,977 @@
+***********************************************************************
+*
+*	CODE GENERATION LISTING FOR: PLC02-relepassopasso
+*	COMPILER VERSION: 6.2.0.18
+*
+***********************************************************************
+
+**************************************************
+	List function: eGetBYTE
+**************************************************
+
+FUNCTION eGetBYTE : BYTE
+
+	{ DE:"(Sfr108a300) eLLabCommonLib - Get BYTE value from void pointer" }
+
+	VAR_INPUT
+		RAddress : DWORD;	{ DE:"Read address" }
+	END_VAR
+
+	VAR
+		Ptr : @BYTE;	{ DE:"Auxiliary pointer" }
+	END_VAR
+
+END_FUNCTION
+
+	*** Function data allocation
+
+	[Inp] RAddress: CALLER STACK FRAME AT sp+0
+	[Var] Ptr: REGISTER r4 (_TMP_32LO)
+
+000600B0  E1A0B00D		mov r11, sp
+000600B4  E92D47F0		stmdb sp!, { r4, r5, r6, r7, r8, r9, r10, lr }
+000600B8  E1A0A00B		mov r10, r11
+
+000600BC  E3A08000		mov r8, #0
+
+000600C0  E59A0000		ldr r0, [r10, #0]
+000600C4  E24DD008		sub sp, sp, #8
+000600C8  E58D0000		str r0, [sp]
+000600CC  E1A04000		mov r4, r0
+000600D0  E59D0000		ldr r0, [sp]
+000600D4  E28DD008		add sp, sp, #8
+
+000600D8  E1A0C004		mov r12, r4
+000600DC  E5DC0000		ldrb r0, [r12, #0]
+000600E0  E1A08000		mov r8, r0
+
+000600E4  E1A00008		mov r0, r8
+000600E8  E8BD47F0		ldmia sp!, { r4, r5, r6, r7, r8, r9, r10, lr }
+
+000600EC  E1A0F00E		mov pc, lr
+
+END_FUNCTION
+**************************************************
+	List function: eSetBYTE
+**************************************************
+
+FUNCTION eSetBYTE : BOOL
+
+	{ DE:"(Sfr108a300) eLLabCommonLib - Set BYTE value to void pointer" }
+
+	VAR_INPUT
+		WAddress : DWORD;	{ DE:"Write address" }
+		WValue : BYTE;	{ DE:"Write value" }
+	END_VAR
+
+	VAR
+		Ptr : @BYTE;	{ DE:"Auxiliary pointer" }
+	END_VAR
+
+END_FUNCTION
+
+	*** Function data allocation
+
+	[Inp] WAddress: CALLER STACK FRAME AT sp+0
+	[Inp] WValue: CALLER STACK FRAME AT sp+4
+	[Var] Ptr: REGISTER r4 (_TMP_32LO)
+
+000600F0  E1A0B00D		mov r11, sp
+000600F4  E92D47F0		stmdb sp!, { r4, r5, r6, r7, r8, r9, r10, lr }
+000600F8  E1A0A00B		mov r10, r11
+
+000600FC  E3A08000		mov r8, #0
+
+00060100  E59A0000		ldr r0, [r10, #0]
+00060104  E24DD008		sub sp, sp, #8
+00060108  E58D0000		str r0, [sp]
+0006010C  E1A04000		mov r4, r0
+00060110  E59D0000		ldr r0, [sp]
+00060114  E28DD008		add sp, sp, #8
+
+00060118  E5DA0004		ldrb r0, [r10, #4]
+0006011C  E1A0C004		mov r12, r4
+00060120  E5CC0000		strb r0, [r12]
+
+00060124  E3A00001		mov r0, #1 ; 0x01
+00060128  E1A08000		mov r8, r0
+
+0006012C  E1A00008		mov r0, r8
+00060130  E8BD47F0		ldmia sp!, { r4, r5, r6, r7, r8, r9, r10, lr }
+
+00060134  E1A0F00E		mov pc, lr
+
+END_FUNCTION
+**************************************************
+	List function: StringConv
+**************************************************
+
+FUNCTION StringConv : BOOL
+
+	{ DE:"(Sfr094b000) eLLabXUnified12Lib - To void pointer cast" }
+
+	VAR_INPUT
+		Destination : @STRING;	{ DE:"Destination buffer" }
+		Source : @STRING;	{ DE:"Source buffer" }
+		DSize : UDINT;	{ DE:"Destination size" }
+		Mode : USINT;	{ DE:"Conversion mode" }
+	END_VAR
+
+	VAR
+		i : UDINT;	{ DE:"Auxiliary variable" }
+		AyB : BYTE;	{ DE:"Auxiliary byte buffer" }
+		IDx : UDINT;	{ DE:"Index" }
+		DBSpace : UDINT;	{ DE:"Destination buffer space" }
+		SLength : UDINT;
+	END_VAR
+
+END_FUNCTION
+
+	*** Function data allocation
+
+	[Inp] Destination: CALLER STACK FRAME AT sp+0
+	[Inp] Source: CALLER STACK FRAME AT sp+4
+	[Inp] DSize: CALLER STACK FRAME AT sp+8
+	[Inp] Mode: CALLER STACK FRAME AT sp+12
+	[Var] i: REGISTER r4 (_TMP_32LO)
+	[Var] AyB: REGISTER r5 (_TMP_32HI)
+	[Var] IDx: REGISTER r6 (_GPR3)
+	[Var] DBSpace: REGISTER r7 (_GPR4)
+	[Var] SLength: LOCAL STACK FRAME AT sp-4
+
+00060138  E1A0B00D		mov r11, sp
+0006013C  E24DD008		sub sp, sp, #8, 0
+00060140  E92D47F0		stmdb sp!, { r4, r5, r6, r7, r8, r9, r10, lr }
+00060144  E1A0A00B		mov r10, r11
+
+00060148  E3A08000		mov r8, #0
+
+0006014C  E59A0008		ldr r0, [r10, #8]
+
+00060150  E2400002		sub r0, r0, #2
+
+00060154  E1A07000		mov r7, r0
+
+00060158  E3A00001		mov r0, #1 ; 0x01
+0006015C  E1A08000		mov r8, r0
+
+00060160  E59A0008		ldr r0, [r10, #8]
+
+00060164  E24DD008		sub sp, sp, #8
+00060168  E58D0000		str r0, [sp]
+0006016C  E3A00000		mov r0, #0 ; 0x00
+
+00060170  E24DD008		sub sp, sp, #8
+00060174  E58D8000		str r8, [sp]
+00060178  E59A0004		ldr r0, [r10, #4]
+0006017C  E59F8440		ldr r8, [pc, #+1088] ; 0x789F0
+00060180  E1A0E00F		mov lr, pc
+00060184  E1A0F008		mov pc, r8 ; Sysstrlen
+00060188  E59D8000		ldr r8, [sp]
+0006018C  E28DD008		add sp, sp, #8
+
+00060190  E2800001		add r0, r0, #1
+
+00060194  E1A0B000		mov r11, r0
+00060198  E59D0000		ldr r0, [sp]
+0006019C  E28DD008		add sp, sp, #8
+000601A0  E150000B		cmp r0, r11
+000601A4  23A00000		hsmov r0, #0
+000601A8  33A00001		lomov r0, #1
+
+000601AC  E3500000		cmp r0, #0
+000601B0  0A000001		beq #0x000007 ; 0x000601BC
+
+000601B4  E3A00000		mov r0, #0 ; 0x00
+000601B8  E1A08000		mov r8, r0
+
+000601BC  E5DA000C		ldrb r0, [r10, #12]
+
+000601C0  E3500000		cmp r0, #0
+000601C4  13A00000		nemov r0, #0
+000601C8  03A00001		eqmov r0, #1
+
+000601CC  E3500000		cmp r0, #0
+000601D0  1A000012		bne #0x00004B ; 0x00060220
+
+000601D4  E5DA000C		ldrb r0, [r10, #12]
+
+000601D8  E3500001		cmp r0, #1
+000601DC  13A00000		nemov r0, #0
+000601E0  03A00001		eqmov r0, #1
+
+000601E4  E3500000		cmp r0, #0
+000601E8  1A000014		bne #0x000053 ; 0x00060240
+
+000601EC  E5DA000C		ldrb r0, [r10, #12]
+
+000601F0  E3500002		cmp r0, #2
+000601F4  13A00000		nemov r0, #0
+000601F8  03A00001		eqmov r0, #1
+
+000601FC  E3500000		cmp r0, #0
+00060200  1A000045		bne #0x000117 ; 0x0006031C
+
+00060204  E5DA000C		ldrb r0, [r10, #12]
+
+00060208  E3500003		cmp r0, #3
+0006020C  13A00000		nemov r0, #0
+00060210  03A00001		eqmov r0, #1
+
+00060214  E3500000		cmp r0, #0
+00060218  1A000089		bne #0x000227 ; 0x00060444
+
+0006021C  EA0000D1		b #0x000344 ; 0x00060568
+
+00060220  E3A00001		mov r0, #1 ; 0x01
+00060224  E1A08000		mov r8, r0
+
+00060228  E3A0B0AC		mov r11, #0xAC ; 0x605AC
+0006022C  E38BBC05		orr r11, r11, #0x05, 12 
+00060230  E38BB806		orr r11, r11, #0x06, 8 
+00060234  E38BB400		orr r11, r11, #0x00, 4 
+00060238  E1A0F00B		mov pc, r11
+
+0006023C  EA0000C9		b #0x000324 ; 0x00060568
+
+00060240  E3A00000		mov r0, #0 ; 0x00
+
+00060244  E24DD008		sub sp, sp, #8
+00060248  E58D0000		str r0, [sp]
+0006024C  E1A06000		mov r6, r0
+00060250  E59D0000		ldr r0, [sp]
+00060254  E28DD008		add sp, sp, #8
+
+00060258  E1A00006		mov r0, r6
+
+0006025C  E1500007		cmp r0, r7
+00060260  93A00000		lsmov r0, #0
+00060264  83A00001		himov r0, #1
+
+00060268  E3500000		cmp r0, #0
+0006026C  1A000029		bne #0x0000A7 ; 0x00060318
+
+00060270  E59A0004		ldr r0, [r10, #4]
+
+00060274  E0800006		add r0, r0, r6
+
+00060278  E24DD008		sub sp, sp, #8
+0006027C  E58D8000		str r8, [sp]
+00060280  E24DDF02		sub sp, sp, #2, 15
+00060284  E1A0B000		mov r11, r0
+00060288  E58DB000		str r11, [sp]
+0006028C  E59F8328		ldr r8, [pc, #+808] ; 0x600B0
+00060290  E1A0E00F		mov lr, pc
+00060294  E1A0F008		mov pc, r8
+00060298  E28DDF02		add sp, sp, #2, 15
+0006029C  E59D8000		ldr r8, [sp]
+000602A0  E28DD008		add sp, sp, #8
+
+000602A4  E1A05000		mov r5, r0
+
+000602A8  E1A00005		mov r0, r5
+
+000602AC  E3500000		cmp r0, #0
+000602B0  13A00000		nemov r0, #0
+000602B4  03A00001		eqmov r0, #1
+
+000602B8  E3500000		cmp r0, #0
+000602BC  0A000000		beq #0x000003 ; 0x000602C4
+
+000602C0  EA000014		b #0x000050 ; 0x00060318
+
+000602C4  E59A0000		ldr r0, [r10, #0]
+
+000602C8  E0800006		add r0, r0, r6
+
+000602CC  E24DD008		sub sp, sp, #8
+000602D0  E58D8000		str r8, [sp]
+000602D4  E24DDF02		sub sp, sp, #2, 15
+000602D8  E1A0B000		mov r11, r0
+000602DC  E58DB000		str r11, [sp]
+000602E0  E1A0B005		mov r11, r5
+000602E4  E58DB004		str r11, [sp, #+4]
+000602E8  E59F82D0		ldr r8, [pc, #+720] ; 0x600F0
+000602EC  E1A0E00F		mov lr, pc
+000602F0  E1A0F008		mov pc, r8
+000602F4  E28DDF02		add sp, sp, #2, 15
+000602F8  E59D8000		ldr r8, [sp]
+000602FC  E28DD008		add sp, sp, #8
+
+00060300  E3500000		cmp r0, #0
+00060304  0AFFFFFF		beq #0xFFFFFFFF ; 0x00060308
+
+00060308  E1A00006		mov r0, r6
+
+0006030C  E2800001		add r0, r0, #1
+
+00060310  E1A06000		mov r6, r0
+
+00060314  EAFFFFCF		b #0xFFFFFF3C ; 0x00060258
+
+00060318  EA000092		b #0x000248 ; 0x00060568
+
+0006031C  E3A00000		mov r0, #0 ; 0x00
+
+00060320  E24DD008		sub sp, sp, #8
+00060324  E58D0000		str r0, [sp]
+00060328  E1A06000		mov r6, r0
+0006032C  E59D0000		ldr r0, [sp]
+00060330  E28DD008		add sp, sp, #8
+
+00060334  E1A00006		mov r0, r6
+
+00060338  E1500007		cmp r0, r7
+0006033C  93A00000		lsmov r0, #0
+00060340  83A00001		himov r0, #1
+
+00060344  E3500000		cmp r0, #0
+00060348  1A00003C		bne #0x0000F3 ; 0x00060440
+
+0006034C  E59A0004		ldr r0, [r10, #4]
+
+00060350  E0800006		add r0, r0, r6
+
+00060354  E24DD008		sub sp, sp, #8
+00060358  E58D8000		str r8, [sp]
+0006035C  E24DDF02		sub sp, sp, #2, 15
+00060360  E1A0B000		mov r11, r0
+00060364  E58DB000		str r11, [sp]
+00060368  E59F824C		ldr r8, [pc, #+588] ; 0x600B0
+0006036C  E1A0E00F		mov lr, pc
+00060370  E1A0F008		mov pc, r8
+00060374  E28DDF02		add sp, sp, #2, 15
+00060378  E59D8000		ldr r8, [sp]
+0006037C  E28DD008		add sp, sp, #8
+
+00060380  E1A05000		mov r5, r0
+
+00060384  E1A00005		mov r0, r5
+
+00060388  E3500000		cmp r0, #0
+0006038C  13A00000		nemov r0, #0
+00060390  03A00001		eqmov r0, #1
+
+00060394  E3500000		cmp r0, #0
+00060398  0A000000		beq #0x000003 ; 0x000603A0
+
+0006039C  EA000027		b #0x00009C ; 0x00060440
+
+000603A0  E1A00005		mov r0, r5
+
+000603A4  E350005A		cmp r0, #90
+000603A8  C3A00000		gtmov r0, #0
+000603AC  D3A00001		lemov r0, #1
+
+000603B0  E24DD008		sub sp, sp, #8
+000603B4  E58D0000		str r0, [sp]
+000603B8  E1A00005		mov r0, r5
+
+000603BC  E3500041		cmp r0, #65
+000603C0  B3A00000		ltmov r0, #0
+000603C4  A3A00001		gemov r0, #1
+
+000603C8  E1A0B000		mov r11, r0
+000603CC  E59D0000		ldr r0, [sp]
+000603D0  E28DD008		add sp, sp, #8
+000603D4  E000000B		and r0, r0, r11
+
+000603D8  E3500000		cmp r0, #0
+000603DC  0A000002		beq #0x00000B ; 0x000603EC
+
+000603E0  E1A00005		mov r0, r5
+
+000603E4  E2800020		add r0, r0, #32
+
+000603E8  E1A05000		mov r5, r0
+
+000603EC  E59A0000		ldr r0, [r10, #0]
+
+000603F0  E0800006		add r0, r0, r6
+
+000603F4  E24DD008		sub sp, sp, #8
+000603F8  E58D8000		str r8, [sp]
+000603FC  E24DDF02		sub sp, sp, #2, 15
+00060400  E1A0B000		mov r11, r0
+00060404  E58DB000		str r11, [sp]
+00060408  E1A0B005		mov r11, r5
+0006040C  E58DB004		str r11, [sp, #+4]
+00060410  E59F81A8		ldr r8, [pc, #+424] ; 0x600F0
+00060414  E1A0E00F		mov lr, pc
+00060418  E1A0F008		mov pc, r8
+0006041C  E28DDF02		add sp, sp, #2, 15
+00060420  E59D8000		ldr r8, [sp]
+00060424  E28DD008		add sp, sp, #8
+
+00060428  E3500000		cmp r0, #0
+0006042C  0AFFFFFF		beq #0xFFFFFFFF ; 0x00060430
+
+00060430  E1A00006		mov r0, r6
+
+00060434  E2800001		add r0, r0, #1
+
+00060438  E1A06000		mov r6, r0
+
+0006043C  EAFFFFBC		b #0xFFFFFEF0 ; 0x00060334
+
+00060440  EA000048		b #0x000120 ; 0x00060568
+
+00060444  E3A00000		mov r0, #0 ; 0x00
+
+00060448  E24DD008		sub sp, sp, #8
+0006044C  E58D0000		str r0, [sp]
+00060450  E1A06000		mov r6, r0
+00060454  E59D0000		ldr r0, [sp]
+00060458  E28DD008		add sp, sp, #8
+
+0006045C  E1A00006		mov r0, r6
+
+00060460  E1500007		cmp r0, r7
+00060464  93A00000		lsmov r0, #0
+00060468  83A00001		himov r0, #1
+
+0006046C  E3500000		cmp r0, #0
+00060470  1A00003C		bne #0x0000F3 ; 0x00060568
+
+00060474  E59A0004		ldr r0, [r10, #4]
+
+00060478  E0800006		add r0, r0, r6
+
+0006047C  E24DD008		sub sp, sp, #8
+00060480  E58D8000		str r8, [sp]
+00060484  E24DDF02		sub sp, sp, #2, 15
+00060488  E1A0B000		mov r11, r0
+0006048C  E58DB000		str r11, [sp]
+00060490  E59F8124		ldr r8, [pc, #+292] ; 0x600B0
+00060494  E1A0E00F		mov lr, pc
+00060498  E1A0F008		mov pc, r8
+0006049C  E28DDF02		add sp, sp, #2, 15
+000604A0  E59D8000		ldr r8, [sp]
+000604A4  E28DD008		add sp, sp, #8
+
+000604A8  E1A05000		mov r5, r0
+
+000604AC  E1A00005		mov r0, r5
+
+000604B0  E3500000		cmp r0, #0
+000604B4  13A00000		nemov r0, #0
+000604B8  03A00001		eqmov r0, #1
+
+000604BC  E3500000		cmp r0, #0
+000604C0  0A000000		beq #0x000003 ; 0x000604C8
+
+000604C4  EA000027		b #0x00009C ; 0x00060568
+
+000604C8  E1A00005		mov r0, r5
+
+000604CC  E350007A		cmp r0, #122
+000604D0  C3A00000		gtmov r0, #0
+000604D4  D3A00001		lemov r0, #1
+
+000604D8  E24DD008		sub sp, sp, #8
+000604DC  E58D0000		str r0, [sp]
+000604E0  E1A00005		mov r0, r5
+
+000604E4  E3500061		cmp r0, #97
+000604E8  B3A00000		ltmov r0, #0
+000604EC  A3A00001		gemov r0, #1
+
+000604F0  E1A0B000		mov r11, r0
+000604F4  E59D0000		ldr r0, [sp]
+000604F8  E28DD008		add sp, sp, #8
+000604FC  E000000B		and r0, r0, r11
+
+00060500  E3500000		cmp r0, #0
+00060504  0A000002		beq #0x00000B ; 0x00060514
+
+00060508  E1A00005		mov r0, r5
+
+0006050C  E2400020		sub r0, r0, #32
+
+00060510  E1A05000		mov r5, r0
+
+00060514  E59A0000		ldr r0, [r10, #0]
+
+00060518  E0800006		add r0, r0, r6
+
+0006051C  E24DD008		sub sp, sp, #8
+00060520  E58D8000		str r8, [sp]
+00060524  E24DDF02		sub sp, sp, #2, 15
+00060528  E1A0B000		mov r11, r0
+0006052C  E58DB000		str r11, [sp]
+00060530  E1A0B005		mov r11, r5
+00060534  E58DB004		str r11, [sp, #+4]
+00060538  E59F8080		ldr r8, [pc, #+128] ; 0x600F0
+0006053C  E1A0E00F		mov lr, pc
+00060540  E1A0F008		mov pc, r8
+00060544  E28DDF02		add sp, sp, #2, 15
+00060548  E59D8000		ldr r8, [sp]
+0006054C  E28DD008		add sp, sp, #8
+
+00060550  E3500000		cmp r0, #0
+00060554  0AFFFFFF		beq #0xFFFFFFFF ; 0x00060558
+
+00060558  E1A00006		mov r0, r6
+
+0006055C  E2800001		add r0, r0, #1
+
+00060560  E1A06000		mov r6, r0
+
+00060564  EAFFFFBC		b #0xFFFFFEF0 ; 0x0006045C
+
+00060568  E59A0000		ldr r0, [r10, #0]
+
+0006056C  E0800006		add r0, r0, r6
+
+00060570  E24DD008		sub sp, sp, #8
+00060574  E58D8000		str r8, [sp]
+00060578  E24DDF02		sub sp, sp, #2, 15
+0006057C  E1A0B000		mov r11, r0
+00060580  E58DB000		str r11, [sp]
+00060584  E3A0B000		mov r11, #0 ; 0x00
+00060588  E58DB004		str r11, [sp, #+4]
+0006058C  E59F802C		ldr r8, [pc, #+44] ; 0x600F0
+00060590  E1A0E00F		mov lr, pc
+00060594  E1A0F008		mov pc, r8
+00060598  E28DDF02		add sp, sp, #2, 15
+0006059C  E59D8000		ldr r8, [sp]
+000605A0  E28DD008		add sp, sp, #8
+
+000605A4  E3500000		cmp r0, #0
+000605A8  0AFFFFFF		beq #0xFFFFFFFF ; 0x000605AC
+
+000605AC  E1A00008		mov r0, r8
+000605B0  E8BD47F0		ldmia sp!, { r4, r5, r6, r7, r8, r9, r10, lr }
+000605B4  E28DD008		add sp, sp, #8, 0
+
+000605B8  E1A0F00E		mov pc, lr
+
+000605BC  000600B0		; 0x000600B0
+000605C0  000600F0		; 0x000600F0
+000605C4  000789F0		; 0x000789F0
+
+END_FUNCTION
+**************************************************
+	List function: XUnifiedLibInit
+**************************************************
+
+FUNCTION XUnifiedLibInit : BOOL
+
+	{ DE:"(Sfr094a100) eLLabXUnified12Lib - XUnified library init" }
+
+	VAR_INPUT
+		Cmd : BOOL;	{ DE:"Command" }
+	END_VAR
+
+	VAR
+		Version : STRING[ 10 ] := 'Sfr094a100';	{ DE:"Library version" }
+	END_VAR
+
+END_FUNCTION
+
+	*** Function data allocation
+
+	[Inp] Cmd: CALLER STACK FRAME AT sp+0
+	[Var] Version: LOCAL STACK FRAME AT sp-12
+
+000605C8  E1A0B00D		mov r11, sp
+000605CC  E24DD010		sub sp, sp, #16, 0
+000605D0  E92D47F0		stmdb sp!, { r4, r5, r6, r7, r8, r9, r10, lr }
+000605D4  E1A0A00B		mov r10, r11
+
+000605D8  E3A08000		mov r8, #0
+
+Var init: V::XUnifiedLibInit.Version = 'Sfr094a100'
+000605DC  E1A0B00A		mov r11, r10
+000605E0  E59FC0F4		ldr r12, [pc, #+244] ; 0xFFFFFFF4 = -12
+000605E4  E08BB00C		add r11, r11, r12
+000605E8  E59F00E4		ldr r0, [pc, #+228] ; 0x30726653 = 812803667
+000605EC  E58B0000		str r0, [r11]
+000605F0  E59F00E0		ldr r0, [pc, #+224] ; 0x31613439 = 828453945
+000605F4  E58B0004		str r0, [r11, #4]
+000605F8  E28BB008		add r11, r11, #8
+000605FC  E59F00C4		ldr r0, [pc, #+196] ; 0x3030 = 12336
+00060600  E1CB00B0		strh r0, [r11]
+00060604  E28BB002		add r11, r11, #2
+00060608  E3A00000		mov r0, #0
+0006060C  E5CB0000		strb r0, [r11]
+
+00060610  E59FB0C4		ldr r11, [pc, #+196] ; 0xFFFFFFF4 = -12
+00060614  E08A000B		add r0, r10, r11
+
+00060618  E50A0010		str r0, [r10, #-16]
+
+0006061C  E59FB0B8		ldr r11, [pc, #+184] ; 0xFFFFFFF4 = -12
+00060620  E08A000B		add r0, r10, r11
+
+00060624  E24DD008		sub sp, sp, #8
+00060628  E58D8000		str r8, [sp]
+0006062C  E24DDF04		sub sp, sp, #4, 15
+00060630  E1A0B000		mov r11, r0
+00060634  E58DB000		str r11, [sp]
+00060638  E51AB010		ldr r11, [r10, #-16]
+0006063C  E58DB004		str r11, [sp, #+4]
+00060640  E3A0B00B		mov r11, #11, 0 ; 0x000B
+00060644  E58DB008		str r11, [sp, #+8]
+00060648  E3A0B003		mov r11, #3 ; 0x03
+0006064C  E58DB00C		str r11, [sp, #+12]
+00060650  E59F8074		ldr r8, [pc, #+116] ; 0x60138
+00060654  E1A0E00F		mov lr, pc
+00060658  E1A0F008		mov pc, r8
+0006065C  E28DDF04		add sp, sp, #4, 15
+00060660  E59D8000		ldr r8, [sp]
+00060664  E28DD008		add sp, sp, #8
+
+00060668  E3500000		cmp r0, #0
+0006066C  0AFFFFFF		beq #0xFFFFFFFF ; 0x00060670
+
+00060670  E59FB064		ldr r11, [pc, #+100] ; 0xFFFFFFF4 = -12
+00060674  E08A000B		add r0, r10, r11
+
+00060678  E50A0010		str r0, [r10, #-16]
+
+0006067C  E24DD008		sub sp, sp, #8
+00060680  E58D8000		str r8, [sp]
+00060684  E3A00001		mov r0, #1 ; 0x01
+00060688  E3A0B001		mov r11, #1 ; 0x01
+0006068C  E1A0100B		mov r1, r11
+00060690  E51AB010		ldr r11, [r10, #-16]
+00060694  E1A0200B		mov r2, r11
+00060698  E59F8030		ldr r8, [pc, #+48] ; 0x78A1C
+0006069C  E1A0E00F		mov lr, pc
+000606A0  E1A0F008		mov pc, r8 ; SysXUnifiedValue
+000606A4  E59D8000		ldr r8, [sp]
+000606A8  E28DD008		add sp, sp, #8
+
+000606AC  E1A08000		mov r8, r0
+
+000606B0  E3A00001		mov r0, #1 ; 0x01
+000606B4  E1A08000		mov r8, r0
+
+000606B8  E1A00008		mov r0, r8
+000606BC  E8BD47F0		ldmia sp!, { r4, r5, r6, r7, r8, r9, r10, lr }
+000606C0  E28DD010		add sp, sp, #16, 0
+
+000606C4  E1A0F00E		mov pc, lr
+
+000606C8  00003030		; 0x00003030
+000606CC  00060138		; 0x00060138
+000606D0  00078A1C		; 0x00078A1C
+000606D4  30726653		; 0x30726653
+000606D8  31613439		; 0x31613439
+000606DC  FFFFFFF4		; 0xFFFFFFF4
+
+END_FUNCTION
+**************************************************
+	List program: $$ElsistInit
+**************************************************
+
+PROGRAM $$ElsistInit
+
+	VAR
+		dummy : BOOL;
+	END_VAR
+
+END_PROGRAM
+
+000606E0  E24DD008		sub sp, sp, #8
+000606E4  E58DE000		str lr, [sp]
+000606E8  E92D0FF0		stmdb sp!, { r4, r5, r6, r7, r8, r9, r10, r11 }
+000606EC  E1A0A00D		mov r10, sp
+
+#0		{SRC:$$ElsistInit}
+#1		(*$WAITSWITCH$*)
+#2		
+#3			(* dummy:=XUnifiedLibInit(TRUE); *)
+#4			LDP0		TRUE	{LNXT:2|2|-1}
+(*) UDINT
+#5			XUnifiedLibInit	{LNXT:2|2|-1}
+(*) BOOL
+000606F0  E24DDF02		sub sp, sp, #2, 15
+000606F4  E3A0B001		mov r11, #1 ; 0x01
+000606F8  E58DB000		str r11, [sp]
+000606FC  E59F8020		ldr r8, [pc, #+32] ; 0x605C8
+00060700  E1A0E00F		mov lr, pc
+00060704  E1A0F008		mov pc, r8
+00060708  E28DDF02		add sp, sp, #2, 15
+
+#6			ST		dummy	{LNXT:2|2|-1}
+(*) BOOL
+0006070C  E59FB014		ldr r11, [pc, #+20] ; 0x40007F68
+00060710  E5CB0000		strb r0, [r11]
+
+00060714  E8BD0FF0		ldmia sp!, { r4, r5, r6, r7, r8, r9, r10, r11 }
+00060718  E59DE000		ldr lr, [sp]
+0006071C  E28DD008		add sp, sp, #8
+
+00060720  E1A0F00E		mov pc, lr
+
+00060724  000605C8		; 0x000605C8
+00060728  40007F68		; 0x40007F68
+
+END_PROGRAM
+
+
+**************************************************
+	Target variable image generation
+**************************************************
+
+
+*** INPUT:
+0006072C  E1A0F00E		mov pc, lr
+
+
+*** OUTPUT:
+00060730  E1A0F00E		mov pc, lr
+
+
+
+**************************************************
+	Task Boot init code
+**************************************************
+
+00060734  E24DD008		sub sp, sp, #8
+00060738  E58DE000		str lr, [sp]
+0006073C  E92D0FF0		stmdb sp!, { r4, r5, r6, r7, r8, r9, r10, r11 }
+
+00060740  E8BD0FF0		ldmia sp!, { r4, r5, r6, r7, r8, r9, r10, r11 }
+00060744  E59DE000		ldr lr, [sp]
+00060748  E28DD008		add sp, sp, #8
+
+0006074C  E1A0F00E		mov pc, lr
+
+**************************************************
+	List program: main
+**************************************************
+
+PROGRAM main
+
+END_PROGRAM
+
+00060760  E24DD008		sub sp, sp, #8
+00060764  E58DE000		str lr, [sp]
+00060768  E92D0FF0		stmdb sp!, { r4, r5, r6, r7, r8, r9, r10, r11 }
+0006076C  E1A0A00D		mov r10, sp
+
+#0			{SRC:main}
+#1		 
+#2		 	(* P/N contacts management *)
+#3			LD		BT1 {R:-1}
+(*) UNDEF
+00060770  E59FB0EC		ldr r11, [pc, #+236] ; 0x4000AF7C
+00060774  E5DB0000		ldrb r0, [r11]
+
+#4			ANDN	$$MEMPC$BT1 {R:-1}
+(*) BOOL
+00060778  E59FB0D4		ldr r11, [pc, #+212] ; 0x40007F69
+0006077C  E5DBB000		ldrb r11, [r11]
+00060780  E35B0000		cmp r11, #0
+00060784  03A0B001		eqmov r11, #1
+00060788  13A0B000		nemov r11, #0
+0006078C  E000000B		and r0, r0, r11
+
+#5			ST		$$PC$BT1 {R:-1}
+(*) BOOL
+00060790  E59FB0C0		ldr r11, [pc, #+192] ; 0x40007F6A
+00060794  E5CB0000		strb r0, [r11]
+
+#6			LD		BT1 {R:-1}
+(*) UNDEF
+00060798  E59FB0C4		ldr r11, [pc, #+196] ; 0x4000AF7C
+0006079C  E5DB0000		ldrb r0, [r11]
+
+#7			ST		$$MEMPC$BT1 {R:-1}
+(*) BOOL
+000607A0  E59FB0AC		ldr r11, [pc, #+172] ; 0x40007F69
+000607A4  E5CB0000		strb r0, [r11]
+
+#8		 
+#9			(* Network 1 *)
+#10			LD		$$PC$BT1 {R:1$0}
+(*) UNDEF
+000607A8  E59FB0A8		ldr r11, [pc, #+168] ; 0x40007F6A
+000607AC  E5DB0000		ldrb r0, [r11]
+
+#11			ANDN		OUT {R:1$2}
+(*) BOOL
+000607B0  E59FB0B0		ldr r11, [pc, #+176] ; 0x4000B4C7
+000607B4  E5DBB000		ldrb r11, [r11]
+000607B8  E35B0000		cmp r11, #0
+000607BC  03A0B001		eqmov r11, #1
+000607C0  13A0B000		nemov r11, #0
+000607C4  E000000B		and r0, r0, r11
+
+#12			ST		M2 {R:1$1}
+(*) BOOL
+000607C8  E59FB08C		ldr r11, [pc, #+140] ; 0x40007F6B
+000607CC  E5CB0000		strb r0, [r11]
+
+#13		 
+#14			(* Network 2 *)
+#15			LD		$$PC$BT1 {R:2$0}
+(*) UNDEF
+000607D0  E59FB080		ldr r11, [pc, #+128] ; 0x40007F6A
+000607D4  E5DB0000		ldrb r0, [r11]
+
+#16			AND		OUT {R:2$2}
+(*) BOOL
+000607D8  E59FB088		ldr r11, [pc, #+136] ; 0x4000B4C7
+000607DC  E5DBB000		ldrb r11, [r11]
+000607E0  E000000B		and r0, r0, r11
+
+#17			ST		M3 {R:2$1}
+(*) BOOL
+000607E4  E59FB074		ldr r11, [pc, #+116] ; 0x40007F6C
+000607E8  E5CB0000		strb r0, [r11]
+
+#18		 
+#19			(* Network 3 *)
+#20			LD		M2 {R:3$0}
+(*) UNDEF
+000607EC  E59FB068		ldr r11, [pc, #+104] ; 0x40007F6B
+000607F0  E5DB0000		ldrb r0, [r11]
+
+#21			S		OUT {R:3$1}
+(*) BOOL
+000607F4  E3500000		cmp r0, #0
+000607F8  0A000006		beq #0x000018
+000607FC  E24DD008		sub sp, sp, #8
+00060800  E58D0000		str r0, [sp]
+00060804  E3A00001		mov r0, #1
+00060808  E59FB058		ldr r11, [pc, #+88] ; 0x4000B4C7
+0006080C  E5CB0000		strb r0, [r11]
+00060810  E59D0000		ldr r0, [sp]
+00060814  E28DD008		add sp, sp, #8
+
+#22		 
+#23			(* Network 4 *)
+#24			LD		M3 {R:4$0}
+(*) UNDEF
+00060818  E59FB040		ldr r11, [pc, #+64] ; 0x40007F6C
+0006081C  E5DB0000		ldrb r0, [r11]
+
+#25			R		OUT {R:4$1}
+(*) BOOL
+00060820  E3500000		cmp r0, #0
+00060824  0A000006		beq #0x000018
+00060828  E24DD008		sub sp, sp, #8
+0006082C  E58D0000		str r0, [sp]
+00060830  E3A00000		mov r0, #0
+00060834  E59FB02C		ldr r11, [pc, #+44] ; 0x4000B4C7
+00060838  E5CB0000		strb r0, [r11]
+0006083C  E59D0000		ldr r0, [sp]
+00060840  E28DD008		add sp, sp, #8
+
+00060844  E8BD0FF0		ldmia sp!, { r4, r5, r6, r7, r8, r9, r10, r11 }
+00060848  E59DE000		ldr lr, [sp]
+0006084C  E28DD008		add sp, sp, #8
+
+00060850  E1A0F00E		mov pc, lr
+
+00060854  40007F69		; 0x40007F69
+00060858  40007F6A		; 0x40007F6A
+0006085C  40007F6B		; 0x40007F6B
+00060860  40007F6C		; 0x40007F6C
+00060864  4000AF7C		; 0x4000AF7C
+00060868  4000B4C7		; 0x4000B4C7
+
+END_PROGRAM
+
+
+**************************************************
+	Target variable image generation
+**************************************************
+
+
+*** INPUT:
+0006086C  E1A0F00E		mov pc, lr
+
+
+*** OUTPUT:
+00060870  E1A0F00E		mov pc, lr
+
+
+
+**************************************************
+	Task Slow init code
+**************************************************
+
+00060874  E24DD008		sub sp, sp, #8
+00060878  E58DE000		str lr, [sp]
+0006087C  E92D0FF0		stmdb sp!, { r4, r5, r6, r7, r8, r9, r10, r11 }
+
+Var init: V::main.$$PC$BT1 = 1
+00060880  E3A00001		mov r0, #1 ; 0x1 = 1
+00060884  E59FB010		ldr r11, [pc, #+16] ; 0x40007F6A
+00060888  E5CB0000		strb r0, [r11]
+
+0006088C  E8BD0FF0		ldmia sp!, { r4, r5, r6, r7, r8, r9, r10, r11 }
+00060890  E59DE000		ldr lr, [sp]
+00060894  E28DD008		add sp, sp, #8
+
+00060898  E1A0F00E		mov pc, lr
+
+0006089C  40007F6A		; 0x40007F6A
+
+
+
+**************************************************
+	Global init code
+**************************************************
+
+000608B0  E24DD008		sub sp, sp, #8
+000608B4  E58DE000		str lr, [sp]
+000608B8  E92D0FF0		stmdb sp!, { r4, r5, r6, r7, r8, r9, r10, r11 }
+
+000608BC  E8BD0FF0		ldmia sp!, { r4, r5, r6, r7, r8, r9, r10, r11 }
+000608C0  E59DE000		ldr lr, [sp]
+000608C4  E28DD008		add sp, sp, #8
+
+000608C8  E1A0F00E		mov pc, lr
+
+
+
+**************************************************
+	Task $$VirtualTables init code
+**************************************************
+
+000608CC  E24DD008		sub sp, sp, #8
+000608D0  E58DE000		str lr, [sp]
+000608D4  E92D0FF0		stmdb sp!, { r4, r5, r6, r7, r8, r9, r10, r11 }
+
+000608D8  E8BD0FF0		ldmia sp!, { r4, r5, r6, r7, r8, r9, r10, r11 }
+000608DC  E59DE000		ldr lr, [sp]
+000608E0  E28DD008		add sp, sp, #8
+
+000608E4  E1A0F00E		mov pc, lr
+
+
+
+********************************************
+MEMORY MAP
+********************************************
+
+Code area type:          		       main code
+Start code area:          		0000000000060000h
+End code area:            		00000000000608F0h
+Code size:                		000008F0h
+
+Start local data area:    		0000000040007F60h
+End local data area:      		0000000040007F6Dh
+Local data size:          		0000000Dh
+
+Start retentive data area:		0000000040007B74h
+End retentive data area:  		0000000040007B74h
+Retentive data size:      		00000000h
+
+Start bit data area:      		0000000000000000h
+End bit data area:        		0000000000000000h
+Bit data size:            		00000000h
+
+
+
+********************************************
+CODE ID:                                37454845
+DEBUG MEMO ID:                          0000842C
+FULL MEMO ID:                           0000E7CF
+********************************************

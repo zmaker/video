@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<plcProject caseSensitive="true" extendedIdNames="false" useCustomWorkspace="true" debugMode="false" extcheck="true" SFCControl="false" strictPointerCheck="true" strictInitValuesCheck="false" verboseWarningMode="false" iecTypeConversionRules="false" PNContactsOnEachNetwork="false" LocalVarsFBAccess="false" strictEnumsCheck="true" copyWarningThreshold="200" version="2.13" useLD2="true" useXPLCFiles="false" useFBMethods="false" customSortOfProjectTree="false" autoDerefPointers="false">
+	<image>Autoritenuta.imgx</image>
+	<commSettings>ModbusTCP:255,1000,M#TCPIP:192.168.0.122/502,5000</commSettings>
+	<sources>
+		<main>
+			<resources>
+				<resource name="ELS20" processor="ARM9">
+					<task name="Fast" interval="t#1000us" priority="0" type="cyclic" hidden="false" dynamic="false" descr="Fast task"/>
+					<task name="Slow" interval="t#10000us" priority="1" type="cyclic" hidden="false" dynamic="false" descr="Slow task">
+						<program>main</program>
+					</task>
+					<task name="Boot" interval="t#0us" priority="2" type="single" hidden="false" dynamic="false" descr="Boot task"/>
+					<task name="Back" interval="t#0us" priority="3" type="cyclic" hidden="false" dynamic="false" descr="Background task"/>
+				</resource>
+			</resources>
+			<globalVars>
+				<group name="Variables" version="1.0.0">
+					<var name="START" type="BOOL">
+						<address type="I" typeVar="X" index="255" subIndex="0"/>
+					</var>
+					<var name="STOP" type="BOOL">
+						<address type="I" typeVar="X" index="255" subIndex="1"/>
+					</var>
+					<var name="MOTOR" type="BOOL">
+						<address type="Q" typeVar="X" index="255" subIndex="0"/>
+					</var>
+				</group>
+			</globalVars>
+			<retainVars/>
+			<constantVars/>
+			<iecVarsDeclaration>
+				<group name="Variables">
+					<iecDeclaration active="FALSE"/>
+				</group>
+			</iecVarsDeclaration>
+			<binaries/>
+			<functions/>
+			<functionBlocks/>
+			<programs>
+				<program name="main" version="1.0.0" creationDate="1775456624" lastModifiedDate="1775457078">
+					<vars/>
+					<iecDeclaration active="FALSE"/>
+					<sourceCode type="LD2">
+						<LD2 version="1">
+							<network label="" id="1" nextID="6" comment="" disabled="false" disableCondition="">
+								<assignment fromTmpVar="">
+									<input>
+										<and id="3">
+											<or id="5">
+												<contact name="START" type="Normal" id="0"/>
+												<contact name="MOTOR" type="Normal" id="4"/>
+											</or>
+											<contact name="STOP" type="Closed" id="2"/>
+										</and>
+									</input>
+									<outputs>
+										<coil name="MOTOR" type="Normal" id="1"/>
+									</outputs>
+								</assignment>
+							</network>
+						</LD2>
+					</sourceCode>
+				</program>
+			</programs>
+			<macros/>
+			<structs/>
+			<typedefs/>
+			<enums/>
+			<subranges/>
+			<interfaces/>
+		</main>
+		<target id="Mps053_XUnified_1_0" name="Autoritenuta.tgt" fullXml="false">
+			<![CDATA[(* ************************************************************************** *)
+(* Project      : PCK033****                                                  *)
+(* Programmer   : Massimo Piovera                                             *)
+(* ************************************************************************** *)
+(* Alias "ELSIST XUnified"                                                    *)
+(* -------------------------------------------------------------------------- *)
+
+(* ************************************************************************** *)
+(* VARIABLES                                                                  *)
+(* ************************************************************************** *)
+
+VAR_GLOBAL
+    {G:"Digital inputs"}
+    SysDI00             AT %IX0.0 : ARRAY[0..31] OF BOOL;       {IO:"Logic inputs module 00"}
+    SysDI01             AT %IX1.0 : ARRAY[0..31] OF BOOL;       {IO:"Logic inputs module 01"}
+    SysDI02             AT %IX2.0 : ARRAY[0..31] OF BOOL;       {IO:"Logic inputs module 02"}
+    SysDI03             AT %IX3.0 : ARRAY[0..31] OF BOOL;       {IO:"Logic inputs module 03"}
+    SysDI04             AT %IX4.0 : ARRAY[0..31] OF BOOL;       {IO:"Logic inputs module 04"}
+    SysDI05             AT %IX5.0 : ARRAY[0..31] OF BOOL;       {IO:"Logic inputs module 05"}
+    SysDI06             AT %IX6.0 : ARRAY[0..31] OF BOOL;       {IO:"Logic inputs module 06"}
+    SysDI07             AT %IX7.0 : ARRAY[0..31] OF BOOL;       {IO:"Logic inputs module 07"}
+    SysDI08             AT %IX8.0 : ARRAY[0..31] OF BOOL;       {IO:"Logic inputs module 08"}
+    SysDI09             AT %IX9.0 : ARRAY[0..31] OF BOOL;       {IO:"Logic inputs module 09"}
+    SysDI10             AT %IX10.0 : ARRAY[0..31] OF BOOL;      {IO:"Logic inputs module 10"}
+    SysDI11             AT %IX11.0 : ARRAY[0..31] OF BOOL;      {IO:"Logic inputs module 11"}
+    SysDI12             AT %IX12.0 : ARRAY[0..31] OF BOOL;      {IO:"Logic inputs module 12"}
+    SysDI13             AT %IX13.0 : ARRAY[0..31] OF BOOL;      {IO:"Logic inputs module 13"}
+    SysDI14             AT %IX14.0 : ARRAY[0..31] OF BOOL;      {IO:"Logic inputs module 14"}
+    SysDI15             AT %IX15.0 : ARRAY[0..31] OF BOOL;      {IO:"Logic inputs module 15"}
+
+    SysCPUDI            AT %IX255.0 : ARRAY[0..31] OF BOOL;     {IO:"Logic inputs CPU"}
+
+    {G:"Digital outputs"}
+    SysDO00             AT %QX0.0 : ARRAY[0..31] OF BOOL;       {IO:"Logic outputs module 00"}
+    SysDO01             AT %QX1.0 : ARRAY[0..31] OF BOOL;       {IO:"Logic outputs module 01"}
+    SysDO02             AT %QX2.0 : ARRAY[0..31] OF BOOL;       {IO:"Logic outputs module 02"}
+    SysDO03             AT %QX3.0 : ARRAY[0..31] OF BOOL;       {IO:"Logic outputs module 03"}
+    SysDO04             AT %QX4.0 : ARRAY[0..31] OF BOOL;       {IO:"Logic outputs module 04"}
+    SysDO05             AT %QX5.0 : ARRAY[0..31] OF BOOL;       {IO:"Logic outputs module 05"}
+    SysDO06             AT %QX6.0 : ARRAY[0..31] OF BOOL;       {IO:"Logic outputs module 06"}
+    SysDO07             AT %QX7.0 : ARRAY[0..31] OF BOOL;       {IO:"Logic outputs module 07"}
+    SysDO08             AT %QX8.0 : ARRAY[0..31] OF BOOL;       {IO:"Logic outputs module 08"}
+    SysDO09             AT %QX9.0 : ARRAY[0..31] OF BOOL;       {IO:"Logic outputs module 09"}
+    SysDO10             AT %QX10.0 : ARRAY[0..31] OF BOOL;      {IO:"Logic outputs module 10"}
+    SysDO11             AT %QX11.0 : ARRAY[0..31] OF BOOL;      {IO:"Logic outputs module 11"}
+    SysDO12             AT %QX12.0 : ARRAY[0..31] OF BOOL;      {IO:"Logic outputs module 12"}
+    SysDO13             AT %QX13.0 : ARRAY[0..31] OF BOOL;      {IO:"Logic outputs module 13"}
+    SysDO14             AT %QX14.0 : ARRAY[0..31] OF BOOL;      {IO:"Logic outputs module 14"}
+    SysDO15             AT %QX15.0 : ARRAY[0..31] OF BOOL;      {IO:"Logic outputs module 15"}
+
+    SysCPUDO            AT %QX255.0 : ARRAY[0..31] OF BOOL;     {IO:"Logic outputs CPU"}
+END_VAR
+]]>
+		</target>
+		<targetXML name="Autoritenuta.tgtx" fullXml="true">
+			<target>
+				<resources>
+					<resource name="ELS20" processor="ARM9">
+						<task id="0" name="Fast" type="cyclic" period="1000" descr="Fast task">
+							<constraints minPeriod="100" maxPeriod="10000"/>
+						</task>
+						<task id="1" name="Slow" type="cyclic" period="10000" descr="Slow task">
+							<constraints minPeriod="1000" maxPeriod="100000"/>
+						</task>
+						<task id="2" name="Boot" type="single" period="0" descr="Boot task"/>
+						<task id="3" name="Back" period="0" type="cyclic" descr="Background task"/>
+					</resource>
+				</resources>
+			</target>
+		</targetXML>
+		<libraries/>
+		<libdirectories>
+			<libdirectory>C:\Program Files (x86)\Elsist\LogicLab\LogicLab\..\Libraries\Pck055a040</libdirectory>
+		</libdirectories>
+		<aux>
+			<src fullXml="false" name="ElsistInit.PLC" order="-1" hidden="true">
+				<![CDATA[
+(* XUnified library init *)
+PROGRAM $$ElsistInit WITH Boot;
+PROGRAM $$ElsistInit
+
+{ HIDDEN:ON }
+
+VAR
+dummy : BOOL;
+END_VAR
+
+{ CODE:ST }
+dummy:=XUnifiedLibInit(TRUE);
+END_PROGRAM
+
+]]>
+			</src>
+			<src fullXml="false" name="HMIsManager.PLC" order="0" hidden="true">
+				<![CDATA[]]>
+			</src>
+		</aux>
+		<workspace>
+			<root name="Autoritenuta" nextID="12">
+				<!-- <Pou name="POUs" id="1"/> -->
+				<folder name="POUs" id="1">
+					<Pou name="main" id="5"/>
+				</folder>
+				<GlobalVars name="Variables" id="2">
+					<!-- <GlobalVars name="Global vars" id="2"> -->
+					<!-- <var name="cnt" id="3"/> -->
+				</GlobalVars>
+			</root>
+		</workspace>
+	</sources>
+	<codegen crossReference="true" crossReferenceOptions="0x3000001D" listing="true" unusedObjs="true" saveEXPFile="false" saveEXPFileLibraries="false" saveTargetFiles="false" warningEnable="true" symMap="true" checkIndexType="false" waitExtension="false" allocateUnusedVariables="false" checkArrayBounds="false" checkDivisionByZero="false" checkPointers="0" floatToIntegerConversionMode="0" checkReferences="false" checkInterfaces="false" checkStackOverflow="false" ioVarsAsReferences="false" customTargetBINFileName="PlcCode0.bin" customTargetTSCFileName="PlcSource0.bin" customTargetTDSFileName="PlcDebug0.bin" generateCustomFilesName="true" initFunVarsWithZero="false" enablePreprocessDirectives="false">
+		<disabledWarnings/>
+		<applicationDataBlocks/>
+	</codegen>
+	<debug watchRefresh="20" watchVarRefresh="0" watchMaxArray="20" autoSaveWatchList="false" watchFBLocalVars="false"/>
+	<editor useOldGridSize="false"/>
+	<userDef>
+		<release/>
+		<author/>
+		<note/>
+		<version/>
+		<password disabled="false"/>
+	</userDef>
+	<downloadSequence sourceCode="onPLCApplicationDownload" debugSymbols="onPLCApplicationDownload"/>
+	<commands>
+		<postbuild/>
+		<postdown/>
+		<predown/>
+	</commands>
+	<resources>
+		<configuration template="LogicLab.pct" version="1">
+			<data protocol="root">
+				<project_config nextID="0">
+					<datacomment/>
+				</project_config>
+				<Mps053_XUnified_1_0 template="Elsist\Plc\Mps053_XUnified_1_0.pct" version="1" name="SlimLine Mps053 XUnified" caption="SlimLine Mps053 XUnified">
+					<config>
+						<elsist_hmis/>
+					</config>
+				</Mps053_XUnified_1_0>
+			</data>
+		</configuration>
+	</resources>
+</plcProject>

@@ -1,0 +1,469 @@
+***********************************************************************
+*
+*	CODE GENERATION LISTING FOR: P01_PLC_Hello
+*	COMPILER VERSION: 5.22.0.24
+*
+***********************************************************************
+
+**************************************************
+	List function: eGetBYTE
+**************************************************
+
+FUNCTION eGetBYTE : BYTE
+
+	{ DE:"(Sfr108a240) eLLabCommonLib - Get BYTE value from void pointer" }
+
+        VAR_INPUT
+RAddress : DWORD;	{ DE:"Read address" }
+	END_VAR
+
+        VAR
+Ptr : @BYTE;	{ DE:"Auxiliary pointer" }
+	END_VAR
+
+END_FUNCTION
+
+	*** Function data allocation
+
+	Par RAddress: CALLER STACK FRAME AT sp+0
+	Var Ptr: REGISTER _TMP_32LO
+
+000600B0  E1A0B00D		mov r11, sp
+000600B4  E92D47F0		stmdb sp!, { r4, r5, r6, r7, r8, r9, r10, lr }
+000600B8  E1A0A00B		mov r10, r11
+000600BC  E3A08000		mov r8, #0
+
+000600C0  E59A0000		ldr r0, [r10]
+000600C4  E1A04000		mov r4, r0
+
+000600C8  E1A0C004		mov r12, r4
+000600CC  E5DC0000		ldrb r0, [r12]
+000600D0  E1A08000		mov r8, r0
+
+000600D4  E1A00008		mov r0, r8
+000600D8  E8BD47F0		ldmia sp!, { r4, r5, r6, r7, r8, r9, r10, lr }
+
+000600DC  E1A0F00E		mov pc, lr
+
+END_FUNCTION
+**************************************************
+	List function: eSetBYTE
+**************************************************
+
+FUNCTION eSetBYTE : BOOL
+
+	{ DE:"(Sfr108a240) eLLabCommonLib - Set BYTE value to void pointer" }
+
+        VAR_INPUT
+WAddress : DWORD;	{ DE:"Write address" }
+WValue : BYTE;	{ DE:"Write value" }
+	END_VAR
+
+        VAR
+Ptr : @BYTE;	{ DE:"Auxiliary pointer" }
+	END_VAR
+
+END_FUNCTION
+
+	*** Function data allocation
+
+	Par WAddress: CALLER STACK FRAME AT sp+0
+	Par WValue: CALLER STACK FRAME AT sp+4
+	Var Ptr: REGISTER _TMP_32LO
+
+000600E0  E1A0B00D		mov r11, sp
+000600E4  E92D47F0		stmdb sp!, { r4, r5, r6, r7, r8, r9, r10, lr }
+000600E8  E1A0A00B		mov r10, r11
+000600EC  E3A08000		mov r8, #0
+
+000600F0  E59A0000		ldr r0, [r10]
+000600F4  E1A04000		mov r4, r0
+
+000600F8  E59FB01C		ldr r11, [pc, #+28] ; 0x4
+000600FC  E7DA000B		ldrb r0, [r10, +r11]
+00060100  E1A0C004		mov r12, r4
+00060104  E5CC0000		strb r0, [r12]
+
+00060108  E3A00001		mov r0, #1 ; 0x01
+0006010C  E1A08000		mov r8, r0
+
+00060110  E1A00008		mov r0, r8
+00060114  E8BD47F0		ldmia sp!, { r4, r5, r6, r7, r8, r9, r10, lr }
+
+00060118  E1A0F00E		mov pc, lr
+
+0006011C  00000004		; 0x00000004
+
+END_FUNCTION
+**************************************************
+	List function: XUnifiedLibInit
+**************************************************
+
+FUNCTION XUnifiedLibInit : BOOL
+
+	{ DE:"(Sfr094a070) eLLabXUnified12Lib - XUnified library init" }
+
+        VAR_INPUT
+Cmd : BOOL;	{ DE:"Command" }
+	END_VAR
+
+        VAR
+i : UDINT;	{ DE:"Auxiliary variable" }
+Version : STRING[ 10 ] := 'Sfr094a070';	{ DE:"Library version" }
+	END_VAR
+
+END_FUNCTION
+
+	*** Function data allocation
+
+	Par Cmd: CALLER STACK FRAME AT sp+0
+	Var i: REGISTER _TMP_32LO
+	Var Version: LOCAL STACK FRAME AT sp-12
+
+00060120  E1A0B00D		mov r11, sp
+00060124  E24DD010		sub sp, sp, #16, 0
+00060128  E92D47F0		stmdb sp!, { r4, r5, r6, r7, r8, r9, r10, lr }
+0006012C  E1A0A00B		mov r10, r11
+00060130  E3A08000		mov r8, #0
+
+00060134  E59FB19C		ldr r11, [pc, #+412] ; 0x30726653
+00060138  E50AB00C		str r11, [r10, #-12]
+0006013C  E59FB190		ldr r11, [pc, #+400] ; 0x30613439
+00060140  E50AB008		str r11, [r10, #-8]
+00060144  E59FB174		ldr r11, [pc, #+372] ; 0x3037
+00060148  E14AB0B4		strh r11, [r10, #-4]
+0006014C  E3A0B000		mov r11, #0
+00060150  E54AB002		strb r11, [r10, #-2]
+
+00060154  E3A00000		mov r0, #0 ; 0x00
+
+00060158  E1A04000		mov r4, r0
+
+0006015C  E1A00004		mov r0, r4
+
+00060160  E24DD008		sub sp, sp, #8
+00060164  E58D0000		str r0, [sp]
+00060168  E3A0000B		mov r0, #11, 0 ; 0x000B
+
+0006016C  E2400002		sub r0, r0, #2
+
+00060170  E1A0B000		mov r11, r0
+00060174  E59D0000		ldr r0, [sp]
+00060178  E28DD008		add sp, sp, #8
+0006017C  E150000B		cmp r0, r11
+00060180  93A00000		lsmov r0, #0
+00060184  83A00001		himov r0, #1
+
+00060188  E3500000		cmp r0, #0
+0006018C  1A000030		bne #0x0000C3 ; 0x00060254
+
+00060190  E59FB124		ldr r11, [pc, #+292] ; 0xFFFFFFF4
+00060194  E08A000B		add r0, r10, r11
+
+00060198  E0800004		add r0, r0, r4
+
+0006019C  E24DD008		sub sp, sp, #8
+000601A0  E58D8000		str r8, [sp]
+000601A4  E24DDF02		sub sp, sp, #2, 15
+000601A8  E1A0B000		mov r11, r0
+000601AC  E58DB000		str r11, [sp]
+000601B0  E59F810C		ldr r8, [pc, #+268] ; 0x600B0
+000601B4  E1A0E00F		mov lr, pc
+000601B8  E1A0F008		mov pc, r8
+000601BC  E28DDF02		add sp, sp, #2, 15
+000601C0  E59D8000		ldr r8, [sp]
+000601C4  E28DD008		add sp, sp, #8
+
+000601C8  E24DD008		sub sp, sp, #8
+000601CC  E58D8000		str r8, [sp]
+000601D0  E24DD008		sub sp, sp, #8
+000601D4  E58D8000		str r8, [sp]
+000601D8  E1A0B000		mov r11, r0
+000601DC  E1A0000B		mov r0, r11
+000601E0  E59F80E4		ldr r8, [pc, #+228] ; 0x789C4
+000601E4  E1A0E00F		mov lr, pc
+000601E8  E1A0F008		mov pc, r8
+000601EC  E59D8000		ldr r8, [sp]
+000601F0  E28DD008		add sp, sp, #8
+000601F4  E59D8000		ldr r8, [sp]
+000601F8  E28DD008		add sp, sp, #8
+
+000601FC  E1A05000		mov r5, r0
+
+00060200  E59FB0B4		ldr r11, [pc, #+180] ; 0xFFFFFFF4
+00060204  E08A000B		add r0, r10, r11
+
+00060208  E0800004		add r0, r0, r4
+
+0006020C  E24DD008		sub sp, sp, #8
+00060210  E58D8000		str r8, [sp]
+00060214  E24DDF02		sub sp, sp, #2, 15
+00060218  E1A0B000		mov r11, r0
+0006021C  E58DB000		str r11, [sp]
+00060220  E1A0B005		mov r11, r5
+00060224  E58DB004		str r11, [sp, #+4]
+00060228  E59F8098		ldr r8, [pc, #+152] ; 0x600E0
+0006022C  E1A0E00F		mov lr, pc
+00060230  E1A0F008		mov pc, r8
+00060234  E28DDF02		add sp, sp, #2, 15
+00060238  E59D8000		ldr r8, [sp]
+0006023C  E28DD008		add sp, sp, #8
+
+00060240  E1A08000		mov r8, r0
+
+00060244  E1A00004		mov r0, r4
+
+00060248  E2800001		add r0, r0, #1
+
+0006024C  E1A04000		mov r4, r0
+
+00060250  EAFFFFC1		b #0xFFFFFF04 ; 0x0006015C
+
+00060254  E59FB060		ldr r11, [pc, #+96] ; 0xFFFFFFF4
+00060258  E08A000B		add r0, r10, r11
+
+0006025C  E1A06000		mov r6, r0
+
+00060260  E24DD008		sub sp, sp, #8
+00060264  E58D8000		str r8, [sp]
+00060268  E24DD008		sub sp, sp, #8
+0006026C  E58D8000		str r8, [sp]
+00060270  E3A00001		mov r0, #1 ; 0x01
+00060274  E3A0B001		mov r11, #1 ; 0x01
+00060278  E1A0100B		mov r1, r11
+0006027C  E1A0B006		mov r11, r6
+00060280  E1A0200B		mov r2, r11
+00060284  E59F8044		ldr r8, [pc, #+68] ; 0x78A1C
+00060288  E1A0E00F		mov lr, pc
+0006028C  E1A0F008		mov pc, r8
+00060290  E59D8000		ldr r8, [sp]
+00060294  E28DD008		add sp, sp, #8
+00060298  E59D8000		ldr r8, [sp]
+0006029C  E28DD008		add sp, sp, #8
+
+000602A0  E1A04000		mov r4, r0
+
+000602A4  E3A00001		mov r0, #1 ; 0x01
+000602A8  E1A08000		mov r8, r0
+
+000602AC  E1A00008		mov r0, r8
+000602B0  E8BD47F0		ldmia sp!, { r4, r5, r6, r7, r8, r9, r10, lr }
+000602B4  E28DD010		add sp, sp, #16, 0
+
+000602B8  E1A0F00E		mov pc, lr
+
+000602BC  FFFFFFF4		; 0xFFFFFFF4
+000602C0  00003037		; 0x00003037
+000602C4  000600B0		; 0x000600B0
+000602C8  000600E0		; 0x000600E0
+000602CC  000789C4		; 0x000789C4
+000602D0  00078A1C		; 0x00078A1C
+000602D4  30613439		; 0x30613439
+000602D8  30726653		; 0x30726653
+
+END_FUNCTION
+**************************************************
+	List program: $$ElsistInit
+**************************************************
+
+PROGRAM $$ElsistInit
+
+        VAR
+dummy : BOOL;
+	END_VAR
+
+END_PROGRAM
+
+000602E0  E24DD008		sub sp, sp, #8
+000602E4  E58DE000		str lr, [sp]
+000602E8  E92D0FF0		stmdb sp!, { r4, r5, r6, r7, r8, r9, r10, r11 }
+
+#0		{SRC:$$ElsistInit}
+#1		(*$WAITSWITCH$*)
+#2		
+#3			(* dummy:=XUnifiedLibInit(TRUE); *)
+#4			LDP0		TRUE	{LNXT:2|2|-1}
+(*) UDINT
+#5			XUnifiedLibInit	{LNXT:2|2|-1}
+(*) UDINT
+000602EC  E24DDF02		sub sp, sp, #2, 15
+000602F0  E3A0B001		mov r11, #1 ; 0x01
+000602F4  E58DB000		str r11, [sp]
+000602F8  E59F8020		ldr r8, [pc, #+32] ; 0x60120
+000602FC  E1A0E00F		mov lr, pc
+00060300  E1A0F008		mov pc, r8
+00060304  E28DDF02		add sp, sp, #2, 15
+
+#6			ST		dummy	{LNXT:2|2|-1}
+(*) BOOL
+00060308  E59FB014		ldr r11, [pc, #+20] ; 0x40007F6C
+0006030C  E5CB0000		strb r0, [r11]
+
+00060310  E8BD0FF0		ldmia sp!, { r4, r5, r6, r7, r8, r9, r10, r11 }
+00060314  E59DE000		ldr lr, [sp]
+00060318  E28DD008		add sp, sp, #8
+
+0006031C  E1A0F00E		mov pc, lr
+
+00060320  00060120		; 0x00060120
+00060324  40007F6C		; 0x40007F6C
+
+END_PROGRAM
+
+
+**************************************************
+	Target variable image generation
+**************************************************
+
+
+*** INPUT:
+00060328  E1A0F00E		mov pc, lr
+
+
+*** OUTPUT:
+0006032C  E1A0F00E		mov pc, lr
+
+
+
+**************************************************
+	Task Boot init code
+**************************************************
+
+00060330  E24DD008		sub sp, sp, #8
+00060334  E58DE000		str lr, [sp]
+00060338  E92D0FF0		stmdb sp!, { r4, r5, r6, r7, r8, r9, r10, r11 }
+
+0006033C  E8BD0FF0		ldmia sp!, { r4, r5, r6, r7, r8, r9, r10, r11 }
+00060340  E59DE000		ldr lr, [sp]
+00060344  E28DD008		add sp, sp, #8
+
+00060348  E1A0F00E		mov pc, lr
+
+**************************************************
+	List program: Main
+**************************************************
+
+PROGRAM Main
+
+END_PROGRAM
+
+00060360  E24DD008		sub sp, sp, #8
+00060364  E58DE000		str lr, [sp]
+00060368  E92D0FF0		stmdb sp!, { r4, r5, r6, r7, r8, r9, r10, r11 }
+
+#0			{SRC:Main}
+#1		 
+#2		  
+#3			(* Network 1 *)
+#4			LD		START {R:1$0}
+(*) UNDEF
+0006036C  E59FB018		ldr r11, [pc, #+24] ; 0x4000AF7C
+00060370  E5DB0000		ldrb r0, [r11]
+
+#5			ST		LED {R:1$1}
+(*) BOOL
+00060374  E59FB014		ldr r11, [pc, #+20] ; 0x4000B4C8
+00060378  E5CB0000		strb r0, [r11]
+
+0006037C  E8BD0FF0		ldmia sp!, { r4, r5, r6, r7, r8, r9, r10, r11 }
+00060380  E59DE000		ldr lr, [sp]
+00060384  E28DD008		add sp, sp, #8
+
+00060388  E1A0F00E		mov pc, lr
+
+0006038C  4000AF7C		; 0x4000AF7C
+00060390  4000B4C8		; 0x4000B4C8
+
+END_PROGRAM
+
+
+**************************************************
+	Target variable image generation
+**************************************************
+
+
+*** INPUT:
+00060394  E1A0F00E		mov pc, lr
+
+
+*** OUTPUT:
+00060398  E1A0F00E		mov pc, lr
+
+
+
+**************************************************
+	Task Slow init code
+**************************************************
+
+0006039C  E24DD008		sub sp, sp, #8
+000603A0  E58DE000		str lr, [sp]
+000603A4  E92D0FF0		stmdb sp!, { r4, r5, r6, r7, r8, r9, r10, r11 }
+
+000603A8  E8BD0FF0		ldmia sp!, { r4, r5, r6, r7, r8, r9, r10, r11 }
+000603AC  E59DE000		ldr lr, [sp]
+000603B0  E28DD008		add sp, sp, #8
+
+000603B4  E1A0F00E		mov pc, lr
+
+
+
+**************************************************
+	Global init code
+**************************************************
+
+000603C0  E24DD008		sub sp, sp, #8
+000603C4  E58DE000		str lr, [sp]
+000603C8  E92D0FF0		stmdb sp!, { r4, r5, r6, r7, r8, r9, r10, r11 }
+
+000603CC  E8BD0FF0		ldmia sp!, { r4, r5, r6, r7, r8, r9, r10, r11 }
+000603D0  E59DE000		ldr lr, [sp]
+000603D4  E28DD008		add sp, sp, #8
+
+000603D8  E1A0F00E		mov pc, lr
+
+
+
+**************************************************
+	Task $$VirtualTables init code
+**************************************************
+
+000603DC  E24DD008		sub sp, sp, #8
+000603E0  E58DE000		str lr, [sp]
+000603E4  E92D0FF0		stmdb sp!, { r4, r5, r6, r7, r8, r9, r10, r11 }
+
+000603E8  E8BD0FF0		ldmia sp!, { r4, r5, r6, r7, r8, r9, r10, r11 }
+000603EC  E59DE000		ldr lr, [sp]
+000603F0  E28DD008		add sp, sp, #8
+
+000603F4  E1A0F00E		mov pc, lr
+
+
+
+********************************************
+MEMORY MAP
+********************************************
+
+Code area type:          		       main code
+Start code area:          		0000000000060000h
+End code area:            		0000000000060400h
+Code size:                		00000400h
+
+Start local data area:    		0000000040007F60h
+End local data area:      		0000000040007F6Dh
+Local data size:          		0000000Dh
+
+Start retentive data area:		0000000040007B74h
+End retentive data area:  		0000000040007B74h
+Retentive data size:      		00000000h
+
+Start bit data area:      		0000000000000000h
+End bit data area:        		0000000000000000h
+Bit data size:            		00000000h
+
+
+
+********************************************
+CODE ID:                                A2FE095B
+DEBUG MEMO ID:                          0000842C
+FULL MEMO ID:                           0000E7CF
+********************************************

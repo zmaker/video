@@ -1,0 +1,814 @@
+***********************************************************************
+*
+*	CODE GENERATION LISTING FOR: Autoritenuta
+*	COMPILER VERSION: 6.2.0.18
+*
+***********************************************************************
+
+**************************************************
+	List function: eGetBYTE
+**************************************************
+
+FUNCTION eGetBYTE : BYTE
+
+	{ DE:"(Sfr108a300) eLLabCommonLib - Get BYTE value from void pointer" }
+
+	VAR_INPUT
+		RAddress : DWORD;	{ DE:"Read address" }
+	END_VAR
+
+	VAR
+		Ptr : @BYTE;	{ DE:"Auxiliary pointer" }
+	END_VAR
+
+END_FUNCTION
+
+	*** Function data allocation
+
+	[Res] eGetBYTE: LOCAL STACK FRAME AT -4(ebp)
+	[Inp] RAddress: CALLER STACK FRAME AT 8(ebp)
+	[Var] Ptr: LOCAL STACK FRAME AT -8(ebp)
+
+07BB00D0  55                            push ebp
+07BB00D1  8B EC                         mov ebp, esp
+07BB00D3  81 EC 08 00 00 00             sub esp, 8
+07BB00D9  57                            push edi
+
+07BB00DA  8B 45 08                      mov eax, 8[ebp]
+07BB00DD  89 45 F8                      mov -8[ebp], eax
+
+07BB00E0  8B 55 F8                      mov edx, -8[ebp]
+07BB00E3  33 C0                         xor eax, eax
+07BB00E5  8A 02                         mov al, [edx]
+07BB00E7  88 45 FC                      mov -4[ebp], al
+
+07BB00EA  33 C0                         xor eax, eax
+07BB00EC  8A 45 FC                      mov al, -4[ebp]
+07BB00EF  5F                            pop edi
+07BB00F0  8B E5                         mov esp, ebp
+07BB00F2  5D                            pop ebp
+
+07BB00F3  C3                            ret
+
+END_FUNCTION
+**************************************************
+	List function: eSetBYTE
+**************************************************
+
+FUNCTION eSetBYTE : BOOL
+
+	{ DE:"(Sfr108a300) eLLabCommonLib - Set BYTE value to void pointer" }
+
+	VAR_INPUT
+		WAddress : DWORD;	{ DE:"Write address" }
+		WValue : BYTE;	{ DE:"Write value" }
+	END_VAR
+
+	VAR
+		Ptr : @BYTE;	{ DE:"Auxiliary pointer" }
+	END_VAR
+
+END_FUNCTION
+
+	*** Function data allocation
+
+	[Res] eSetBYTE: LOCAL STACK FRAME AT -4(ebp)
+	[Inp] WAddress: CALLER STACK FRAME AT 8(ebp)
+	[Inp] WValue: CALLER STACK FRAME AT 12(ebp)
+	[Var] Ptr: LOCAL STACK FRAME AT -8(ebp)
+
+07BB00F4  55                            push ebp
+07BB00F5  8B EC                         mov ebp, esp
+07BB00F7  81 EC 08 00 00 00             sub esp, 8
+07BB00FD  57                            push edi
+
+07BB00FE  8B 45 08                      mov eax, 8[ebp]
+07BB0101  89 45 F8                      mov -8[ebp], eax
+
+07BB0104  33 C0                         xor eax, eax
+07BB0106  8A 45 0C                      mov al, 12[ebp]
+07BB0109  8B 55 F8                      mov edx, -8[ebp]
+07BB010C  88 02                         mov [edx], al
+
+07BB010E  B8 01 00 00 00                mov eax, 01H
+07BB0113  84 C0                         test al, al
+07BB0115  0F 95 45 FC                   setne -4[ebp]
+
+07BB0119  33 C0                         xor eax, eax
+07BB011B  8A 45 FC                      mov al, -4[ebp]
+07BB011E  5F                            pop edi
+07BB011F  8B E5                         mov esp, ebp
+07BB0121  5D                            pop ebp
+
+07BB0122  C3                            ret
+
+END_FUNCTION
+**************************************************
+	List function: StringConv
+**************************************************
+
+FUNCTION StringConv : BOOL
+
+	{ DE:"(Sfr094b000) eLLabXUnified12Lib - To void pointer cast" }
+
+	VAR_INPUT
+		Destination : @STRING;	{ DE:"Destination buffer" }
+		Source : @STRING;	{ DE:"Source buffer" }
+		DSize : UDINT;	{ DE:"Destination size" }
+		Mode : USINT;	{ DE:"Conversion mode" }
+	END_VAR
+
+	VAR
+		i : UDINT;	{ DE:"Auxiliary variable" }
+		AyB : BYTE;	{ DE:"Auxiliary byte buffer" }
+		IDx : UDINT;	{ DE:"Index" }
+		DBSpace : UDINT;	{ DE:"Destination buffer space" }
+		SLength : UDINT;
+	END_VAR
+
+END_FUNCTION
+
+	*** Function data allocation
+
+	[Res] StringConv: LOCAL STACK FRAME AT -4(ebp)
+	[Inp] Destination: CALLER STACK FRAME AT 8(ebp)
+	[Inp] Source: CALLER STACK FRAME AT 12(ebp)
+	[Inp] DSize: CALLER STACK FRAME AT 16(ebp)
+	[Inp] Mode: CALLER STACK FRAME AT 20(ebp)
+	[Var] i: LOCAL STACK FRAME AT -8(ebp)
+	[Var] AyB: LOCAL STACK FRAME AT -12(ebp)
+	[Var] IDx: LOCAL STACK FRAME AT -16(ebp)
+	[Var] DBSpace: LOCAL STACK FRAME AT -20(ebp)
+	[Var] SLength: LOCAL STACK FRAME AT -24(ebp)
+
+07BB0123  55                            push ebp
+07BB0124  8B EC                         mov ebp, esp
+07BB0126  81 EC 18 00 00 00             sub esp, 24
+07BB012C  57                            push edi
+
+07BB012D  8B 45 10                      mov eax, 16[ebp]
+
+07BB0130  2D 02 00 00 00                sub eax, 2
+
+07BB0135  89 45 EC                      mov -20[ebp], eax
+
+07BB0138  B8 01 00 00 00                mov eax, 01H
+07BB013D  84 C0                         test al, al
+07BB013F  0F 95 45 FC                   setne -4[ebp]
+
+07BB0143  8B 45 10                      mov eax, 16[ebp]
+
+07BB0146  50                            push eax
+07BB0147  B8 00 00 00 00                mov eax, 00H
+
+07BB014C  FF 75 0C                      push 12[ebp]
+07BB014F  B9 CC CC CC CC                mov ecx, CCCCCCCCH ; Sysstrlen
+07BB0154  FF D1                         call ecx
+07BB0156  81 C4 04 00 00 00             add esp, 4
+
+07BB015C  05 01 00 00 00                add eax, 1
+
+07BB0161  8B C8                         mov ecx, eax
+07BB0163  58                            pop eax
+07BB0164  3B C1                         cmp eax, ecx
+07BB0166  0F 92 C0                      setb al
+07BB0169  25 FF 00 00 00                and eax, 0FFh
+
+07BB016E  84 C0                         test al, al
+07BB0170  90 74 0E 90 90 90             je 07BB0181H
+
+07BB0176  B8 00 00 00 00                mov eax, 00H
+07BB017B  84 C0                         test al, al
+07BB017D  0F 95 45 FC                   setne -4[ebp]
+
+07BB0181  33 C0                         xor eax, eax
+07BB0183  8A 45 14                      mov al, 20[ebp]
+
+07BB0186  3D 00 00 00 00                cmp eax, 0
+07BB018B  0F 94 C0                      sete al
+07BB018E  25 FF 00 00 00                and eax, 0FFh
+
+07BB0193  84 C0                         test al, al
+07BB0195  90 75 56 90 90 90             jne 07BB01EEH
+
+07BB019B  33 C0                         xor eax, eax
+07BB019D  8A 45 14                      mov al, 20[ebp]
+
+07BB01A0  3D 01 00 00 00                cmp eax, 1
+07BB01A5  0F 94 C0                      sete al
+07BB01A8  25 FF 00 00 00                and eax, 0FFh
+
+07BB01AD  84 C0                         test al, al
+07BB01AF  90 75 51 90 90 90             jne 07BB0203H
+
+07BB01B5  33 C0                         xor eax, eax
+07BB01B7  8A 45 14                      mov al, 20[ebp]
+
+07BB01BA  3D 02 00 00 00                cmp eax, 2
+07BB01BF  0F 94 C0                      sete al
+07BB01C2  25 FF 00 00 00                and eax, 0FFh
+
+07BB01C7  84 C0                         test al, al
+07BB01C9  0F 85 BE 00 00 00             jne 07BB028DH
+
+07BB01CF  33 C0                         xor eax, eax
+07BB01D1  8A 45 14                      mov al, 20[ebp]
+
+07BB01D4  3D 03 00 00 00                cmp eax, 3
+07BB01D9  0F 94 C0                      sete al
+07BB01DC  25 FF 00 00 00                and eax, 0FFh
+
+07BB01E1  84 C0                         test al, al
+07BB01E3  0F 85 6D 01 00 00             jne 07BB0356H
+
+07BB01E9  E9 2C 02 00 00                jmp 07BB041AH
+
+07BB01EE  B8 01 00 00 00                mov eax, 01H
+07BB01F3  84 C0                         test al, al
+07BB01F5  0F 95 45 FC                   setne -4[ebp]
+
+07BB01F9  E9 3D 02 00 00                jmp 07BB043BH
+
+07BB01FE  E9 17 02 00 00                jmp 07BB041AH
+
+07BB0203  B8 00 00 00 00                mov eax, 00H
+
+07BB0208  89 45 F0                      mov -16[ebp], eax
+
+07BB020B  8B 45 F0                      mov eax, -16[ebp]
+
+07BB020E  3B 45 EC                      cmp eax, [ebp+-20]
+07BB0211  0F 97 C0                      seta al
+07BB0214  25 FF 00 00 00                and eax, 0FFh
+
+07BB0219  84 C0                         test al, al
+07BB021B  90 75 6A 90 90 90             jne 07BB0288H
+
+07BB0221  8B 45 0C                      mov eax, 12[ebp]
+
+07BB0224  03 45 F0                      add eax, [ebp+-16]
+
+07BB0227  8B C8                         mov ecx, eax
+07BB0229  51                            push ecx
+07BB022A  E8 A1 FE FF FF                call 07BB00D0H ; $$CODE$$+208
+07BB022F  81 C4 04 00 00 00             add esp, 4
+
+07BB0235  88 45 F4                      mov -12[ebp], al
+
+07BB0238  33 C0                         xor eax, eax
+07BB023A  8A 45 F4                      mov al, -12[ebp]
+
+07BB023D  3D 00 00 00 00                cmp eax, 0
+07BB0242  0F 94 C0                      sete al
+07BB0245  25 FF 00 00 00                and eax, 0FFh
+
+07BB024A  84 C0                         test al, al
+07BB024C  90 74 08 90 90 90             je 07BB0257H
+
+07BB0252  EB 34 90 90 90                jmp 07BB0288H
+
+07BB0257  8B 45 08                      mov eax, 8[ebp]
+
+07BB025A  03 45 F0                      add eax, [ebp+-16]
+
+07BB025D  0F B6 4D F4                   movzx ecx, byte ptr -12[ebp]
+07BB0261  51                            push ecx
+07BB0262  8B C8                         mov ecx, eax
+07BB0264  51                            push ecx
+07BB0265  E8 8A FE FF FF                call 07BB00F4H ; $$CODE$$+244
+07BB026A  81 C4 08 00 00 00             add esp, 8
+
+07BB0270  84 C0                         test al, al
+07BB0272  90 74 03 90 90 90             je 07BB0278H
+
+07BB0278  8B 45 F0                      mov eax, -16[ebp]
+
+07BB027B  05 01 00 00 00                add eax, 1
+
+07BB0280  89 45 F0                      mov -16[ebp], eax
+
+07BB0283  EB 86 90 90 90                jmp 07BB020BH
+
+07BB0288  E9 8D 01 00 00                jmp 07BB041AH
+
+07BB028D  B8 00 00 00 00                mov eax, 00H
+
+07BB0292  89 45 F0                      mov -16[ebp], eax
+
+07BB0295  8B 45 F0                      mov eax, -16[ebp]
+
+07BB0298  3B 45 EC                      cmp eax, [ebp+-20]
+07BB029B  0F 97 C0                      seta al
+07BB029E  25 FF 00 00 00                and eax, 0FFh
+
+07BB02A3  84 C0                         test al, al
+07BB02A5  0F 85 A6 00 00 00             jne 07BB0351H
+
+07BB02AB  8B 45 0C                      mov eax, 12[ebp]
+
+07BB02AE  03 45 F0                      add eax, [ebp+-16]
+
+07BB02B1  8B C8                         mov ecx, eax
+07BB02B3  51                            push ecx
+07BB02B4  E8 17 FE FF FF                call 07BB00D0H ; $$CODE$$+208
+07BB02B9  81 C4 04 00 00 00             add esp, 4
+
+07BB02BF  88 45 F4                      mov -12[ebp], al
+
+07BB02C2  33 C0                         xor eax, eax
+07BB02C4  8A 45 F4                      mov al, -12[ebp]
+
+07BB02C7  3D 00 00 00 00                cmp eax, 0
+07BB02CC  0F 94 C0                      sete al
+07BB02CF  25 FF 00 00 00                and eax, 0FFh
+
+07BB02D4  84 C0                         test al, al
+07BB02D6  90 74 08 90 90 90             je 07BB02E1H
+
+07BB02DC  EB 73 90 90 90                jmp 07BB0351H
+
+07BB02E1  33 C0                         xor eax, eax
+07BB02E3  8A 45 F4                      mov al, -12[ebp]
+
+07BB02E6  3D 5A 00 00 00                cmp eax, 90
+07BB02EB  0F 9E C0                      setle al
+07BB02EE  25 FF 00 00 00                and eax, 0FFh
+
+07BB02F3  50                            push eax
+07BB02F4  33 C0                         xor eax, eax
+07BB02F6  8A 45 F4                      mov al, -12[ebp]
+
+07BB02F9  3D 41 00 00 00                cmp eax, 65
+07BB02FE  0F 9D C0                      setge al
+07BB0301  25 FF 00 00 00                and eax, 0FFh
+
+07BB0306  8B C8                         mov ecx, eax
+07BB0308  58                            pop eax
+07BB0309  23 C1                         and eax, ecx
+
+07BB030B  84 C0                         test al, al
+07BB030D  90 74 10 90 90 90             je 07BB0320H
+
+07BB0313  33 C0                         xor eax, eax
+07BB0315  8A 45 F4                      mov al, -12[ebp]
+
+07BB0318  05 20 00 00 00                add eax, 32
+
+07BB031D  88 45 F4                      mov -12[ebp], al
+
+07BB0320  8B 45 08                      mov eax, 8[ebp]
+
+07BB0323  03 45 F0                      add eax, [ebp+-16]
+
+07BB0326  0F B6 4D F4                   movzx ecx, byte ptr -12[ebp]
+07BB032A  51                            push ecx
+07BB032B  8B C8                         mov ecx, eax
+07BB032D  51                            push ecx
+07BB032E  E8 C1 FD FF FF                call 07BB00F4H ; $$CODE$$+244
+07BB0333  81 C4 08 00 00 00             add esp, 8
+
+07BB0339  84 C0                         test al, al
+07BB033B  90 74 03 90 90 90             je 07BB0341H
+
+07BB0341  8B 45 F0                      mov eax, -16[ebp]
+
+07BB0344  05 01 00 00 00                add eax, 1
+
+07BB0349  89 45 F0                      mov -16[ebp], eax
+
+07BB034C  E9 44 FF FF FF                jmp 07BB0295H
+
+07BB0351  E9 C4 00 00 00                jmp 07BB041AH
+
+07BB0356  B8 00 00 00 00                mov eax, 00H
+
+07BB035B  89 45 F0                      mov -16[ebp], eax
+
+07BB035E  8B 45 F0                      mov eax, -16[ebp]
+
+07BB0361  3B 45 EC                      cmp eax, [ebp+-20]
+07BB0364  0F 97 C0                      seta al
+07BB0367  25 FF 00 00 00                and eax, 0FFh
+
+07BB036C  84 C0                         test al, al
+07BB036E  0F 85 A6 00 00 00             jne 07BB041AH
+
+07BB0374  8B 45 0C                      mov eax, 12[ebp]
+
+07BB0377  03 45 F0                      add eax, [ebp+-16]
+
+07BB037A  8B C8                         mov ecx, eax
+07BB037C  51                            push ecx
+07BB037D  E8 4E FD FF FF                call 07BB00D0H ; $$CODE$$+208
+07BB0382  81 C4 04 00 00 00             add esp, 4
+
+07BB0388  88 45 F4                      mov -12[ebp], al
+
+07BB038B  33 C0                         xor eax, eax
+07BB038D  8A 45 F4                      mov al, -12[ebp]
+
+07BB0390  3D 00 00 00 00                cmp eax, 0
+07BB0395  0F 94 C0                      sete al
+07BB0398  25 FF 00 00 00                and eax, 0FFh
+
+07BB039D  84 C0                         test al, al
+07BB039F  90 74 08 90 90 90             je 07BB03AAH
+
+07BB03A5  EB 73 90 90 90                jmp 07BB041AH
+
+07BB03AA  33 C0                         xor eax, eax
+07BB03AC  8A 45 F4                      mov al, -12[ebp]
+
+07BB03AF  3D 7A 00 00 00                cmp eax, 122
+07BB03B4  0F 9E C0                      setle al
+07BB03B7  25 FF 00 00 00                and eax, 0FFh
+
+07BB03BC  50                            push eax
+07BB03BD  33 C0                         xor eax, eax
+07BB03BF  8A 45 F4                      mov al, -12[ebp]
+
+07BB03C2  3D 61 00 00 00                cmp eax, 97
+07BB03C7  0F 9D C0                      setge al
+07BB03CA  25 FF 00 00 00                and eax, 0FFh
+
+07BB03CF  8B C8                         mov ecx, eax
+07BB03D1  58                            pop eax
+07BB03D2  23 C1                         and eax, ecx
+
+07BB03D4  84 C0                         test al, al
+07BB03D6  90 74 10 90 90 90             je 07BB03E9H
+
+07BB03DC  33 C0                         xor eax, eax
+07BB03DE  8A 45 F4                      mov al, -12[ebp]
+
+07BB03E1  2D 20 00 00 00                sub eax, 32
+
+07BB03E6  88 45 F4                      mov -12[ebp], al
+
+07BB03E9  8B 45 08                      mov eax, 8[ebp]
+
+07BB03EC  03 45 F0                      add eax, [ebp+-16]
+
+07BB03EF  0F B6 4D F4                   movzx ecx, byte ptr -12[ebp]
+07BB03F3  51                            push ecx
+07BB03F4  8B C8                         mov ecx, eax
+07BB03F6  51                            push ecx
+07BB03F7  E8 F8 FC FF FF                call 07BB00F4H ; $$CODE$$+244
+07BB03FC  81 C4 08 00 00 00             add esp, 8
+
+07BB0402  84 C0                         test al, al
+07BB0404  90 74 03 90 90 90             je 07BB040AH
+
+07BB040A  8B 45 F0                      mov eax, -16[ebp]
+
+07BB040D  05 01 00 00 00                add eax, 1
+
+07BB0412  89 45 F0                      mov -16[ebp], eax
+
+07BB0415  E9 44 FF FF FF                jmp 07BB035EH
+
+07BB041A  8B 45 08                      mov eax, 8[ebp]
+
+07BB041D  03 45 F0                      add eax, [ebp+-16]
+
+07BB0420  68 00 00 00 00                push 0
+07BB0425  8B C8                         mov ecx, eax
+07BB0427  51                            push ecx
+07BB0428  E8 C7 FC FF FF                call 07BB00F4H ; $$CODE$$+244
+07BB042D  81 C4 08 00 00 00             add esp, 8
+
+07BB0433  84 C0                         test al, al
+07BB0435  90 74 03 90 90 90             je 07BB043BH
+
+07BB043B  33 C0                         xor eax, eax
+07BB043D  8A 45 FC                      mov al, -4[ebp]
+07BB0440  5F                            pop edi
+07BB0441  8B E5                         mov esp, ebp
+07BB0443  5D                            pop ebp
+
+07BB0444  C3                            ret
+
+END_FUNCTION
+**************************************************
+	List function: XUnifiedLibInit
+**************************************************
+
+FUNCTION XUnifiedLibInit : BOOL
+
+	{ DE:"(Sfr094a100) eLLabXUnified12Lib - XUnified library init" }
+
+	VAR_INPUT
+		Cmd : BOOL;	{ DE:"Command" }
+	END_VAR
+
+	VAR
+		Version : STRING[ 10 ] := 'Sfr094a100';	{ DE:"Library version" }
+	END_VAR
+
+END_FUNCTION
+
+	*** Function data allocation
+
+	[Res] XUnifiedLibInit: LOCAL STACK FRAME AT -4(ebp)
+	[Inp] Cmd: CALLER STACK FRAME AT 8(ebp)
+	[Var] Version: LOCAL STACK FRAME AT -16(ebp)
+
+07BB0445  55                            push ebp
+07BB0446  8B EC                         mov ebp, esp
+07BB0448  81 EC 14 00 00 00             sub esp, 20
+07BB044E  57                            push edi
+
+Var init: V::XUnifiedLibInit.Version = 'Sfr094a100'
+07BB044F  C7 45 F0 53 66 72 30          mov -16[ebp], 30726653H
+07BB0456  C7 45 F4 39 34 61 31          mov -12[ebp], 31613439H
+07BB045D  66 C7 45 F8 30 30             mov word ptr -8[ebp], 3030H
+07BB0463  C6 45 FA 00                   mov byte ptr -6[ebp], 00H
+
+07BB0467  8D 45 F0                      lea eax, -16[ebp]
+
+07BB046A  89 45 EC                      mov -20[ebp], eax
+
+07BB046D  8D 45 F0                      lea eax, -16[ebp]
+
+07BB0470  68 03 00 00 00                push 3
+07BB0475  68 0B 00 00 00                push 11
+07BB047A  FF 75 EC                      push -20[ebp]
+07BB047D  50                            push eax
+07BB047E  E8 A0 FC FF FF                call 07BB0123H ; $$CODE$$+291
+07BB0483  81 C4 10 00 00 00             add esp, 16
+
+07BB0489  84 C0                         test al, al
+07BB048B  90 74 03 90 90 90             je 07BB0491H
+
+07BB0491  8D 45 F0                      lea eax, -16[ebp]
+
+07BB0494  89 45 EC                      mov -20[ebp], eax
+
+07BB0497  8B 4D EC                      mov ecx, -20[ebp]
+07BB049A  51                            push ecx
+07BB049B  68 01 00 00 00                push 1
+07BB04A0  68 01 00 00 00                push 1
+07BB04A5  B9 CC CC CC CC                mov ecx, CCCCCCCCH ; SysXUnifiedValue
+07BB04AA  FF D1                         call ecx
+07BB04AC  81 C4 0C 00 00 00             add esp, 12
+
+07BB04B2  84 C0                         test al, al
+07BB04B4  0F 95 45 FC                   setne -4[ebp]
+
+07BB04B8  B8 01 00 00 00                mov eax, 01H
+07BB04BD  84 C0                         test al, al
+07BB04BF  0F 95 45 FC                   setne -4[ebp]
+
+07BB04C3  33 C0                         xor eax, eax
+07BB04C5  8A 45 FC                      mov al, -4[ebp]
+07BB04C8  5F                            pop edi
+07BB04C9  8B E5                         mov esp, ebp
+07BB04CB  5D                            pop ebp
+
+07BB04CC  C3                            ret
+
+END_FUNCTION
+**************************************************
+	List program: $$ElsistInit
+**************************************************
+
+PROGRAM $$ElsistInit
+
+	VAR
+		dummy : BOOL;
+	END_VAR
+
+END_PROGRAM
+
+07BB04D0  55                            push ebp
+07BB04D1  8B EC                         mov ebp, esp
+07BB04D3  60                            pushad
+
+__Float_handling_mode_TRUNCATION::Start
+07BB04D4  81 EC 04 00 00 00             sub esp, 4
+07BB04DA  D9 3C 24                      fnstcw [esp]
+07BB04DD  8B 0C 24                      mov ecx, [esp]
+07BB04E0  66 81 E1 FF F3                and cx, F3FFH
+07BB04E5  80 CD 0C                      or ch, 0CH
+07BB04E8  89 0C 24                      mov [esp], ecx
+07BB04EB  D9 2C 24                      fldcw [esp]
+07BB04EE  81 C4 04 00 00 00             add esp, 4
+__Float_handling_mode_TRUNCATION::End
+
+#0		{SRC:$$ElsistInit}
+#1		(*$WAITSWITCH$*)
+#2		
+#3			(* dummy:=XUnifiedLibInit(TRUE); *)
+#4			LDP0		TRUE	{LNXT:2|2|-1}
+(*) UDINT
+#5			XUnifiedLibInit	{LNXT:2|2|-1}
+(*) BOOL
+07BB04F4  68 01 00 00 00                push 1
+07BB04F9  E8 47 FF FF FF                call 07BB0445H ; $$CODE$$+1093
+07BB04FE  81 C4 04 00 00 00             add esp, 4
+
+#6			ST		dummy	{LNXT:2|2|-1}
+(*) BOOL
+07BB0504  84 C0                         test al, al
+07BB0506  0F 95 05 CC CC CC CC          setne [CCCCCCCCH] ; $$DATA$$+8 ; <0x7B90008>
+
+07BB050D  61                            popad
+07BB050E  5D                            pop ebp
+
+07BB050F  C3                            ret
+
+END_PROGRAM
+
+
+**************************************************
+	Target variable image generation
+**************************************************
+
+
+*** INPUT:
+07BB0510  C3                            ret
+
+
+*** OUTPUT:
+07BB0511  C3                            ret
+
+
+
+**************************************************
+	Task Boot init code
+**************************************************
+
+07BB0512  55                            push ebp
+07BB0513  8B EC                         mov ebp, esp
+
+07BB0515  8B E5                         mov esp, ebp
+07BB0517  5D                            pop ebp
+
+07BB0518  C3                            ret
+
+**************************************************
+	List program: main
+**************************************************
+
+PROGRAM main
+
+END_PROGRAM
+
+07BB0530  55                            push ebp
+07BB0531  8B EC                         mov ebp, esp
+07BB0533  60                            pushad
+
+__Float_handling_mode_TRUNCATION::Start
+07BB0534  81 EC 04 00 00 00             sub esp, 4
+07BB053A  D9 3C 24                      fnstcw [esp]
+07BB053D  8B 0C 24                      mov ecx, [esp]
+07BB0540  66 81 E1 FF F3                and cx, F3FFH
+07BB0545  80 CD 0C                      or ch, 0CH
+07BB0548  89 0C 24                      mov [esp], ecx
+07BB054B  D9 2C 24                      fldcw [esp]
+07BB054E  81 C4 04 00 00 00             add esp, 4
+__Float_handling_mode_TRUNCATION::End
+
+#0			{SRC:main}
+#1		 
+#2		  
+#3			(* Network 1 *)
+#4			LD		START {R:1$0}
+(*) UNDEF
+07BB0554  33 C0                         xor eax, eax
+07BB0556  8A 05 CC CC CC CC             mov al, [CCCCCCCCH] ; %I255+0 ; <0x7B8962C>
+
+#5			OR		MOTOR {R:1$4}
+(*) BOOL
+07BB055C  33 C9                         xor ecx, ecx
+07BB055E  8A 0D CC CC CC CC             mov cl, [CCCCCCCCH] ; %Q255+0 ; <0x7B8984C>
+07BB0564  0B C1                         or eax, ecx
+
+#6			ANDN		STOP {R:1$2}
+(*) BOOL
+07BB0566  33 C9                         xor ecx, ecx
+07BB0568  8A 0D CC CC CC CC             mov cl, [CCCCCCCCH] ; %I255+1 ; <0x7B8962D>
+07BB056E  84 C9                         test cl, cl
+07BB0570  0F 94 C1                      sete cl
+07BB0573  23 C1                         and eax, ecx
+
+#7			ST		MOTOR {R:1$1}
+(*) BOOL
+07BB0575  84 C0                         test al, al
+07BB0577  0F 95 05 CC CC CC CC          setne [CCCCCCCCH] ; %Q255+0 ; <0x7B8984C>
+
+07BB057E  61                            popad
+07BB057F  5D                            pop ebp
+
+07BB0580  C3                            ret
+
+END_PROGRAM
+
+
+**************************************************
+	Target variable image generation
+**************************************************
+
+
+*** INPUT:
+07BB0581  C3                            ret
+
+
+*** OUTPUT:
+07BB0582  C3                            ret
+
+
+
+**************************************************
+	Task Slow init code
+**************************************************
+
+07BB0583  55                            push ebp
+07BB0584  8B EC                         mov ebp, esp
+
+07BB0586  8B E5                         mov esp, ebp
+07BB0588  5D                            pop ebp
+
+07BB0589  C3                            ret
+
+
+
+**************************************************
+	Global init code
+**************************************************
+
+07BB0590  55                            push ebp
+07BB0591  8B EC                         mov ebp, esp
+
+Var init: V:EmbeddedElements:$$POUCBARRAY$$Boot = [?$$ElsistInit.$$POUCB$$, 0]
+07BB0593  B9 CC CC CC CC                mov ecx, CCCCCCCCH ; $$DATA$$+28 ; <0x7B9001C>
+07BB0598  89 0D CC CC CC CC             mov [CCCCCCCCH], ecx ; $$DATA$$+12 ; <0x7B9000C>
+
+Var init: V:EmbeddedElements:$$POUCBARRAY$$Slow = [?main.$$POUCB$$, 0]
+07BB059E  B9 CC CC CC CC                mov ecx, CCCCCCCCH ; $$DATA$$+34 ; <0x7B90022>
+07BB05A3  89 0D CC CC CC CC             mov [CCCCCCCCH], ecx ; $$DATA$$+20 ; <0x7B90014>
+
+07BB05A9  8B E5                         mov esp, ebp
+07BB05AB  5D                            pop ebp
+
+07BB05AC  C3                            ret
+
+
+
+**************************************************
+	Global RETAIN init code
+**************************************************
+
+07BB05AD  55                            push ebp
+07BB05AE  8B EC                         mov ebp, esp
+
+07BB05B0  8B E5                         mov esp, ebp
+07BB05B2  5D                            pop ebp
+
+07BB05B3  C3                            ret
+
+
+
+**************************************************
+	Task $$VirtualTables init code
+**************************************************
+
+07BB05B4  55                            push ebp
+07BB05B5  8B EC                         mov ebp, esp
+
+07BB05B7  8B E5                         mov esp, ebp
+07BB05B9  5D                            pop ebp
+
+07BB05BA  C3                            ret
+
+
+
+********************************************
+MEMORY MAP
+********************************************
+
+Code area type:          		       main code
+Start code area:          		0000000007BB0000h
+End code area:            		0000000007BB06BCh
+Code size:                		000006BCh
+
+Start local data area:    		0000000007B90000h
+End local data area:      		0000000007B90028h
+Local data size:          		00000028h
+
+Start retentive data area:		0000000007BA0000h
+End retentive data area:  		0000000007BA0000h
+Retentive data size:      		00000000h
+
+Start bit data area:      		0000000000000000h
+End bit data area:        		0000000000000000h
+Bit data size:            		00000000h
+
+
+
+********************************************
+CODE ID:                                1799D4BD
+DEBUG MEMO ID:                          00008BF5
+FULL MEMO ID:                           00006CC9
+RELOCATION ADDR:                        0000000007BB0000
+********************************************
